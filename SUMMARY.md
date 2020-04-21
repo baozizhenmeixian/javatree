@@ -104,6 +104,7 @@
   * [类加载、链接、初始化](space-memory-management/cheng-xu-de-yun-hang-guo-cheng/lei-jia-zai-lian-jie-chu-shi-hua/README.md)
     * [方法区](space-memory-management/cheng-xu-de-yun-hang-guo-cheng/lei-jia-zai-lian-jie-chu-shi-hua/fang-fa-qu.md)
 * [JVM运行时数据区](space-memory-management/jvm-yun-hang-shi-shu-ju-qu/README.md)
+  * [前置知识](space-memory-management/jvm-yun-hang-shi-shu-ju-qu/qian-zhi-zhi-shi.md)
   * [程序计数器](space-memory-management/jvm-yun-hang-shi-shu-ju-qu/cheng-xu-ji-shu-qi.md)
   * [本地方法栈](space-memory-management/jvm-yun-hang-shi-shu-ju-qu/ben-di-fang-fa-zhan.md)
   * [虚拟机栈](space-memory-management/jvm-yun-hang-shi-shu-ju-qu/xu-ni-ji-zhan.md)
