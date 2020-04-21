@@ -105,5 +105,5 @@ C标准库中封装一个同名的mmap\(\)函数，底层便是使用的mmap\(\)
 
 参考书籍：《深入理解计算机系统》、《深入理解linux内核》
 
-![](../../.gitbook/assets/image%20%2815%29.png)
+![](../../.gitbook/assets/image%20%2817%29.png)
 
