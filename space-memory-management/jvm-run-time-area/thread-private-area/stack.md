@@ -73,11 +73,11 @@ mov  [0], eax  #将eax的值放回变量0
 
 **1.1.2.2 基于寄存器的执行引擎**
 
-
+待填充
 
 **1.1.2.3 基于寄存器与基于栈的对比**
 
-
+待填充
 
 #### 1.1.3 运行环境区
 
@@ -128,7 +128,9 @@ bool os::create_thread(Thread* thread, ThreadType thr_type, size_t stack_size){
 
 再追一追pthread库的代码，发现如果调用`pthread_create()`方法时不指定地址，那么将默认调用mmap\(\)方法（ [前置知识](../pre-knowledge.md#3-1-1-mmap)）从进程中分配一块**内存映射空间**作为LWP的栈空间
 
-至此，hotspot涉及到的栈相关的概念就都清楚了
+至此，hotspot涉及到的栈相关的概念就都清楚了（进程栈、lwp栈、java栈，操作树栈）
+
+![](../../../.gitbook/assets/image%20%2819%29.png)
 
 
 
