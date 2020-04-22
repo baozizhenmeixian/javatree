@@ -106,5 +106,5 @@
   * [线程共享区](space-memory-management/jvm-run-time-area/thread-share-area/README.md)
     * [堆](space-memory-management/jvm-run-time-area/thread-share-area/java-heap.md)
     * [方法区](space-memory-management/jvm-run-time-area/thread-share-area/method-area/README.md)
-      * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/yun-hang-shi-chang-liang-chi.md)
+      * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.md)
 

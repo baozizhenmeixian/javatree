@@ -130,7 +130,7 @@ bool os::create_thread(Thread* thread, ThreadType thr_type, size_t stack_size){
 
 至此，hotspot涉及到的栈相关的概念就都清楚了（进程栈、lwp栈、java栈，操作树栈）
 
-![](../../../.gitbook/assets/image%20%2819%29.png)
+![](../../../.gitbook/assets/image%20%2821%29.png)
 
 
 

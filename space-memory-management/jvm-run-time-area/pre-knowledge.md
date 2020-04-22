@@ -8,7 +8,7 @@ description: linux进程虚拟地址空间
 
 ## 1、Linux进程空间划分
 
-![](../../.gitbook/assets/image%20%2820%29.png)
+![](../../.gitbook/assets/image%20%2823%29.png)
 
 ### **1.1 程序代码和数据**
 
@@ -115,5 +115,5 @@ C标准库中封装一个同名的mmap\(\)函数，底层便是使用的mmap\(\)
 
 参考书籍：《深入理解计算机系统》、《深入理解linux内核》
 
-![](../../.gitbook/assets/image%20%2818%29.png)
+![](../../.gitbook/assets/image%20%2819%29.png)
 
