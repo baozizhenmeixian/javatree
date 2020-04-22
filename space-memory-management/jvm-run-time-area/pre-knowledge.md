@@ -8,7 +8,7 @@ description: linux进程虚拟地址空间
 
 ## 1、Linux进程空间划分
 
-![](https://upload-images.jianshu.io/upload_images/18927149-ec955894929bcb8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](../../.gitbook/assets/image%20%2820%29.png)
 
 ### **1.1 程序代码和数据**
 
