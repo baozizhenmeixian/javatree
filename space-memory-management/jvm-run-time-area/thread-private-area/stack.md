@@ -222,5 +222,7 @@ bool os::create_thread(Thread* thread, ThreadType thr_type, size_t stack_size){
 
 
 
+参考书籍：《HOTSPOT实战》、[RednaxelaFX博客](https://www.iteye.com/blog/rednaxelafx-492667)
+
 
 
