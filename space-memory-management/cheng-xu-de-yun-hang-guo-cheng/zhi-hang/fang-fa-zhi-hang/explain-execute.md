@@ -69,9 +69,11 @@ class InterpreterCodelet: public Stub {
 
 为了方便管理，在解释器中，每个InterpreterCodelet并不是孤立的，它们共同构成了一个**Stub队列**
 
->刚开始学这块时，总是分不清Stub是个什么东西，明明队列里放的是Codelet还要叫Stub队列（博客和书籍里），后面看了上面那段源码，原来Stub就是个父类，此外，Stub有个意思是“一小块代码”，通常是有个caller要调用callee的时候，中间需要一些特殊处理的逻辑，就会用这种“小块代码”去做，它们并不是最终的调用目标，而是做一些简单的处理之后“跳”到真正的目标去。
+>刚开始学这块时，总是分不清Stub是个什么东西，明明队列里放的s是Codelet还要叫Stub队列（博客和书籍里），后面看了上面那段源码，原来Stub就是个父类，此外，Stub有个意思是“一小块代码”，通常是有个caller要调用callee的时候，中间需要一些特殊处理的逻辑，就会用这种“小块代码”去做，它们并不是最终的调用目标，而是做一些简单的处理之后“跳”到真正的目标去。
 
-![](http://upload-images.jianshu.io/upload_images/18927149-c91985c2dec1fd0d.png)
+![stub_queue](../../../../img/stub_queue.png)
+
+
 
 
 ##### 1.2.1.3 字节码模块
@@ -120,13 +122,13 @@ address Method::bcp_from(int bci) const {
 
 函数code_at()首先得到该方法对应字节码流在JVM内存中的基地址code_base，接下来根据`bcp = code_base() + bci`计算得到**字节码指针（byte code pointer,缩写为bcp）地址**；最后访问bcp指向内存的指针，即得到目标bytecode，完成“取码”，具体流程如下图：
 
-![取指](http://upload-images.jianshu.io/upload_images/18927149-68477efaae6f681d.png)
+![](../../../../img/fetch_bytecode.png)
 
 ##### 1.2.1.4 转发表
 
 同样是在JVM的启动过程中，将会创建一张转发表(DispatchTable)，转发表是连接字节码和机器码的桥梁，记录了**字节码**以及其对应的**机器码的入口地址(entry_point)**，这样在JVM需要使用该字节码的机器码时，只用通过转发表就能跳过去执行了
 
-![](http://upload-images.jianshu.io/upload_images/18927149-7a24b885ad553a22.png)
+![](../../../../img/dispatch.png)
 
 
 
@@ -134,7 +136,7 @@ address Method::bcp_from(int bci) const {
 
 在了解了模版解释器的组成之后，它的运作过程也比较清晰了，结合着“**取指-译码-执行**“这一循环操作，各个模块间是这么交互的：
 
-![](http://upload-images.jianshu.io/upload_images/18927149-6c3d0323a0d8dc94.png)
+![](../../../../img/intercepter_run.png)
 
 
 
