@@ -1,0 +1,1773 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>方法执行 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="explain-execute.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语言：符号组织</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../../language-symbol-organization/symbol-compile/">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/">
+            
+                    
+                    符号编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                    
+                    隐藏(hide)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                    
+                    遮掩(obscure)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                    
+                    遮蔽(shadow)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                    
+                    重载(overloading)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                    
+                    过程结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                    
+                    顺序结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                    
+                    选择结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                    
+                    if...else 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                    
+                    switch 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                    
+                    条件三目运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                    
+                    Optional、各种类库等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.5" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                    
+                    assert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.6" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                    
+                    try...catch 等
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                    
+                    while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                    
+                    do...while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                    
+                    for 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                    
+                    语法糖等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                    
+                    迭代器Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../../language-symbol-organization/symbol-definition/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/">
+            
+                    
+                    符号定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.1" data-path="../../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                    
+                    原生类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                    
+                    引用类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                    
+                    类类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                    
+                    Object对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.1.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                    
+                    String对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                    
+                    接口类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                    
+                    类型擦除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                    
+                    边界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.3" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                    
+                    通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.4" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                    
+                    自限定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.5" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                    
+                    协变
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.4" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                    
+                    数组类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                    
+                    类型转换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                    
+                    原生类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.2" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                    
+                    引用类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.3" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                    
+                    自动装箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../../../language-symbol-organization/symbol-definition/value.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/value.html">
+            
+                    
+                    值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                    
+                    关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../../language-symbol-organization/execute-preperation/">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/">
+            
+                    
+                    执行准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                    
+                    加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                    
+                    链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                    
+                    初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">时间：并发同步</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../../time-concurrent/java-language-specification/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/">
+            
+                    
+                    JAVA语言标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                    
+                    要解决的问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                    
+                    可见性问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.2" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                    
+                    指令重排问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                    
+                    要满足的原则
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.2.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                    
+                    happens-before原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                    
+                    Java代码层面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                    
+                    final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                    
+                    Concurrent工具包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/">
+            
+                    
+                    JVM标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                    
+                    同步方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                    
+                    通过读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式获取monitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                    
+                    同步语句块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                    
+                    通过monitorenter, monitorexit这两个指令来显式获取和释放moniter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                    
+                    给字段加上ACC_VOLATILE标志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../../time-concurrent/hotspot-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/">
+            
+                    
+                    Hotspot实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                    
+                    lock指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                    
+                    重量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                    
+                    轻量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                    
+                    偏向锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">空间：内存管理</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    程序的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                <a href="../../lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                    
+                    类加载、链接、初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    方法执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1.1" data-path="explain-execute.html">
+            
+                <a href="explain-execute.html">
+            
+                    
+                    解释执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.1.2" data-path="jit.html">
+            
+                <a href="jit.html">
+            
+                    
+                    编译执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../lei-de-shi-li-hua/">
+            
+                <a href="../lei-de-shi-li-hua/">
+            
+                    
+                    类的实例化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1" data-path="../lei-de-shi-li-hua/dui-xiang/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.1" data-path="../lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                    
+                    创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                    
+                    销毁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                    
+                    GC机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.1" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                    
+                    GC时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.2" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                    
+                    GC对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.3" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                    
+                    GC算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../lei-xie-zai.html">
+            
+                <a href="../../lei-xie-zai.html">
+            
+                    
+                    类卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../../jvm-run-time-area/">
+            
+                <a href="../../../jvm-run-time-area/">
+            
+                    
+                    JVM运行时数据区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../../jvm-run-time-area/pre-knowledge.html">
+            
+                <a href="../../../jvm-run-time-area/pre-knowledge.html">
+            
+                    
+                    前置知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../../../jvm-run-time-area/thread-private-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/">
+            
+                    
+                    线程私有区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" data-path="../../../jvm-run-time-area/thread-private-area/stack.html">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/stack.html">
+            
+                    
+                    JVM栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="../../../jvm-run-time-area/thread-private-area/program-counter.html">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/program-counter.html">
+            
+                    
+                    程序计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../../../jvm-run-time-area/thread-share-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/">
+            
+                    
+                    线程共享区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" data-path="../../../jvm-run-time-area/thread-share-area/java-heap.html">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/java-heap.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" data-path="../../../jvm-run-time-area/thread-share-area/method-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/method-area/">
+            
+                    
+                    方法区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.2.1" data-path="../../../jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.html">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.html">
+            
+                    
+                    运行时常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >方法执行</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x65B9;&#x6CD5;&#x6267;&#x884C;">&#x65B9;&#x6CD5;&#x6267;&#x884C;</h1>
+<p>java&#x7ECF;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x4E00;&#x95E8;&#x89E3;&#x91CA;&#x6027;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x4F46;&#x662F;&#x5728;Hotspot&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x7684;<strong>&#x89E3;&#x91CA;&#x5668;</strong>&#x4F9B;&#x89E3;&#x91CA;&#x6267;&#x884C;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x5BF9;&#x8FD0;&#x884C;&#x662F;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x9891;&#x7E41;&#x7684;&#x7684;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x4F18;&#x5316;&#xFF0C;&#x5C06;&#x5176;&#x7F16;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&quot;&#x9891;&#x7E41;&quot;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x79F0;&#x4E3A;&#x201C;&#x70ED;&#x70B9;&#x201C;&#x4EE3;&#x7801;&#xFF0C;Hotspot&#x865A;&#x62DF;&#x673A;&#x4E5F;&#x7531;&#x6B64;&#x5F97;&#x540D;&#x3002;&#x800C;&#x6267;&#x884C;&#x7F16;&#x8BD1;&#x4EFB;&#x52A1;&#x7684;&#x7EC4;&#x4EF6;&#x79F0;&#x4E3A;<strong>&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#xFF08;Just In Time Complier&#xFF0C;&#x5373;JIT&#x7F16;&#x8BD1;&#x5668;&#xFF09;</strong></p>
+<p>&#x4E0B;&#x6587;&#x5C06;&#x4ECE;&#x865A;&#x62DF;&#x673A;&#x57FA;&#x7840;&#x7740;&#x624B;&#xFF0C;&#x4ECE;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x62BD;&#x8C61;&#x5C42;&#x9762;&#x5BF9;&#x7F16;&#x8BD1;&#x548C;&#x89E3;&#x91CA;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;</p>
+<h2 id="1&#x3001;&#x865A;&#x62DF;&#x673A;&#x57FA;&#x7840;">1&#x3001;&#x865A;&#x62DF;&#x673A;&#x57FA;&#x7840;</h2>
+<p>&#x8981;&#x7406;&#x89E3;&quot;&#x865A;&#x62DF;&#x673A;&quot;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x8BA8;&#x8BBA;&#x201C;&#x673A;&#x5668;&#x201C;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x201C;&#x673A;&#x5668;&#x201C;&#x7684;&#x542B;&#x4E49;&#x4E0E;&#x8BA8;&#x8BBA;&#x65F6;&#x6240;&#x7AD9;&#x7684;&#x89D2;&#x5EA6;&#x6709;&#x5173;&#x3002;</p>
+<p>&#x4ECE;&#x6267;&#x884C;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x7684;<strong>&#x8FDB;&#x7A0B;&#x89D2;&#x5EA6;</strong>&#x770B;&#xFF0C;&#x201C;&#x673A;&#x5668;&#x201C;&#x7531;&#x5206;&#x914D;&#x7ED9;&#x8FDB;&#x7A0B;&#x7684;&#x903B;&#x8F91;&#x5185;&#x5B58;&#x5730;&#x5740;&#x7A7A;&#x95F4;&#x3001;&#x7528;&#x6237;&#x7EA7;&#x5BC4;&#x5B58;&#x5668;&#x548C;&#x5141;&#x8BB8;&#x6267;&#x884C;&#x8FDB;&#x7A0B;&#x4EE3;&#x7801;&#x7684;&#x6307;&#x4EE4;&#x7EC4;&#x6210;&#x3002;&#x673A;&#x5668;&#x7684;I/O&#x90E8;&#x5206;&#x53EA;&#x80FD;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x770B;&#x5230;&#xFF0C;&#x8FDB;&#x7A0B;&#x4E0E;I/O&#x7CFB;&#x7EDF;&#x4EA4;&#x4E92;&#x7684;&#x552F;&#x4E00;&#x65B9;&#x6CD5;&#x662F;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x5C06;&#x7CFB;&#x7EDF;&#x5E93;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x8FDB;&#x7A0B;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x6765;&#x6267;&#x884C;&#x3002;&#x6240;&#x4EE5;&#x4ECE;&#x8FDB;&#x7A0B;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x673A;&#x5668;&#x7531;<strong>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</strong>&#x4E0E;&#x5E95;&#x5C42;&#x7684;<strong>&#x7528;&#x6237;&#x7EA7;&#x786C;&#x4EF6;</strong>&#x7EC4;&#x5408;&#x800C;&#x6210;</p>
+<p>&#x4ECE;<strong>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</strong>&#x7684;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;&#x7531;&#x5E95;&#x5C42;&#x673A;&#x5668;&#x652F;&#x6491;&#x3002;&#x4E00;&#x4E2A;&#x7CFB;&#x7EDF;&#x662F;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x652F;&#x6301;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#xFF0C;&#x6240;&#x6709;&#x8FDB;&#x7A0B;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x548C;&#x5176;&#x4ED6;&#x7684;I/O&#x8D44;&#x6E90;&#x3002;&#x7CFB;&#x7EDF;&#x4E3A;&#x8FDB;&#x7A0B;&#x5206;&#x914D;&#x7269;&#x7406;&#x5185;&#x5B58;&#x548C;I/O&#x8D44;&#x6E90;&#xFF0C;&#x5141;&#x8BB8;&#x8FDB;&#x7A0B;&#x901A;&#x8FC7;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0E;&#x5206;&#x914D;&#x7ED9;&#x5B83;&#x4EEC;&#x7684;&#x8D44;&#x6E90;&#x4EA4;&#x4E92;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4ECE;&#x7CFB;&#x7EDF;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#xFF0C;&#x673A;&#x5668;&#x4EC5;&#x7531;<strong>&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x5B9E;&#x73B0;</strong></p>
+<p><img src="../../../../.gitbook/assets/image%20%2842%29.png" alt="&#x7A0B;&#x5E8F;&#x548C;&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#x7684;&#x201C;&#x673A;&#x5668;&#x201D;"></p>
+<p>&#x5BF9;&#x673A;&#x5668;&#x53EF;&#x4EE5;&#x4ECE;&#x8FDB;&#x7A0B;&#x548C;&#x7CFB;&#x7EDF;&#x89D2;&#x5EA6;&#x53BB;&#x7406;&#x89E3;&#xFF0C;&#x76F8;&#x5E94;&#x5730;&#x4E5F;&#x5C31;&#x6709;<strong>&#x8FDB;&#x7A0B;&#x7EA7;</strong>&#x548C;<strong>&#x7CFB;&#x7EDF;&#x7EA7;</strong>&#x865A;&#x62DF;&#x673A;</p>
+<h3 id="11-&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;">1.1 &#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;</h3>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x4E00;&#x53F0;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x80FD;&#x591F;&#x652F;&#x6301;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x8FDB;&#x7A0B;&#xFF0C;&#x865A;&#x62DF;&#x8F6F;&#x4EF6;&#x540C;&#x65F6;&#x4EFF;&#x771F;<strong>&#x7528;&#x6237;&#x7EA7;&#x6307;&#x4EE4;</strong>&#x548C;<strong>&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;</strong>&#xFF0C;&#x5373;&#x4E0A;&#x56FE;&#x5DE6;&#x8FB9;&#x673A;&#x5668;&#x4E0E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x8FB9;&#x754C;&#xFF0C;&#x4E0B;&#x56FE;&#x662F;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x7684;&#x793A;&#x4F8B;</p>
+<p><img src="../../../../.gitbook/assets/image%20%2835%29.png" alt="&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x5C42;&#x7EA7;&#xFF08;&#x300A;&#x865A;&#x62DF;&#x673A;&#x7CFB;&#x7EDF;&#x4E0E;&#x8FDB;&#x7A0B;&#x7684;&#x901A;&#x7528;&#x5E73;&#x53F0;&#x300B;&#xFF09;"></p>
+<p>&#x672F;&#x8BED;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x5C06;&#x5E95;&#x5C42;&#x5E73;&#x53F0;&#x79F0;&#x4E3A;<strong>&#x4E3B;&#x673A;</strong>&#xFF0C;&#x5C06;&#x8FD0;&#x884C;&#x5728;&#x865A;&#x62DF;&#x673A;&#x73AF;&#x5883;&#x4E0A;&#x7684;&#x8F6F;&#x4EF6;&#x79F0;&#x4E3A;<strong>&#x5BA2;&#x6237;&#x673A;</strong>&#xFF0C;&#x865A;&#x62DF;&#x8F6F;&#x4EF6;&#x7ECF;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x8FD0;&#x884C;&#x65F6;</strong>&#xFF08;runtime software&#xFF09;&#xFF0C;&#x8FD0;&#x884C;&#x65F6;&#x7528;&#x6237;&#x652F;&#x6301;&#x5BA2;&#x6237;&#x8FDB;&#x7A0B;&#xFF0C;&#x8FD0;&#x884C;&#x5728;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x4E0A;&#x5C42;&#x3002;&#x865A;&#x62DF;&#x673A;&#x4E3A;&#x5BA2;&#x6237;&#x8FDB;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x548C;&#x7EC8;&#x6B62;&#x63D0;&#x4F9B;&#x76F8;&#x5E94;&#x7684;&#x652F;&#x6301;&#xFF0C;<strong>&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;(&#x5982;jvm)</strong>&#x5C31;&#x662F;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x7684;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x4E00;&#x79CD;</p>
+<h3 id="12-&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;">1.2 &#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;</h3>
+<p>&#x4E0E;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x5927;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;<strong>&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;</strong>&#x63D0;&#x4F9B;&#x5B8C;&#x6210;&#x7684;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#xFF0C;&#x8FD9;&#x4E2A;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x53CA;&#x73B0;&#x5728;&#x7684;&#x8BB8;&#x591A;&#x7528;&#x6237;&#x8FDB;&#x7A0B;&#xFF0C;&#x5B83;&#x4F7F;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x80FD;&#x591F;&#x8BBF;&#x95EE;&#x5E95;&#x5C42;&#x7684;&#x786C;&#x4EF6;&#x8D44;&#x6E90;&#xFF0C;&#x5305;&#x62EC;&#x7F51;&#x7EDC;&#x3001;I/O&#x4EE5;&#x53CA;&#x56FE;&#x5F62;&#x7528;&#x6237;&#x754C;&#x9762;</p>
+<p>&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x865A;&#x62DF;&#x8F6F;&#x4EF6;&#xFF08;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x76D1;&#x89C6;&#x5668;&#xFF0C;VMM&#xFF09;&#x88AB;&#x653E;&#x5728;&#x5E95;&#x5C42;&#x786C;&#x4EF6;&#x673A;&#x5668;&#x548C;&#x4F20;&#x7EDF;&#x8F6F;&#x4EF6;&#x4E4B;&#x95F4;&#xFF0C;&#x865A;&#x62DF;&#x8F6F;&#x4EF6;&#x5C06;&#x4E00;&#x4E2A;&#x786C;&#x4EF6;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x7FFB;&#x8BD1;&#x6210;&#x53E6;&#x4E00;&#x4E2A;&#xFF0C;&#x4EE5;&#x6784;&#x6210;&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x80FD;&#x591F;&#x6267;&#x884C;&#x4E3A;&#x4E0D;&#x540C;&#x786C;&#x4EF6;&#x96C6;&#x5F00;&#x53D1;&#x7684;&#x7CFB;&#x7EDF;&#x8F6F;&#x4EF6;&#x73AF;&#x5883;&#xFF0C;&#x6BD4;&#x5982; VMware ESX</p>
+<p><img src="../../../../.gitbook/assets/image%20%2837%29.png" alt="&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;&#x5C42;&#x7EA7;"></p>
+<p>&#x4EE5;&#x4E0A;&#x7B80;&#x5355;&#x4ECB;&#x7ECD;&#x4E86;&#x865A;&#x62DF;&#x673A;&#x7684;&#x4E24;&#x79CD;&#x5206;&#x7C7B;&#xFF1A;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x548C;&#x7CFB;&#x7EDF;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x91CD;&#x70B9;&#x4ECB;&#x7ECD;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x4E2D;&#x6BD4;&#x8F83;&#x7279;&#x6B8A;&#x7684;&#x4E00;&#x7C7B;&#xFF1A;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;</p>
+<h3 id="13-&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;"><strong>1.3 &#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;</strong></h3>
+<p>&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#x672C;&#x8D28;&#x4E0A;&#x8FD8;&#x662F;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x6240;&#x4EE5;&#x5B83;&#x7684;&#x5C42;&#x7EA7;&#x4E0E;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#x4EE5;java&#x865A;&#x62DF;&#x673A;&#x4E3A;&#x4F8B;&#x5C06;&#x5176;&#x7EC6;&#x5316;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x4E0E;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;&#x57FA;&#x672C;&#x4E00;&#x81F4;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;Java&#x6838;&#x5FC3;&#x7C7B;&#x5E93;&#x8DE8;&#x8D8A;&#x4E86;&#x591A;&#x4E2A;&#x5C42;&#x7EA7;&#xFF1A;</p>
+<p>a&#x3001;&#x5BF9;&#x4E8E;&#x90E8;&#x5206;&#x6838;&#x5FC3;&#x7C7B;&#x5E93;&#xFF0C;&#x5982;java.lang&#x5305;&#xFF0C;&#x9700;&#x8981;&#x9760;Java&#x865A;&#x62DF;&#x673A;&#x6765;&#x5BF9;&#x8BED;&#x4E49;&#x8FDB;&#x884C;&#x5B9E;&#x73B0; </p>
+<p>b&#x3001;&#x90E8;&#x5206;&#x6838;&#x5FC3;&#x7C7B;&#x5E93;&#x4F1A;&#x4E2D;&#x8C03;&#x7528;&#x4E86;native&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x82E5;&#x662F;&#x6D89;&#x53CA;&#x5230;&#x7CFB;&#x7EDF;&#x7EA7;&#x6307;&#x4EE4;&#x5982;I/O&#x6307;&#x4EE4;&#x7B49;&#x5219;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x6765;&#x6267;&#x884C;&#xFF0C;&#x82E5;&#x53EA;&#x662F;&#x6D89;&#x53CA;&#x5230;&#x7528;&#x6237;&#x6001;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5219;&#x65E0;&#x9700;&#x9677;&#x5165;&#x5185;&#x6838;</p>
+<p><img src="../../../../.gitbook/assets/image%20%2839%29.png" alt=""></p>
+<p>&#x4E00;&#x4E2A;<strong>&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;</strong>&#x4E0E;<strong>&#x4F20;&#x7EDF;&#x7684;&#x8FDB;&#x7A0B;&#x865A;&#x62DF;&#x673A;</strong>&#x6709;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#x7684;&#x6307;&#x4EE4;&#x7CFB;&#x7EDF;(ISA)&#x4EC5;&#x4EC5;&#x662F;&#x4E3A;&#x7528;&#x6237;&#x6A21;&#x5F0F;&#x7684;&#x7A0B;&#x5E8F;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;<strong>&#x5E76;&#x4E0D;&#x662F;&#x9488;&#x5BF9;&#x4E00;&#x4E2A;&#x771F;&#x5B9E;&#x7684;&#x786C;&#x4EF6;&#x5904;&#x7406;&#x5668;</strong>&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x5B83;&#x5C06;&#x4EC5;&#x4EC5;&#x5728;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x673A;&#x7684;&#x5904;&#x7406;&#x5668;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x865A;&#x62DF;&#x6307;&#x4EE4;&#x7CFB;&#x7EDF;</strong>&#xFF08;V-ISA&#xFF09;</p>
+<p><img src="../../../../.gitbook/assets/image%20%2834%29.png" alt="&#x4F20;&#x7EDF;&#x7684;&#x7F16;&#x8BD1;&#x3001;&#x52A0;&#x8F7D;&#x4E0E;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#x7684;&#x7F16;&#x8BD1;&#x3001;&#x52A0;&#x8F7D;"></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x8BED;&#x8A00;/&#x7F16;&#x8BD1;&#x5668;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#x5F85;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#xFF1A;</p>
+<p>&#x5728;&#x4F20;&#x7EDF;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x8BCD;&#x6CD5;&#x3001;&#x8BED;&#x6CD5;&#x548C;&#x8BED;&#x4E49;&#x5206;&#x6790;&#x7684;&#x524D;&#x7AEF;&#xFF0C;&#x5B83;&#x4F1A;&#x751F;&#x6210;<strong>&#x7B80;&#x5355;&#x7684;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;(</strong>&#x7C7B;&#x4F3C;&#x4E0E;&#x673A;&#x5668;&#x4EE3;&#x7801;&#x4F46;&#x66F4;&#x62BD;&#x8C61;)&#xFF0C;&#x8FD9;&#x79CD;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x901A;&#x5E38;&#x4E0D;&#x5305;&#x542B;&#x5177;&#x4F53;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x5206;&#x914D;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x4E2A;<strong>&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#xFF08;&#x7F16;&#x8BD1;&#x5668;&#x540E;&#x7AEF;&#xFF09;</strong>&#x63A5;&#x6536;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#xFF0C;&#x751F;&#x6210;&#x9762;&#x5411;&#x7279;&#x5B9A;&#x6307;&#x4EE4;&#x7CFB;&#x7EDF;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;<strong>&#x4E8C;&#x8FDB;&#x5236;&#x673A;&#x5668;&#x4EE3;&#x7801;</strong>&#xFF0C;&#x8FD9;&#x4E9B;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x88AB;&#x53D1;&#x5E03;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x80FD;&#x5728;&#x652F;&#x6301;&#x7F16;&#x8BD1;&#x65F6;&#x7ED9;&#x5B9A;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x7CFB;&#x7EDF;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x5426;&#x5219;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;</p>
+<p>&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#x6539;&#x53D8;&#x4E86;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x7684;&#x7F16;&#x8BD1;&#x6B65;&#x9AA4;&#x7C7B;&#x4F3C;&#x4E8E;&#x4F20;&#x7EDF;&#x6A21;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x66F4;&#x9AD8;&#x7684;&#x5C42;&#x6B21;&#x53D1;&#x5E03;&#x7A0B;&#x5E8F;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x8FD9;&#x4E2A;&#x865A;&#x62DF;ISA&#x5B9E;&#x9645;&#x4E0A;&#x5C31;&#x662F;&#x865A;&#x62DF;&#x673A;&#x7684;&#x673A;&#x5668;&#x4EE3;&#x7801;&#x3002;&#x53EF;&#x79FB;&#x690D;&#x7684;&#x865A;&#x62DF;ISA&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x88AB;&#x53D1;&#x5E03;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x6267;&#x884C;&#xFF0C;&#x6BCF;&#x4E2A;&#x5E73;&#x53F0;&#x90FD;&#x8981;&#x5B9E;&#x73B0;&#x80FD;&#x6267;&#x884C;&#x865A;&#x62DF;ISA&#x7684;&#x865A;&#x62DF;&#x673A;</p>
+<p>&#x4EE5;java&#x8BED;&#x8A00;&#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;Class&#x6587;&#x4EF6;&#x5C31;&#x5BF9;&#x5E94;&#x7740;&#x865A;&#x62DF;ISA(&#x53EF;&#x79FB;&#x690D;&#x4EE3;&#x7801;)</p>
+<p><img src="../../../../.gitbook/assets/image%20%2841%29.png" alt="&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x73AF;&#x5883;&#xFF1A;java&#x8BED;&#x8A00;&#x73AF;&#x5883;"></p>
+<h2 id="2&#x3001;java&#x865A;&#x62DF;&#x673A;&#x7684;&#x89E3;&#x91CA;&#x3001;&#x7F16;&#x8BD1;">2&#x3001;Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x89E3;&#x91CA;&#x3001;&#x7F16;&#x8BD1;</h2>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x5B83;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x5728;&#x4E8E;&#x5C06;<strong>&#x6E90;&#x4EE3;&#x7801;</strong>&#x7F16;&#x8BD1;&#x6210;<strong>&#x76EE;&#x6807;&#x4EE3;&#x7801;</strong>&#xFF0C;&#x4E2D;&#x95F4;&#x4F1A;&#x7ECF;&#x8FC7;&#x8BCD;&#x6CD5;&#x5206;&#x6790;&#x3001;&#x8BED;&#x6CD5;&#x5206;&#x6790;&#x7B49;&#x8BB8;&#x591A;&#x6B65;&#x9AA4;&#xFF0C;&#x5177;&#x4F53;&#x6D41;&#x7A0B;&#x53EF;&#x4EE5;&#x770B;&#x4E0B;&#x56FE;&#xFF0C;&#x4EE5;C&#x8BED;&#x8A00;&#x4E3A;&#x4F8B;&#x7684;&#x8BDD;&#x5C31;&#x662F;&#x5C06;C&#x539F;&#x6587;&#x4EF6;&#x7F16;&#x8BD1;&#x6210;&#x4E86;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF0C;</p>
+<p><img src="../../../../.gitbook/assets/image%20%2833%29.png" alt="&#x7F16;&#x8BD1;&#x5668;&#x57FA;&#x672C;&#x7ED3;&#x6784;"></p>
+<p>&#x5BF9;&#x4E8E;&#x89E3;&#x91CA;&#x5668;&#x800C;&#x8A00;&#xFF0C;&#x524D;&#x534A;&#x90E8;&#x5206;&#x4E0E;&#x7F16;&#x8BD1;&#x5668;&#x975E;&#x5E38;&#x7684;&#x76F8;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5728;&#x751F;&#x6210;&#x4E86;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x4E4B;&#x540E;&#x5C31;&#x76F4;&#x63A5;&#x53D1;&#x5E03;&#x4E86;&#xFF0C;&#x76F4;&#x63A5;&#x7531;&#x5B57;&#x8282;&#x7801;&#x89E3;&#x91CA;&#x5668;&#x6765;&#x5BF9;&#x4E2D;&#x95F4;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x6267;&#x884C;&#xFF0C;&#x4ECE;&#x8FD9;&#x4E2A;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;&#x5B57;&#x8282;&#x7801;&#x89E3;&#x91CA;&#x5668;&#x5176;&#x5B9E;&#x662F;&#x4E2A;&#x9ED1;&#x76D2;&#xFF0C;&#x81F3;&#x4E8E;&#x89E3;&#x91CA;&#x5668;&#x5230;&#x5E95;&#x662F;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x5077;&#x5077;&#x53C8;&#x7F16;&#x8BD1;&#x6210;&#x4E86;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x4E5F;&#x72B9;&#x672A;&#x53EF;&#x77E5;&#xFF0C;&#x5C31;&#x5982;&#x540C;&#x6587;&#x7AE0;&#x5F00;&#x5934;&#x5F15;&#x51FA;&#x7684;Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x5176;&#x65E2;&#x5B58;&#x5728;<strong>&#x89E3;&#x91CA;&#x6267;&#x884C;&#xFF0C;</strong>&#x4E5F;&#x5B58;&#x5728;<strong>&#x7F16;&#x8BD1;&#x6267;&#x884C;</strong></p>
+<p><img src="../../../../.gitbook/assets/image%20%2840%29.png" alt="&#x89E3;&#x91CA;&#x5668;&#x57FA;&#x672C;&#x7ED3;&#x6784;"></p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x4EE5;java&#x865A;&#x62DF;&#x673A;&#x4E3A;&#x4F8B;&#xFF0C;&#x5206;&#x6790;jvm&#x7684;&#x8FD9;&#x4E2A;&#x89E3;&#x91CA;&#x5668;&#x9ED1;&#x76D2;&#xFF08;jvm&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF09;&#x5185;&#x90E8;&#x662F;&#x4EC0;&#x4E48;&#x6784;&#x9020;&#xFF1A;</p>
+<p><img src="../../../../.gitbook/assets/image%20%2838%29.png" alt="java&#x865A;&#x62DF;&#x673A;"></p>
+<p>&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF0C;java&#x865A;&#x62DF;&#x673A;&#x5176;&#x5B9E;&#x5C06;&#x4F20;&#x7EDF;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x62C6;&#x6210;&#x4E86;&#x4E24;&#x5757;&#xFF0C;&#x524D;&#x7AEF;&#x90E8;&#x5206;&#x6210;&#x4E86;Java&#x6E90;&#x7801;&#x7EA7;&#x7F16;&#x8BD1;&#x5668;&#xFF0C;&#x540E;&#x7AEF;&#x90E8;&#x5206;&#x6210;&#x4E86;JIT&#x7F16;&#x8BD1;&#x5668;&#xFF08;&#x5C5E;&#x4E8E;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF09;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x4E24;&#x7BC7;&#x6587;&#x7AE0;&#x5C06;&#x5206;&#x522B;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;JVM&#x7684;&#x7F16;&#x8BD1;&#x6267;&#x884C;&#x548C;&#x89E3;&#x91CA;&#x6267;&#x884C;</p>
+<p>&#x53C2;&#x8003;&#x4E66;&#x7C4D;&#xFF1A;&#x300A;&#x865A;&#x62DF;&#x673A;&#x7CFB;&#x7EDF;&#x4E0E;&#x8FDB;&#x7A0B;&#x7684;&#x901A;&#x7528;&#x5E73;&#x53F0;&#x300B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: 执行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="explain-execute.html" class="navigation navigation-next " aria-label="Next page: 解释执行">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"方法执行","level":"4.1.2.1","depth":3,"next":{"title":"解释执行","level":"4.1.2.1.1","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","articles":[]},"previous":{"title":"执行","level":"4.1.2","depth":2,"path":"space-memory-management/process-of-program/execution/README.md","ref":"space-memory-management/process-of-program/execution/README.md","articles":[{"title":"方法执行","level":"4.1.2.1","depth":3,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md","articles":[{"title":"解释执行","level":"4.1.2.1.1","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","articles":[]},{"title":"编译执行","level":"4.1.2.1.2","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","articles":[]}]},{"title":"类的实例化","level":"4.1.2.2","depth":3,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/README.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/README.md","articles":[{"title":"对象","level":"4.1.2.2.1","depth":4,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/README.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/README.md","articles":[{"title":"创建","level":"4.1.2.2.1.1","depth":5,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/chuang-jian.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/chuang-jian.md","articles":[]},{"title":"销毁","level":"4.1.2.2.1.2","depth":5,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/README.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/README.md","articles":[{"title":"GC机制","level":"4.1.2.2.1.2.1","depth":6,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/README.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/README.md","articles":[{"title":"GC时机","level":"4.1.2.2.1.2.1.1","depth":7,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.md","articles":[]},{"title":"GC对象","level":"4.1.2.2.1.2.1.2","depth":7,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.md","articles":[]},{"title":"GC算法","level":"4.1.2.2.1.2.1.3","depth":7,"path":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md","ref":"space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md","articles":[]}]}]}]}]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md","mtime":"2020-05-28T10:30:19.994Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-31T16:53:56.776Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
