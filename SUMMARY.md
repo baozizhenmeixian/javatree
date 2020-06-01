@@ -4,10 +4,7 @@
 
 ## 语言：符号组织
 * [符号编译](language-symbol-organization/symbol-compile/README.md)
-    * [隐藏(hide)](language-symbol-organization/symbol-compile/hide.md)
-    * [遮掩(obscure)](language-symbol-organization/symbol-compile/obscure.md)
-    * [遮蔽(shadow)](language-symbol-organization/symbol-compile/shadow.md)
-    * [重载(overloading)](language-symbol-organization/symbol-compile/overloading.md)
+    * [字节码](language-symbol-organization/symbol-compile/bytecode.md)
 * [过程结构](language-symbol-organization/guo-cheng-jie-gou/README.md)
     * [顺序结构](language-symbol-organization/guo-cheng-jie-gou/sequence-structure.md)
     * [选择结构](language-symbol-organization/guo-cheng-jie-gou/case-structure/README.md)
