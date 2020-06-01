@@ -1,0 +1,1875 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JVM栈 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="program-counter.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语言：符号组织</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../language-symbol-organization/symbol-compile/">
+            
+                <a href="../../../language-symbol-organization/symbol-compile/">
+            
+                    
+                    符号编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                <a href="../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                    
+                    隐藏(hide)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                <a href="../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                    
+                    遮掩(obscure)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                <a href="../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                    
+                    遮蔽(shadow)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                <a href="../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                    
+                    重载(overloading)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                    
+                    过程结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                    
+                    顺序结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                    
+                    选择结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                    
+                    if...else 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                    
+                    switch 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                    
+                    条件三目运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                    
+                    Optional、各种类库等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.5" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                    
+                    assert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.6" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                    
+                    try...catch 等
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                    
+                    while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                    
+                    do...while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                    
+                    for 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                    
+                    语法糖等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                <a href="../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                    
+                    迭代器Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../language-symbol-organization/symbol-definition/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/">
+            
+                    
+                    符号定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../../language-symbol-organization/symbol-definition/types/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.1" data-path="../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                    
+                    原生类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                    
+                    引用类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                    
+                    类类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1.1" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                    
+                    Object对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.1.2" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                    
+                    String对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.2" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                    
+                    接口类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.3.1" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                    
+                    类型擦除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.2" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                    
+                    边界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.3" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                    
+                    通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.4" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                    
+                    自限定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.5" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                    
+                    协变
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.4" data-path="../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                    
+                    数组类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3" data-path="../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                    
+                    类型转换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.3.1" data-path="../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                    
+                    原生类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.2" data-path="../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                    
+                    引用类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.3" data-path="../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                    
+                    自动装箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../../language-symbol-organization/symbol-definition/value.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/value.html">
+            
+                    
+                    值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                <a href="../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                    
+                    关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../language-symbol-organization/execute-preperation/">
+            
+                <a href="../../../language-symbol-organization/execute-preperation/">
+            
+                    
+                    执行准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                <a href="../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                    
+                    加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                <a href="../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                    
+                    链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                <a href="../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                    
+                    初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">时间：并发同步</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../time-concurrent/java-language-specification/">
+            
+                <a href="../../../time-concurrent/java-language-specification/">
+            
+                    
+                    JAVA语言标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                    
+                    要解决的问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1.1" data-path="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                    
+                    可见性问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.2" data-path="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                    
+                    指令重排问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                    
+                    要满足的原则
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.2.1" data-path="../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                    
+                    happens-before原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                    
+                    Java代码层面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                    
+                    final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" data-path="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                <a href="../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                    
+                    Concurrent工具包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../time-concurrent/java-virtual-machine-specification/">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/">
+            
+                    
+                    JVM标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" data-path="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                    
+                    同步方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1.1" data-path="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                    
+                    通过读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式获取monitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" data-path="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                    
+                    同步语句块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.2.1" data-path="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                    
+                    通过monitorenter, monitorexit这两个指令来显式获取和释放moniter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                <a href="../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                    
+                    给字段加上ACC_VOLATILE标志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../time-concurrent/hotspot-realization/">
+            
+                <a href="../../../time-concurrent/hotspot-realization/">
+            
+                    
+                    Hotspot实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                <a href="../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                <a href="../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                    
+                    lock指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                <a href="../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                <a href="../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                    
+                    重量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                <a href="../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                    
+                    轻量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                <a href="../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                    
+                    偏向锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">空间：内存管理</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../process-of-program/">
+            
+                <a href="../../process-of-program/">
+            
+                    
+                    程序的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                <a href="../../process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                    
+                    类加载、链接、初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../process-of-program/execution/">
+            
+                <a href="../../process-of-program/execution/">
+            
+                    
+                    执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="../../process-of-program/execution/fang-fa-zhi-hang/">
+            
+                <a href="../../process-of-program/execution/fang-fa-zhi-hang/">
+            
+                    
+                    方法执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1.1" data-path="../../process-of-program/execution/fang-fa-zhi-hang/explain-execute.html">
+            
+                <a href="../../process-of-program/execution/fang-fa-zhi-hang/explain-execute.html">
+            
+                    
+                    解释执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.1.2" data-path="../../process-of-program/execution/fang-fa-zhi-hang/jit.html">
+            
+                <a href="../../process-of-program/execution/fang-fa-zhi-hang/jit.html">
+            
+                    
+                    编译执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../../process-of-program/execution/lei-de-shi-li-hua/">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/">
+            
+                    
+                    类的实例化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.1" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                    
+                    创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                    
+                    销毁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                    
+                    GC机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.1" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                    
+                    GC时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.2" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                    
+                    GC对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.3" data-path="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                <a href="../../process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                    
+                    GC算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../process-of-program/lei-xie-zai.html">
+            
+                <a href="../../process-of-program/lei-xie-zai.html">
+            
+                    
+                    类卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    JVM运行时数据区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../pre-knowledge.html">
+            
+                <a href="../pre-knowledge.html">
+            
+                    
+                    前置知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    线程私有区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.2.2.1" data-path="stack.html">
+            
+                <a href="stack.html">
+            
+                    
+                    JVM栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="program-counter.html">
+            
+                <a href="program-counter.html">
+            
+                    
+                    程序计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../thread-share-area/">
+            
+                <a href="../thread-share-area/">
+            
+                    
+                    线程共享区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" data-path="../thread-share-area/java-heap.html">
+            
+                <a href="../thread-share-area/java-heap.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" data-path="../thread-share-area/method-area/">
+            
+                <a href="../thread-share-area/method-area/">
+            
+                    
+                    方法区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.2.1" data-path="../thread-share-area/method-area/run-time-constant-pool.html">
+            
+                <a href="../thread-share-area/method-area/run-time-constant-pool.html">
+            
+                    
+                    运行时常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >JVM栈</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="jvm&#x6808;">JVM&#x6808;</h1>
+<p>[TOC]</p>
+<h2 id="1&#x3001;jvm&#x89C4;&#x8303;">1&#x3001;jvm&#x89C4;&#x8303;</h2>
+<p>&#x5728;jvm&#x89C4;&#x8303;&#x4E2D;&#xFF0C;&#x5C06;&#x6808;&#x5212;&#x5206;&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x6808;&#x548C;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF0C;&#x5206;&#x522B;&#x5BF9;&#x5E94;&#x4E0E;java&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x548C;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;</p>
+<h3 id="11-&#x865A;&#x62DF;&#x673A;&#x6808;">1.1 &#x865A;&#x62DF;&#x673A;&#x6808;</h3>
+<blockquote>
+<p>&#x6BCF;&#x4E2A;Java&#x865A;&#x62DF;&#x673A;&#x7EBF;&#x7A0B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x79C1;&#x6709;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#xFF0C;&#x4E0E;&#x8BE5;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x88AB;&#x521B;&#x5EFA;&#x3002;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#x5B58;&#x50A8;&#x7740;&#x6808;&#x5E27;&#x3002;Java&#x865A;&#x62DF;&#x673A;&#x6808;&#x7C7B;&#x4F3C;&#x4E8E;&#x5E38;&#x89C4;&#x8BED;&#x8A00;&#xFF08;&#x4F8B;&#x5982;C&#xFF09;&#x7684;&#x5806;&#x6808;&#xFF1A;&#x5B83;&#x4FDD;&#x5B58;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x548C;&#x90E8;&#x5206;&#x7ED3;&#x679C;&#xFF0C;&#x5E76;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x548C;&#x8FD4;&#x56DE;&#x4E2D;&#x8D77;&#x4F5C;&#x7528;&#x3002;&#x56E0;&#x4E3A;&#x9664;&#x4E86;pop&#x548C;push&#x5E27;&#x5916;&#xFF0C;&#x5E76;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x64CD;&#x7EB5;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#xFF0C;&#x6240;&#x4EE5;&#x6808;&#x5E27;&#x4E5F;&#x53EF;&#x4EE5;&#x4ECE;&#x5806;&#x4E2D;&#x5206;&#x914D;&#x3002;Java&#x865A;&#x62DF;&#x673A;&#x6808;&#x7684;&#x5185;&#x5B58;&#x4E0D;&#x5FC5;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x3002;</p>
+<p>&#x8BE5;&#x89C4;&#x8303;&#x5141;&#x8BB8;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#x5177;&#x6709;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#xFF0C;&#x6216;&#x8005;&#x6839;&#x636E;&#x8BA1;&#x7B97;&#x8981;&#x6C42;&#x52A8;&#x6001;&#x6269;&#x5C55;&#x548C;&#x6536;&#x7F29;&#x3002;&#x5982;&#x679C;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#x7684;&#x5927;&#x5C0F;&#x56FA;&#x5B9A;&#xFF0C;&#x5219;&#x5728;&#x521B;&#x5EFA;&#x6BCF;&#x4E2A;Java&#x865A;&#x62DF;&#x673A;&#x6808;&#x65F6;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x9009;&#x62E9;&#x5176;&#x5927;&#x5C0F;&#x3002;</p>
+<p>Java&#x865A;&#x62DF;&#x673A;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x4E3A;&#x7A0B;&#x5E8F;&#x5458;&#x6216;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x5BF9;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#x521D;&#x59CB;&#x5927;&#x5C0F;&#x7684;&#x63A7;&#x5236;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x52A8;&#x6001;&#x6269;&#x5C55;&#x6216;&#x6536;&#x7F29;Java&#x865A;&#x62DF;&#x673A;&#x5806;&#x6808;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x5927;&#x5C0F;&#x8303;&#x56F4;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0A;&#x662F;jvm&#x89C4;&#x8303;&#x7684;&#x63CF;&#x8FF0;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x6808;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0E;&#x7EBF;&#x7A0B;&#x76F8;&#x540C;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x6267;&#x884C;&#x7684;&#x540C;&#x65F6;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#x7528;&#x4E8E;&#x5B58;&#x50A8;<strong>&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x3001;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x3001;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x3001;&#x65B9;&#x6CD5;&#x51FA;&#x53E3;</strong>&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4ECE;&#x8C03;&#x7528;&#x5230;&#x7ED3;&#x675F;&#xFF0C;&#x90FD;&#x5BF9;&#x5E94;&#x7740;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#x5728;&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E2D;&#x5165;&#x6808;&#x5230;&#x51FA;&#x6808;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0B;&#x9762;&#x5BF9;&#x6808;&#x5E27;&#x7684;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x4ECB;&#x7ECD;</p>
+<h4 id="111-&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x57DF;">1.1.1 &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x57DF;</h4>
+<blockquote>
+<p>&#x6BCF;&#x4E2A;&#x6808;&#x5E27;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x79F0;&#x4E3A;&#x5176;<strong>&#x5C40;&#x90E8;&#x53D8;&#x91CF;</strong>&#x7684;&#x53D8;&#x91CF;&#x6570;&#x7EC4;&#x3002;&#x6808;&#x5E27;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x5728;<strong>&#x7F16;&#x8BD1;&#x6210;&#x5B57;&#x8282;&#x7801;&#x65F6;&#x786E;&#x5B9A;</strong></p>
+<p>&#x5355;&#x4E2A;&#x672C;&#x5730;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x7C7B;&#x578B;&#x7684;&#x503C;<code>boolean</code>&#xFF0C;<code>byte</code>&#xFF0C;<code>char</code>&#xFF0C;<code>short</code>&#xFF0C;<code>int</code>&#xFF0C; <code>float</code>&#xFF0C;<code>reference</code>&#xFF0C;&#x6216;<code>returnAddress</code>&#x3002;&#x7C7B;&#x578B;&#x4E3A;<code>long</code>&#x6216;<code>double</code>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E24;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4FDD;&#x5B58;</p>
+<p>&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x53D6;&#x503C;&#x3002;&#x7B2C;&#x4E00;&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x7D22;&#x5F15;&#x4E3A;0&#xFF0C;&#x4E00;&#x822C;&#x79F0;&#x4E3A;slot_0&#x3002;</p>
+<p>&#x7C7B;&#x578B;&#x4E3A; <code>long</code>&#x6216;<code>double</code>&#x5360;&#x7528;&#x4E24;&#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x8F83;&#x5C0F;&#x7684;&#x7D22;&#x5F15;&#x6765;&#x7D22;&#x5F15;&#x8BE5;&#x503C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;<code>double</code>&#x5B58;&#x50A8;&#x5728;&#x7D22;&#x5F15;&#x4E3A;<em>n</em> &#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x503C; &#x5B9E;&#x9645;&#x4E0A;&#x5360;&#x636E;&#x4E86;&#x7D22;&#x5F15;&#x4E3A;<em>n</em>&#x548C; <em>n</em> +1 &#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF1B;&#x4F46;&#x662F;&#xFF0C;&#x65E0;&#x6CD5;&#x4ECE;&#x7D22;&#x5F15;<em>n</em> +1&#x52A0;&#x8F7D;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5230;<em>n</em>+1&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x6837;&#x505A;&#x4F1A;&#x4F7F;&#x5C40;&#x90E8;&#x53D8;&#x91CF;<em>n</em>&#x7684;&#x5185;&#x5BB9;&#x65E0;&#x6548;&#x3002;</p>
+<p>Java&#x865A;&#x62DF;&#x673A;&#x4E0D;&#x9700;&#x8981; <em>n</em>&#x4E3A;&#x5076;&#x6570;&#x3002;&#x7528;&#x76F4;&#x89C2;&#x7684;&#x672F;&#x8BED;&#x6765;&#x8BF4;&#xFF0C;&#x7C7B;&#x578B;&#x7684;&#x503C;<code>long</code>&#x548C; <code>double</code>&#x4E0D;&#x5FC5;&#x5728;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6570;&#x7EC4;&#x4E2D;&#x8FDB;&#x884C;64&#x4F4D;&#x5BF9;&#x9F50;&#x3002;</p>
+<p>Java&#x865A;&#x62DF;&#x673A;&#x5728;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#x4F7F;&#x7528;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;&#x5728;&#x7C7B;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x53C2;&#x6570;&#x90FD;&#x5C06;&#x4ECE;&#x8FDE;&#x7EED;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF08;&#x4ECE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;0&#x5F00;&#x59CB;&#xFF09;&#x4F20;&#x9012;&#x3002;&#x5728;&#x8C03;&#x7528;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;0&#x9ED8;&#x8BA4;&#x7528;&#x4E8E;&#x4F20;&#x9012;&#x65B9;&#x6CD5;&#x6240;&#x5C5E;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x7684;&#x5F15;&#x7528;&#xFF08;<code>java</code>&#x4E2D;&#x7684;<code>this</code>&#xFF09;&#xFF0C;&#x968F;&#x540E;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x5C06;&#x4ECE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;<em>1</em>&#x5F00;&#x59CB;&#x4F20;&#x9012;&#x3002;</p>
+</blockquote>
+<p>&#x89C4;&#x8303;&#x5BF9;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7684;&#x63CF;&#x8FF0;&#x5DF2;&#x7ECF;&#x5F88;&#x6E05;&#x6670;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x8FD9;&#x91CC;&#x9762;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;<code>reference</code>&#xFF0C;<code>returnAddress</code>&#x3002;</p>
+<p><code>reference</code>&#x7C7B;&#x578B;&#x6807;&#x793A;&#x5BF9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x7684;&#x5F15;&#x7528;&#xFF0C;&#x89C4;&#x8303;&#x4E2D;&#x6CA1;&#x6709;&#x8BF4;&#x660E;&#x5B83;&#x7684;&#x957F;&#x5EA6;&#xFF08;&#x957F;&#x5EA6;&#x4E0E;&#x5B9E;&#x9645;&#x4F7F;&#x7528;32&#x8FD8;&#x662F;64&#x4F4D;&#x865A;&#x62DF;&#x673A;&#x6709;&#x5173;&#xFF09;&#x548C;&#x5177;&#x4F53;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x4F46;&#x662F;&#x5B9A;&#x4E49;&#x4E86;&#x6709;&#x4E09;&#x79CD;<code>reference</code> &#x7C7B;&#x578B;&#xFF1A;&#x7C7B;&#x7C7B;&#x578B;&#xFF0C;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x548C;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x4EEC;&#x5206;&#x522B;&#x6307;&#x5411;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x6570;&#x7EC4;&#x548C;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x5B9E;&#x4F8B;</p>
+<p><code>returnAddress</code>&#x7C7B;&#x578B;&#x662F;&#x4E3A;&#x7531;Java&#x865A;&#x62DF;&#x673A;&#x4F7F;&#x7528;<code>JSR</code>&#xFF0C;<code>RET</code>&#x548C;<code>jsr_w</code>&#x5B57;&#x8282;&#x7801;&#x670D;&#x52A1;&#x7684;&#xFF0C;&#x66FE;&#x88AB;&#x7528;&#x4E8E;&#x5B9E;&#x73B0;&#x5F02;&#x5E38;&#x5904;&#x7406;&#xFF0C;&#x4F46;&#x662F;&#x5728;Java SE 7&#x4E4B;&#x540E;&#x5C31;&#x5DF2;&#x7ECF;&#x88AB;&#x7981;&#x7528;&#x4E86;&#xFF0C;&#x5C31;&#x4E0D;&#x7BA1;&#x5B83;&#x4E86;</p>
+<h4 id="112-&#x64CD;&#x4F5C;&#x6570;&#x6808;">1.1.2 &#x64CD;&#x4F5C;&#x6570;&#x6808;</h4>
+<p>&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x662F;&#x865A;&#x62DF;&#x673A;&#x6808;&#x5E27;&#x4E2D;&#x7684;&#x4E00;&#x5757;&#x533A;&#x57DF;&#xFF0C;JVM&#x7684;&#x89E3;&#x91CA;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x88AB;&#x79F0;&#x4E3A;&#x201C;<strong>&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;</strong>&#x201C;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x201C;&#x6808;&#x201C;&#x5C31;&#x662F;&#x6307;<strong>&#x64CD;&#x4F5C;&#x6570;&#x6808;</strong>&#xFF0C;&#x4E0E;&#x4E4B;&#x76F8;&#x5BF9;&#x7684;&#x662F;&#x201C;<strong>&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;</strong>&#x201C;&#xFF0C;&#x64CD;&#x6BD4;&#x5982;python&#x865A;&#x62DF;&#x673A;&#x7B49;</p>
+<h5 id="1121-&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x67B6;&#x6784;">1.1.2.1 &#x57FA;&#x4E8E;&#x6808;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x67B6;&#x6784;</h5>
+<p>&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x63CF;&#x8FF0;&#x4EC0;&#x4E48;&#x662F;&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#xFF1A;&#x5F53;&#x865A;&#x62DF;&#x673A;&#x8981;&#x5B8C;&#x6210;&#x7C7B;&#x4F3C;<code>a = b + c</code>&#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x5B83;&#x4F1A;&#x600E;&#x4E48;&#x505A;&#x5462;&#xFF0C;&#x5BF9;&#x4E8E;<strong>&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF08;&#x5982;jvm&#xFF09;</strong>&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x53EF;&#x80FD;&#x4F1A;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x6210;&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x7684;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-text">iconst_1  
+iconst_2  
+iadd      
+istore_0
+</code></pre>
+<p>&#x521D;&#x770B;&#x4F1A;&#x611F;&#x89C9;&#x6709;&#x4E9B;&#x83AB;&#x540D;&#x5176;&#x5999;&#xFF0C;&#x5C24;&#x5176;&#x662F;<code>iadd</code>&#x6307;&#x4EE4;&#xFF0C;&#x5149;&#x79C3;&#x79C3;&#x7684;&#xFF0C;<strong>&#x6E90;</strong>&#x548C;<strong>&#x76EE;&#x6807;</strong>&#x90FD;&#x6CA1;&#x6709;&#xFF0C;&#x8FD9;&#x79CD;&#x6307;&#x4EE4;&#x4E00;&#x822C;&#x79F0;&#x4E3A;<strong>&#x96F6;&#x5730;&#x5740;&#x6307;&#x4EE4;</strong>&#xFF0C;&#x610F;&#x5473;&#x7740;&#x6E90;&#x4E0E;&#x76EE;&#x6807;&#x90FD;&#x662F;&#x9690;&#x542B;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x5B9E;&#x73B0;&#x4F9D;&#x8D56;&#x4E8E;&#x4E00;&#x79CD;&#x5E38;&#x89C1;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;<strong>&#x6808;</strong>&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x7684;<code>iconst_1&#x3001;iconst_2</code>&#x4E24;&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x5206;&#x522B;&#x5411;&#x4E00;&#x4E2A;&#x53EB;&#x505A;&#x201C;<strong>&#x64CD;&#x4F5C;&#x6570;&#x6808;</strong>&#x201D;(&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;<strong>&#x6C42;&#x503C;&#x6808;</strong>)&#x7684;&#x5730;&#x65B9;&#x538B;&#x5165;&#x5C40;&#x90E8;&#x53D8;&#x91CF;1&#x548C;&#x5C40;&#x90E8;&#x53D8;&#x91CF;2&#x7684;&#x503C;&#xFF0C;&#x7136;&#x540E;<code>iadd</code>&#x6307;&#x4EE4;&#x5C06;&#x6808;&#x9876;&#x7684;&#x4E24;&#x4E2A;&#x503C;&#x76F8;&#x52A0;&#x540E;&#x653E;&#x56DE;&#x6808;&#x9876;&#xFF0C;istore_0&#x6307;&#x4EE4;&#x5C06;&#x6808;&#x9876;&#x7684;&#x503C;&#x653E;&#x4F1A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;0&#x7684;&#x4F4D;&#x7F6E;</p>
+<pre><code class="lang-text">iconst_1   # &#x5C06;&#x5C40;&#x90E8;&#x53D8;&#x91CF;0&#x538B;&#x5165;&#x6808;
+iconst_2   # &#x5C06;&#x5C40;&#x90E8;&#x53D8;&#x91CF;1&#x538B;&#x5165;&#x6808;
+iadd       # &#x5C06;&#x6808;&#x9876;&#x7684;&#x4E24;&#x4E2A;&#x503C;&#x5F39;&#x51FA;&#xFF0C;&#x76F8;&#x52A0;&#x540E;&#x518D;&#x538B;&#x5165;&#x6808; 
+istore_0   # &#x5C06;&#x6808;&#x9876;&#x7684;&#x503C;&#x653E;&#x56DE;&#x5C40;&#x90E8;&#x53D8;&#x91CF;0
+</code></pre>
+<p>&#x7531;&#x4E8E;&#x6307;&#x4EE4;&#x7684;&#x6E90;&#x4E0E;&#x76EE;&#x6807;&#x90FD;&#x662F;&#x9690;&#x542B;&#x7684;&#xFF0C;&#x5219;&#x4E00;&#x6761;&#x96F6;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x7684;&#x957F;&#x5EA6;&#x53EF;&#x4EE5;&#x5F88;&#x77ED;&#xFF0C;&#x610F;&#x5473;&#x7740;&#x53EF;&#x4EE5;&#x7528;&#x66F4;&#x5C11;&#x7A7A;&#x95F4;&#x653E;&#x4E0B;&#x66F4;&#x591A;&#x6761;&#x6307;&#x4EE4;&#x3002;&#x56E0;&#x6B64;&#x5728;&#x7A7A;&#x95F4;&#x7D27;&#x7F3A;&#x7684;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x96F6;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x662F;&#x79CD;&#x53EF;&#x53D6;&#x7684;&#x8BBE;&#x8BA1;&#x3002;&#x4F46;&#x96F6;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x7684;&#x7F3A;&#x9677;&#x4E5F;&#x5F88;&#x660E;&#x663E;&#xFF0C;&#x8981;&#x5B8C;&#x6210;&#x4E00;&#x4EF6;&#x4E8B;&#x60C5;&#xFF0C;&#x4E00;&#x822C;&#x9700;&#x8981;&#x6BD4;&#x4E8C;&#x5730;&#x5740;&#x6216;&#x8005;&#x4E09;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x66F4;&#x591A;&#x6761;&#x6307;&#x4EE4;&#x3002;</p>
+<h5 id="1122-&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x67B6;&#x6784;">1.1.2.2 &#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x67B6;&#x6784;</h5>
+<p>&#x540C;&#x6837;&#x662F;&#x5B8C;&#x6210;a=b+c&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x5C31;&#x4F1A;&#x5927;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x4EE5;x86&#x4E3A;&#x4F8B;&#xFF0C;&#x6307;&#x4EE4;&#x53EF;&#x80FD;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<pre><code class="lang-text">X86 asm&#x4EE3;&#x7801;:
+mov  eax, [1]  #&#x5C06;&#x53D8;&#x91CF;1&#x653E;&#x5165;&#x5BC4;&#x5B58;&#x5668;eax  
+add  eax, [2]  #&#x5C06;eax&#x4E0E;&#x53D8;&#x91CF;2&#x76F8;&#x52A0;&#x540E;&#x653E;&#x5165;&#x5BC4;&#x5B58;&#x5668;eax
+mov  [0], eax  #&#x5C06;eax&#x7684;&#x503C;&#x653E;&#x56DE;&#x53D8;&#x91CF;0
+</code></pre>
+<p>&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6267;&#x884C;&#x5F15;&#x64CE;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x201C;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x201C;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x800C;&#x662F;&#x4F7F;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5B58;&#x653E;&#x8BA1;&#x7B97;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;</p>
+<h5 id="1123-&#x57FA;&#x4E8E;&#x6808;&#x4E0E;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x7684;vm&#x7684;&#x4E00;&#x7EC4;&#x56FE;&#x89E3;">1.1.2.3 &#x57FA;&#x4E8E;&#x6808;&#x4E0E;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x7684;VM&#x7684;&#x4E00;&#x7EC4;&#x56FE;&#x89E3;</h5>
+<p>&#x8981;&#x662F;&#x62FF;&#x4E24;&#x4E2A;&#x5206;&#x522B;&#x5B9E;&#x73B0;&#x4E86;&#x57FA;&#x4E8E;&#x6808;&#x4E0E;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x3001;&#x4F46;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x8054;&#x7CFB;&#x7684;VM&#x6765;&#x5BF9;&#x6BD4;&#xFF0C;&#x6548;&#x679C;&#x6216;&#x8BB8;&#x4E0D;&#x4F1A;&#x592A;&#x597D;&#x3002;&#x73B0;&#x5728;&#x6070;&#x5DE7;&#x6709;&#x4E24;&#x8005;&#x6709;&#x7D27;&#x5BC6;&#x8054;&#x7CFB;&#x7684;&#x4F8B;&#x5B50;&#x2014;&#x2014;JVM&#x4E0E;Dalvik VM&#x3002;</p>
+<p>JVM&#x7684;&#x5B57;&#x8282;&#x7801;&#x4E3B;&#x8981;&#x662F;&#x96F6;&#x5730;&#x5740;&#x5F62;&#x5F0F;&#x7684;&#xFF0C;&#x6982;&#x5FF5;&#x4E0A;&#x8BF4;JVM&#x662F;&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x67B6;&#x6784;&#x3002;Google Android&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x4E3B;&#x8981;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#x662F;Java&#xFF0C;&#x901A;&#x8FC7;&#x5176;&#x4E2D;&#x7684;Dalvik VM&#x6765;&#x8FD0;&#x884C;Java&#x7A0B;&#x5E8F;&#xFF08;2014&#x5E74;6&#x6708;25&#x65E5;&#xFF0C;&#x8C37;&#x6B4C;&#x76F4;&#x63A5;&#x5220;&#x9664;&#x4E86;Dalvik&#xFF0C;&#x4EE3;&#x66FF;&#x5B83;&#x7684;&#x662F;ART&#xFF09;</p>
+<p>&#x4E3A;&#x4E86;&#x80FD;&#x6B63;&#x786E;&#x5B9E;&#x73B0;&#x8BED;&#x4E49;&#xFF0C;Dalvik VM&#x7684;&#x8BB8;&#x591A;&#x8BBE;&#x8BA1;&#x90FD;&#x8003;&#x8651;&#x5230;&#x4E0E;JVM&#x7684;&#x517C;&#x5BB9;&#x6027;&#xFF1B;&#x4F46;&#x5B83;&#x5374;&#x91C7;&#x7528;&#x4E86;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x5176;&#x5B57;&#x8282;&#x7801;&#x4E3B;&#x8981;&#x662F;&#x4E8C;&#x5730;&#x5740;/&#x4E09;&#x5730;&#x5740;&#x6DF7;&#x5408;&#x5F62;&#x5F0F;&#x7684;&#xFF0C;&#x4E4D;&#x4E00;&#x770B;&#x53EF;&#x80FD;&#x8BA9;&#x4EBA;&#x7EB3;&#x95F7;&#x3002;&#x8003;&#x8651;&#x5230;Android&#x6709;&#x660E;&#x786E;&#x7684;&#x76EE;&#x6807;&#xFF1A;&#x9762;&#x5411;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x6700;&#x521D;&#x8981;&#x5BF9;ARM&#x63D0;&#x4F9B;&#x826F;&#x597D;&#x7684;&#x652F;&#x6301;&#x3002;ARM9&#x6709;16&#x4E2A;32&#x4F4D;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;Dalvik VM&#x7684;&#x67B6;&#x6784;&#x4E5F;&#x5E38;&#x7528;16&#x4E2A;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;<strong>&#xFF0C;</strong>&#x8FD9;&#x6837;Dalvik VM&#x5C31;&#x4E0D;&#x7528;&#x592A;&#x987E;&#x8651;&#x53EF;&#x79FB;&#x690D;&#x6027;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F18;&#x5148;&#x8003;&#x8651;&#x5728;ARM9&#x4E0A;&#x4EE5;&#x9AD8;&#x6548;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x53D1;&#x6325;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x7684;&#x4F18;&#x52BF;&#x3002;</p>
+<p>&#x6765;&#x770B;&#x4E00;&#x6BB5;java&#x6E90;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> Demo {  
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span> </span>{  
+        <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;  
+        <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;  
+        <span class="hljs-keyword">int</span> c = (a + b) * <span class="hljs-number">5</span>;  
+    }  
+}
+</code></pre>
+<p>&#x901A;&#x8FC7;javac&#x7F16;&#x8BD1;&#xFF0C;&#x5F97;&#x5230;Demo.class&#x3002;&#x901A;&#x8FC7;javap&#x53EF;&#x4EE5;&#x770B;&#x5230;foo()&#x65B9;&#x6CD5;&#x7684;&#x5B57;&#x8282;&#x7801;&#x662F;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-number">0</span>:  iconst_1  
+<span class="hljs-number">1</span>:  istore_0  
+<span class="hljs-number">2</span>:  iconst_2  
+<span class="hljs-number">3</span>:  istore_1  
+<span class="hljs-number">4</span>:  iload_0  
+<span class="hljs-number">5</span>:  iload_1  
+<span class="hljs-number">6</span>:  iadd  
+<span class="hljs-number">7</span>:  iconst_5  
+<span class="hljs-number">8</span>:  imul  
+<span class="hljs-number">9</span>:  istore_2  
+<span class="hljs-number">10</span>: <span class="hljs-keyword">return</span>
+</code></pre>
+<p>&#x63A5;&#x7740;&#x7528;Android SDK&#x91CC;platforms\android-1.6\tools&#x76EE;&#x5F55;&#x4E2D;&#x7684;dx&#x5DE5;&#x5177;&#x5C06;Demo.class&#x8F6C;&#x6362;&#x4E3A;dex&#x683C;&#x5F0F;&#xFF0C;&#x5F97;&#x5230;Dalvik VM&#x4F7F;&#x7528;&#x7684;&#x5B57;&#x8282;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-number">0000</span>: <span class="hljs-keyword">const</span>/<span class="hljs-number">4</span>       v0, <span class="hljs-meta">#int 1 <span class="hljs-comment">// #1  </span></span>
+<span class="hljs-number">0001</span>: <span class="hljs-keyword">const</span>/<span class="hljs-number">4</span>       v1, <span class="hljs-meta">#int 2 <span class="hljs-comment">// #2  </span></span>
+<span class="hljs-number">0002</span>: add-<span class="hljs-keyword">int</span>/<span class="hljs-number">2</span>addr v0, v1  
+<span class="hljs-number">0003</span>: mul-<span class="hljs-keyword">int</span>/lit8  v0, v0, <span class="hljs-meta">#int 5 <span class="hljs-comment">// #05  </span></span>
+<span class="hljs-number">0005</span>: <span class="hljs-keyword">return</span>-<span class="hljs-keyword">void</span>
+</code></pre>
+<p>&#x8BA9;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;<strong>&#x9996;&#x5148;&#x770B;JVM</strong>&#xFF1A;</p>
+<p><img src="../../../.gitbook/assets/f2629890-07dc-34f5-9102-9274e5dafffc.gif" alt="JVM"></p>
+<p>&#xFF08;&#x56FE;&#x4E2D;&#x6570;&#x5B57;&#x5747;&#x4EE5;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x3002;&#x5176;&#x4E2D;&#x5B57;&#x8282;&#x7801;&#x7684;&#x4E00;&#x5217;&#x8868;&#x793A;&#x7684;&#x662F;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x7684;&#x5B9E;&#x9645;&#x6570;&#x503C;&#xFF0C;&#x540E;&#x9762;&#x8DDF;&#x7740;&#x7684;&#x52A9;&#x8BB0;&#x7B26;&#x5219;&#x662F;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x5B57;&#x5F62;&#x5F0F;&#x3002;&#x6807;&#x8BB0;&#x4E3A;&#x7EA2;&#x8272;&#x7684;&#x503C;&#x662F;&#x76F8;&#x5BF9;&#x4E0A;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#x72B6;&#x6001;&#x6709;&#x6240;&#x66F4;&#x65B0;&#x7684;&#x503C;&#x3002;&#x4E0B;&#x540C;&#xFF09;</p>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;Demo.foo()&#x65B9;&#x6CD5;&#x6240;&#x9700;&#x8981;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x5927;&#x5C0F;&#x4E3A;3&#x4E2A;slot&#xFF0C;&#x9700;&#x8981;&#x7684;&#x6C42;&#x503C;&#x6808;&#xFF08;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#xFF09;&#x5927;&#x5C0F;&#x4E3A;2&#x4E2A;slot&#x3002;Java&#x6E90;&#x7801;&#x7684;a&#x3001;b&#x3001;c&#x5206;&#x522B;&#x88AB;&#x5206;&#x914D;&#x5230;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x7684;slot 0&#x3001;slot 1&#x548C;slot 2&#x3002;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF;&#x5230;Java&#x5B57;&#x8282;&#x7801;&#x662F;&#x5982;&#x4F55;&#x6307;&#x793A;JVM&#x5C06;&#x6570;&#x636E;<strong>&#x538B;&#x5165;&#x6216;&#x5F39;&#x51FA;&#x6808;</strong>&#xFF0C;&#x4EE5;&#x53CA;&#x6570;&#x636E;&#x662F;&#x5982;&#x4F55;&#x5728;&#x6808;&#x4E0E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x4E4B;&#x524D;&#x6D41;&#x52A8;&#x7684;&#xFF1B;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x7684;&#x6B21;&#x6570;&#x7279;&#x522B;&#x591A;&#x3002;&#x52A8;&#x753B;&#x91CC;&#x53EF;&#x80FD;&#x4E0D;&#x592A;&#x660E;&#x663E;&#xFF0C;iadd&#x548C;imul&#x6307;&#x4EE4;&#x90FD;&#x662F;&#x8981;&#x4ECE;&#x6C42;&#x503C;&#x6808;&#x5F39;&#x51FA;&#x4E24;&#x4E2A;&#x503C;&#x8FD0;&#x7B97;&#xFF0C;&#x518D;&#x628A;&#x7ED3;&#x679C;&#x538B;&#x56DE;&#x5230;&#x6808;&#x4E0A;&#x7684;&#xFF1B;&#x5149;&#x8FD9;&#x6837;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5C31;&#x6709;3&#x6B21;&#x6982;&#x5FF5;&#x4E0A;&#x7684;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x4E86;&#x3002;</p>
+<p>&#x518D;&#x770B;<strong>Dalvik VM</strong>&#xFF1A;</p>
+<p><img src="../../../.gitbook/assets/c6b17556-f5e0-3da2-979a-178cfe1f934f.gif" alt="Dalvik VM"></p>
+<p>&#x8BF4;&#x660E;&#xFF1A;Dalvik&#x5B57;&#x8282;&#x7801;&#x4EE5;16&#x4F4D;&#x4E3A;&#x5355;&#x5143;&#xFF08;&#x6216;&#x8BB8;&#x53EB;&#x201C;&#x53CC;&#x5B57;&#x8282;&#x7801;&#x201D;&#x66F4;&#x51C6;&#x786E;&#xFF09;&#xFF0C;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#x6709;5&#x6761;&#x6307;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;mul-int/lit8&#x6307;&#x4EE4;&#x5360;2&#x5355;&#x5143;&#xFF0C;&#x5176;&#x4F59;&#x6BCF;&#x6761;&#x90FD;&#x53EA;&#x5360;1&#x5355;&#x5143;&#xFF0C;&#x5171;6&#x5355;&#x5143;==12&#x5B57;&#x8282;&#x3002; </p>
+<p>&#x4E0E;JVM&#x76F8;&#x4F3C;&#xFF0C;&#x5728;Dalvik VM&#x4E2D;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x6709;&#x81EA;&#x5DF1;&#x7684;PC&#x548C;&#x8C03;&#x7528;&#x6808;&#xFF0C;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x6D3B;&#x52A8;&#x8BB0;&#x5F55;&#x4EE5;&#x5E27;&#x4E3A;&#x5355;&#x4F4D;&#x4FDD;&#x5B58;&#x5728;&#x8C03;&#x7528;&#x6808;&#x4E0A;&#x3002; &#x4E0E;JVM&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;<strong>Dalvik VM&#x7684;&#x6808;&#x5E27;&#x4E2D;&#x6CA1;&#x6709;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x4E0E;&#x6C42;&#x503C;&#x6808;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;&#x4E00;&#x7EC4;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;</strong>&#x3002;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x90FD;&#x4F1A;&#x5F97;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x4E00;&#x7EC4;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;&#x3002;&#x5E38;&#x7528;v0-v15&#x8FD9;16&#x4E2A;&#xFF0C;&#x4E5F;&#x6709;&#x5C11;&#x6570;&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;v0-v255&#x8303;&#x56F4;&#x5185;&#x7684;256&#x4E2A;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;&#x3002;</p>
+<p>&#x4E0E;JVM&#x76F8;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x6240;&#x9700;&#x8981;&#x7684;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;&#x4E2A;&#x6570;&#x90FD;&#x80FD;&#x591F;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x786E;&#x5B9A;&#xFF0C;&#x5E76;&#x4E14;&#x8BB0;&#x5F55;&#x5728;.dex&#x6587;&#x4EF6;&#x91CC;&#xFF1B;&#x6BCF;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x90FD;&#x662F;&#x5B57;&#x957F;&#xFF08;32&#x4F4D;&#xFF09;&#xFF0C;&#x76F8;&#x90BB;&#x7684;&#x4E00;&#x5BF9;&#x5BC4;&#x5B58;&#x5668;&#x53EF;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;64&#x4F4D;&#x6570;&#x636E;&#x3002;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x6309;&#x6E90;&#x7801;&#x4E2D;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x7684;&#x987A;&#x5E8F;&#x4FDD;&#x5B58;&#x5728;&#x672B;&#x5C3E;&#x7684;&#x51E0;&#x4E2A;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;&#x91CC;&#x3002; &#x4E0E;JVM&#x7248;&#x76F8;&#x6BD4;&#xFF0C;<strong>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;Dalvik&#x7248;&#x7A0B;&#x5E8F;&#x7684;&#x6307;&#x4EE4;&#x6570;&#x660E;&#x663E;&#x51CF;&#x5C11;&#x4E86;</strong>&#xFF0C;<strong>&#x6570;&#x636E;&#x79FB;&#x52A8;&#x6B21;&#x6570;&#x4E5F;&#x660E;&#x663E;&#x51CF;&#x5C11;&#x4E86;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x4E34;&#x65F6;&#x7ED3;&#x679C;&#x7684;&#x5B58;&#x50A8;&#x5355;&#x5143;&#x4E5F;&#x51CF;&#x5C11;&#x4E86;&#x3002;</strong></p>
+<p>&#x518D;&#x6B21;&#x63D0;&#x9192;&#x6CE8;&#x610F;&#xFF0C;<strong>&#x4E0A;&#x9762;&#x7684;&#x63CF;&#x8FF0;&#x662F;&#x9488;&#x5BF9;&#x6982;&#x5FF5;&#x4E0A;&#x7684;JVM&#x4E0E;Dalvik VM&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x9488;&#x5BF9;&#x5B83;&#x4EEC;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;</strong>&#x3002;&#x5B9E;&#x73B0;VM&#x65F6;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x8BB8;&#x591A;&#x4F18;&#x5316;&#x6280;&#x5DE7;&#x53BB;&#x51CF;&#x5C11;&#x6027;&#x80FD;&#x635F;&#x5931;&#xFF0C;&#x4F7F;&#x5F97;&#x5B9E;&#x9645;&#x7684;&#x8FD0;&#x884C;&#x65B9;&#x5F0F;&#x4E0E;&#x6982;&#x5FF5;&#x4E2D;&#x7684;&#x4E0D;&#x5B8C;&#x5168;&#x76F8;&#x7B26;&#xFF0C;&#x53EA;&#x8981;&#x6700;&#x7EC8;&#x7684;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x6EE1;&#x8DB3;&#x539F;&#x672C;&#x6982;&#x5FF5;&#x4E0A;&#x7684;VM&#x6240;&#x5B9E;&#x73B0;&#x7684;&#x8BED;&#x4E49;&#x5C31;&#x884C;&#x3002;</p>
+<h5 id="1124-&#x57FA;&#x4E8E;&#x6808;&#x4E0E;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x7684;vm&#x7684;&#x5BF9;&#x6BD4;">1.1.2.4 &#x57FA;&#x4E8E;&#x6808;&#x4E0E;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x67B6;&#x6784;&#x7684;VM&#x7684;&#x5BF9;&#x6BD4;</h5>
+<h6 id="11241-&#x5B9E;&#x73B0;&#x7684;&#x96BE;&#x6613;&#x7A0B;&#x5EA6;">1.1.2.4.1 &#x5B9E;&#x73B0;&#x7684;&#x96BE;&#x6613;&#x7A0B;&#x5EA6;</h6>
+<p>&#x7531;&#x4E8E;&#x6307;&#x4EE4;&#x4E2D;&#x4E0D;&#x5FC5;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x6E90;&#x4E0E;&#x76EE;&#x6807;&#xFF0C;&#x751F;&#x6210;&#x6307;&#x4EE4;&#xFF08;&#x5982;&#x5B57;&#x8282;&#x7801;&#xFF09;&#x7684;&#x6B65;&#x9AA4;&#x4F1A;&#x7B80;&#x5355;&#x5F88;&#x591A;&#xFF0C;&#x4E0D;&#x5FC5;&#x8003;&#x8651;&#x4E3A;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x5206;&#x914D;&#x7A7A;&#x95F4;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6C42;&#x503C;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E34;&#x65F6;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x90FD;&#x8BA9;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x5305;&#x529E;&#x5C31;&#x884C;</p>
+<p>&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x5E76;&#x4E0D;&#x662F;&#x8BF4;&#x865A;&#x62DF;&#x673A;&#x66F4;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;&#xFF0C;&#x800C;&#x662F;&#x9488;&#x5BF9;&#x57FA;&#x4E8E;&#x6808;&#x67B6;&#x6784;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x751F;&#x6210;&#x4EE3;&#x7801;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#xFF08;javac&#x547D;&#x4EE4;&#xFF09;&#x66F4;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;</p>
+<h6 id="11242-&#x53EF;&#x79FB;&#x690D;&#x6027;">1.1.2.4.2 &#x53EF;&#x79FB;&#x690D;&#x6027;</h6>
+<p>&#x5904;&#x7406;&#x5668;&#x7684;&#x7279;&#x6027;&#x5404;&#x4E2A;&#x4E0D;&#x540C;&#xFF1A;&#x5178;&#x578B;&#x7684;CISC&#x5904;&#x7406;&#x5668;&#x7684;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#x6570;&#x91CF;&#x5F88;&#x5C11;&#xFF0C;&#x4F8B;&#x5982;32&#x4F4D;&#x7684;x86&#x5C31;&#x53EA;&#x6709;8&#x4E2A;32&#x4F4D;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF08;&#x5982;&#x679C;&#x4E0D;&#x7B97;EBP&#x548C;ESP&#x90A3;&#x5C31;&#x662F;6&#x4E2A;&#xFF0C;&#x73B0;&#x5728;&#x4E00;&#x822C;&#x90FD;&#x7B97;&#x4E0A;&#xFF09;&#xFF1B;&#x5178;&#x578B;&#x7684;RISC&#x5904;&#x7406;&#x5668;&#x7684;&#x5404;&#x79CD;&#x5BC4;&#x5B58;&#x5668;&#x6570;&#x91CF;&#x591A;&#x4E00;&#x4E9B;&#xFF0C;&#x4F8B;&#x5982;ARM&#x6709;16&#x4E2A;32&#x4F4D;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;Sun&#x7684;SPARC&#x5728;&#x4E00;&#x4E2A;&#x5BC4;&#x5B58;&#x5668;&#x7A97;&#x53E3;&#x91CC;&#x5219;&#x6709;24&#x4E2A;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;</p>
+<p>&#x5047;&#x5982;&#x4E00;&#x4E2A;VM&#x91C7;&#x7528;<strong>&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x67B6;&#x6784;</strong>&#xFF08;&#x5B83;&#x63A5;&#x53D7;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#x5927;&#x6982;&#x5C31;&#x662F;&#x4E8C;&#x5730;&#x5740;&#x6216;&#x8005;&#x4E09;&#x5730;&#x5740;&#x5F62;&#x5F0F;&#x7684;&#xFF09;&#xFF0C;&#x4E3A;&#x4E86;&#x9AD8;&#x6548;&#x6267;&#x884C;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x5E0C;&#x671B;&#x80FD;&#x628A;&#x6E90;&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x6620;&#x5C04;&#x5230;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x4E0A;&#x5BC4;&#x5B58;&#x5668;&#x4E0A;&#x3002;&#x4F46;&#x662F;VM&#x91CC;&#x6709;&#x4E9B;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x8F85;&#x52A9;&#x6570;&#x636E;&#x4F1A;&#x7ECF;&#x5E38;&#x88AB;&#x8BBF;&#x95EE;&#xFF0C;&#x4F8B;&#x5982;&#x4E00;&#x4E9B;VM&#x4F1A;&#x4FDD;&#x5B58;&#x6E90;&#x6307;&#x4EE4;&#x5E8F;&#x5217;&#x7684;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF08;program counter&#xFF0C;PC&#xFF09;&#xFF0C;&#x4E3A;&#x4E86;&#x6548;&#x7387;&#xFF0C;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x4E5F;&#x5F97;&#x653E;&#x5728;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x91CC;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x6E90;&#x67B6;&#x6784;&#x4E2D;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x6570;&#x91CF;&#x8DDF;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x7684;&#x4E00;&#x6837;&#xFF0C;&#x6216;&#x8005;&#x524D;&#x8005;&#x6BD4;&#x540E;&#x8005;&#x66F4;&#x591A;&#xFF0C;&#x90A3;&#x6E90;&#x67B6;&#x6784;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x5C31;&#x6CA1;&#x529E;&#x6CD5;&#x90FD;<strong>&#x6620;&#x5C04;&#x5230;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x7684;&#x5BC4;&#x5B58;&#x5668;</strong>&#x4E0A;&#xFF1B;&#x8FD9;&#x6837;VM&#x5B9E;&#x73B0;&#x8D77;&#x6765;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;&#x4E0E;&#x80FD;&#x591F;&#x5168;&#x90E8;&#x6620;&#x5C04;&#x76F8;&#x6BD4;&#x6548;&#x7387;&#x4E5F;&#x4F1A;&#x5927;&#x6253;&#x6298;&#x6263;&#x3002;&#x50CF;Dalvik VM&#x7684;&#x89E3;&#x91CA;&#x5668;&#x5B9E;&#x73B0;&#xFF0C;&#x5C31;&#x662F;&#x628A;&#x865A;&#x62DF;&#x5BC4;&#x5B58;&#x5668;&#x5168;&#x90E8;&#x6620;&#x5C04;&#x5230;&#x6808;&#x5E27;&#xFF08;&#x5185;&#x5B58;&#xFF09;&#x91CC;&#x7684;&#xFF0C;&#x8FD9;&#x8DDF;&#x628A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x533A;&#x4E0E;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x90FD;&#x6620;&#x5C04;&#x5230;&#x5185;&#x5B58;&#x91CC;&#x7684;JVM&#x89E3;&#x91CA;&#x5668;&#x5B9E;&#x73B0;&#x76F8;&#x6BD4;&#x5B9E;&#x9645;&#x533A;&#x522B;&#x4E0D;&#x592A;&#x5927;&#x3002;  </p>
+<p>&#x5982;&#x679C;&#x4E00;&#x4E2A;VM&#x91C7;&#x7528;<strong>&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x67B6;&#x6784;</strong>&#xFF0C;&#x5219;&#x65E0;&#x8BBA;&#x5728;&#x600E;&#x6837;&#x7684;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x90FD;&#x5F88;&#x597D;&#x5B9E;&#x73B0;&#x2014;&#x2014;&#x5B83;&#x7684;&#x6E90;&#x67B6;&#x6784;&#x91CC;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x901A;&#x7528;&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x6240;&#x4EE5;&#x5B9E;&#x73B0;VM&#x65F6;&#x53EF;&#x4EE5;&#x6BD4;&#x8F83;&#x81EA;&#x7531;&#x7684;&#x5206;&#x914D;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x3002;&#x4E8E;&#x662F;&#x8FD9;&#x6837;&#x7684;VM&#x53EF;&#x79FB;&#x690D;&#x6027;&#x5C31;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;&#x4F5C;&#x4E3A;&#x4F18;&#x5316;&#xFF0C;&#x57FA;&#x4E8E;&#x6808;&#x7684;VM&#x53EF;&#x4EE5;&#x7528;&#x7F16;&#x8BD1;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x201C;&#x6C42;&#x503C;&#x6808;&#x201D;&#x5B9E;&#x9645;&#x4E0A;&#x4E5F;&#x53EF;&#x4EE5;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x6620;&#x5C04;&#x5230;&#x5BC4;&#x5B58;&#x5668;&#x4E0A;&#xFF0C;&#x51CF;&#x8F7B;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x7684;&#x5F00;&#x9500;&#x3002;</p>
+<h6 id="11243-&#x6027;&#x80FD;">1.1.2.4.3 &#x6027;&#x80FD;</h6>
+<p>&#x4ECE;&#x6027;&#x80FD;&#x4E0A;&#x770B;&#xFF0C;&#x73B0;&#x5728;&#x7684;&#x5B9E;&#x9645;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5927;&#x591A;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x67B6;&#x6784;&#xFF0C;&#x4ECE;&#x4FA7;&#x9762;&#x53CD;&#x6620;&#x51FA;&#x5B83;&#x6BD4;&#x57FA;&#x4E8E;&#x6808;&#x7684;&#x67B6;&#x6784;&#x66F4;&#x4F18;&#x79C0;&#x3002;</p>
+<p> &#x800C;&#x5BF9;&#x4E8E;VM&#x6765;&#x8BF4;&#xFF0C;&#x57FA;&#x4E8E;&#x6808;&#x6216;&#x8005;&#x5BC4;&#x5B58;&#x5668;&#x7684;vm&#xFF0C;&#x90FD;&#x53EF;&#x80FD;&#x662F;&#x7528;&#x5B9E;&#x9645;&#x673A;&#x5668;&#x7684;&#x5185;&#x5B58;&#x6765;&#x6A21;&#x62DF;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6027;&#x80FD;&#x7279;&#x6027;&#x4E0E;&#x5B9E;&#x9645;&#x786C;&#x4EF6;&#x53C8;&#x6709;&#x70B9;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x4E00;&#x822C;&#x8BA4;&#x4E3A;&#x57FA;&#x4E8E;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x67B6;&#x6784;&#x5BF9;VM&#x6765;&#x8BF4;&#x4E5F;&#x662F;&#x66F4;&#x5FEB;&#x7684;&#xFF0C;&#x539F;&#x56E0;&#x662F;&#xFF1A;&#x867D;&#x7136;&#x96F6;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x66F4;&#x7D27;&#x51D1;&#xFF0C;&#x4F46;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;&#x9700;&#x8981;&#x66F4;&#x591A;&#x7684;load/store&#x6307;&#x4EE4;&#xFF0C;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x66F4;&#x591A;&#x7684;&#x6307;&#x4EE4;&#x5206;&#x6D3E;&#xFF08;instruction dispatch&#xFF09;&#x6B21;&#x6570;&#x4E0E;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x6B21;&#x6570;&#xFF1B;&#x8BBF;&#x95EE;&#x5185;&#x5B58;&#x662F;&#x6267;&#x884C;&#x901F;&#x5EA6;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x74F6;&#x9888;&#xFF0C;&#x4E8C;&#x5730;&#x5740;&#x6216;&#x4E09;&#x5730;&#x5740;&#x6307;&#x4EE4;&#x867D;&#x7136;&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x5360;&#x7684;&#x7A7A;&#x95F4;&#x8F83;&#x591A;&#xFF0C;&#x4F46;&#x603B;&#x4F53;&#x6765;&#x8BF4;&#x53EF;&#x4EE5;&#x7528;&#x66F4;&#x5C11;&#x7684;&#x6307;&#x4EE4;&#x5B8C;&#x6210;&#x64CD;&#x4F5C;&#xFF0C;&#x6307;&#x4EE4;&#x5206;&#x6D3E;&#x4E0E;&#x5185;&#x5B58;&#x8BBF;&#x95EE;&#x6B21;&#x6570;&#x90FD;&#x8F83;&#x5C11;&#x3002;</p>
+<h4 id="113-&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x533A;">1.1.3 &#x8FD0;&#x884C;&#x73AF;&#x5883;&#x533A;</h4>
+<h3 id="12-&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;">1.2 &#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</h3>
+<blockquote>
+<p>Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x5B9E;&#x73B0;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4F20;&#x7EDF;&#x7684;&#x5806;&#x6808;&#xFF08;&#x4FD7;&#x79F0;&#x201C; C&#x6808;&#x201D;&#xFF09;&#x6765;&#x652F;&#x6301;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#xFF08;&#x7528;Java&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4EE5;&#x5916;&#x7684;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x89E3;&#x91CA;&#x7A0B;&#x5E8F;&#x7684;&#x5B9E;&#x73B0;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8BF8;&#x5982;C&#x4E4B;&#x7C7B;&#x7684;&#x8BED;&#x8A00;&#x6765;&#x89E3;&#x91CA;Java&#x865A;&#x62DF;&#x673A;&#x7684;&#x6307;&#x4EE4;&#x96C6;&#xFF0C;&#x4EE5;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3002;&#x65E0;&#x6CD5;&#x52A0;&#x8F7D;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x5E76;&#x4E14;&#x81EA;&#x8EAB;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;&#x5E38;&#x89C4;&#x5806;&#x6808;&#x7684;Java&#x865A;&#x62DF;&#x673A;&#x5B9E;&#x73B0;&#x65E0;&#x9700;&#x63D0;&#x4F9B;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3002;&#x5982;&#x679C;&#x63D0;&#x4F9B;&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x521B;&#x5EFA;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x65F6;&#x4E3A;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x5206;&#x914D;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x3002;</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0A;&#x662F;jvm&#x89C4;&#x8303;&#x7684;&#x7FFB;&#x8BD1;&#x8282;&#x9009;&#xFF0C;&#x5176;&#x4ED6;&#x90E8;&#x5206;&#x57FA;&#x672C;&#x4E0E;java&#x865A;&#x62DF;&#x673A;&#x6808;&#x4E00;&#x81F4;&#xFF0C;&#x4ECE;&#x4E2D;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x89C4;&#x8303;&#x4E2D;&#x6709;&#x4E24;&#x7C7B;&#x7A0B;&#x5E8F;&#x4F1A;&#x7528;&#x5230;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF1A;</p>
+<ul>
+<li>&#x8FD0;&#x884C;java&#x4EE5;&#x5916;&#x7684;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x7684;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x4F1A;&#x7528;&#x5230;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</li>
+<li>jvm&#x672C;&#x8EAB;&#x53EF;&#x80FD;&#x4F7F;&#x7528;C&#x4E4B;&#x7C7B;&#x7684;&#x8BED;&#x8A00;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E5F;&#x53EF;&#x80FD;&#x4F1A;&#x7528;&#x5230;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;</li>
+</ul>
+<h2 id="2&#x3001;hotspot&#x5B9E;&#x73B0;">2&#x3001;hotspot&#x5B9E;&#x73B0;</h2>
+<p>&#x5728;hotspot&#x7684;&#x5B9E;&#x73B0;&#x4E2D;&#xFF0C;<strong>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x548C;&#x865A;&#x62DF;&#x673A;&#x6808;&#x5171;&#x7528;&#x4E00;&#x4E2A;&#x6808;</strong>&#xFF08;mixed-stack&#xFF09;&#xFF0C;&#x533A;&#x522B;&#x4EC5;&#x5728;&#x4E8E;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x548C;java&#x65B9;&#x6CD5;&#x4EA7;&#x751F;&#x7684;&#x6808;&#x5E27;&#x4E0D;&#x540C;&#xFF0C;&#x6B64;&#x5916;&#xFF0C;&#x5728;linux&#x4E2D;&#xFF0C;&#x6DF7;&#x5408;&#x6808;&#x662F;&#x901A;&#x8FC7;<strong>&#x8F7B;&#x91CF;&#x7EA7;&#x7EBF;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x6808;</strong>&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x8BA4;&#x4E3A;&#xFF0C;<strong>&#x8F7B;&#x91CF;&#x7EA7;&#x7EBF;&#x7A0B;&#x7684;&#x7528;&#x6237;&#x6808;&#x4E2D;&#x7684;&#x6808;&#x5E27;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;&#x7684;java&#x65B9;&#x6CD5;&#x6808;&#x5E27;&#x548C;native&#x65B9;&#x6CD5;&#x6808;&#x5E27;&#xFF0C;</strong>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;jstack&#x547D;&#x4EE4;&#x6765;&#x76F4;&#x89C2;&#x8FDB;&#x884C;&#x7406;&#x89E3;&#xFF1A;</p>
+<p>&#x4EFB;&#x610F;&#x8DD1;&#x4E00;&#x4E2A;java&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x547D;&#x4EE4; <code>jstack -m {pid}</code>&#x5373;&#x53EF;&#x770B;&#x5230;&#x6DF7;&#x5408;&#x6808;&#x7684;&#x4FE1;&#x606F;&#xFF1A;</p>
+<pre><code class="lang-text">0x00007f2305c90da2    __pthread_cond_timedwait + 0x132
+0x00007f2304dd18f3    _ZN2os5sleepEP6Threadlb + 0x283
+0x00007f2304bcebda    JVM_Sleep + 0x3ba
+0x00007f22f05a79b4    * java.lang.Thread.sleep(long) bci:0 (Interpreted frame)
+0x00007f22f05982bd    * MainTest.main(java.lang.String[]) bci:49 line:40 (Interpreted frame)
+0x00007f22f05907a7    &lt;StubRoutines&gt;
+0x00007f2304b3bd16    _ZN9JavaCalls11call_helperEP9JavaValueP12methodHandleP17JavaCallArgumentsP6Thread + 0x1056
+0x00007f2304b7d132    _ZL17jni_invoke_staticP7JNIEnv_P9JavaValueP8_jobject11JNICallTypeP10_jmethodIDP18JNI_ArgumentPusherP6Thread + 0x362
+0x00007f2304b9999a    jni_CallStaticVoidMethod + 0x17a
+0x00007f2305a76bdf    JavaMain + 0x81f
+</code></pre>
+<p>&#x4E0A;&#x56FE;&#x622A;&#x53D6;&#x4E86;&#x4E00;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#xFF0C;&#x5730;&#x5740;&#x53F3;&#x8FB9;&#x7684;&#x8FD9;&#x4E00;&#x4E32;&#x5C31;&#x662F;&#x6DF7;&#x5408;&#x6808;&#x4E2D;&#x7684;&#x6808;&#x5E27;&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;&#x4EE5;<code>*</code>&#x5F00;&#x5934;&#x7684;&#x4EE3;&#x8868;&#x8FD9;&#x662F;&#x4E2A;<strong>java&#x6808;&#x5E27;</strong>&#xFF0C;&#x5176;&#x5B83;&#x7684;&#x5219;&#x662F;<strong>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x5E27;&#x3002;</strong></p>
+<h3 id="21-&#x6808;mixed-stack&#x7684;&#x521B;&#x5EFA;">2.1 &#x6808;(mixed-stack)&#x7684;&#x521B;&#x5EFA;</h3>
+<p>&#x6211;&#x4EEC;&#x77E5;&#x9053;&#xFF0C;&#x5728;linux&#x73AF;&#x5883;&#x4E0B;&#xFF0C;jvm&#x7684;&#x7EBF;&#x7A0B;&#x662F;&#x901A;&#x8FC7;<strong>&#x8F7B;&#x91CF;&#x7EA7;&#x8FDB;&#x7A0B;(LWP)</strong>&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x800C;&#x8FDB;&#x7A0B;&#x5728;&#x521B;&#x5EFA;LWP&#x65F6;&#x9700;&#x8981;&#x7ED9;&#x5B83;&#x5206;&#x914D;&#x6808;&#x7A7A;&#x95F4;&#xFF08;<a href="../pre-knowledge.html#21-qing-liang-ji-jin-cheng-lwp-de-di-zhi-kong-jian">&#x524D;&#x7F6E;&#x77E5;&#x8BC6;</a>&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#xFF0C;&#x5BF9;&#x4E8E;Hotspot&#x8FDB;&#x7A0B;&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5206;&#x914D;&#x6808;&#x7A7A;&#x95F4;&#x7684;&#x5462;&#xFF0C;&#x8FFD;&#x4E0B;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">bool</span> os::create_thread(Thread* thread, ThreadType thr_type, <span class="hljs-keyword">size_t</span> stack_size){
+     ...
+     <span class="hljs-keyword">int</span> ret = pthread_create(&amp;tid, &amp;attr, (<span class="hljs-keyword">void</span>* (*)(<span class="hljs-keyword">void</span>*)) java_start, thread);
+     ...
+}
+</code></pre>
+<p>&#x5728;Os_linux.cpp&#x6587;&#x4EF6;&#x4E0B;&#xFF0C;hotspot&#x6700;&#x7EC8;&#x8C03;&#x7528;&#x4E86;pthread&#x5E93;&#x7684;<code>phtread_create()</code>&#x65B9;&#x6CD5;&#x6765;&#x521B;&#x5EFA;LWP&#xFF0C;&#x4EE3;&#x7801;&#x4E2D;<code>&amp;attr</code>&#x4F1A;&#x63D0;&#x4F9B;&#x521B;&#x5EFA;&#x6808;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;hotspot&#x5E76;&#x6CA1;&#x6709;&#x5F80;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4E2D;&#x653E;&#x5206;&#x914D;&#x597D;&#x7684;&#x6808;&#x5730;&#x5740;&#xFF0C;&#x800C;<strong>&#x53EA;&#x662F;&#x653E;&#x4E86;&#x9700;&#x8981;&#x7684;&#x6808;&#x5927;&#x5C0F;</strong></p>
+<p>&#x518D;&#x8FFD;&#x4E00;&#x8FFD;pthread&#x5E93;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x53D1;&#x73B0;&#x5982;&#x679C;&#x8C03;&#x7528;<code>pthread_create()</code>&#x65B9;&#x6CD5;&#x65F6;&#x4E0D;&#x6307;&#x5B9A;&#x5730;&#x5740;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x9ED8;&#x8BA4;&#x8C03;&#x7528;mmap()&#x65B9;&#x6CD5;&#xFF08; <a href="../pre-knowledge.html#3-1-1-mmap">&#x524D;&#x7F6E;&#x77E5;&#x8BC6;</a>&#xFF09;&#x4ECE;&#x8FDB;&#x7A0B;&#x4E2D;&#x5206;&#x914D;&#x4E00;&#x5757;<strong>&#x5185;&#x5B58;&#x6620;&#x5C04;&#x7A7A;&#x95F4;</strong>&#x4F5C;&#x4E3A;LWP&#x7684;&#x6808;&#x7A7A;&#x95F4;</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;hotspot&#x6D89;&#x53CA;&#x5230;&#x7684;&#x6808;&#x76F8;&#x5173;&#x7684;&#x6982;&#x5FF5;&#x5C31;&#x90FD;&#x6E05;&#x695A;&#x4E86;&#xFF08;&#x8FDB;&#x7A0B;&#x6808;&#x3001;lwp&#x6808;&#x3001;java&#x6808;&#xFF0C;&#x64CD;&#x4F5C;&#x6811;&#x6808;&#xFF09;</p>
+<p><img src="../../../.gitbook/assets/image%20%2825%29.png" alt=""></p>
+<p>&#x53C2;&#x8003;&#x4E66;&#x7C4D;&#xFF1A;&#x300A;HOTSPOT&#x5B9E;&#x6218;&#x300B;&#x3001;<a href="https://www.iteye.com/blog/rednaxelafx-492667" target="_blank">RednaxelaFX&#x535A;&#x5BA2;</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 线程私有区">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="program-counter.html" class="navigation navigation-next " aria-label="Next page: 程序计数器">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JVM栈","level":"4.2.2.1","depth":3,"next":{"title":"程序计数器","level":"4.2.2.2","depth":3,"path":"space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md","ref":"space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md","articles":[]},"previous":{"title":"线程私有区","level":"4.2.2","depth":2,"path":"space-memory-management/jvm-run-time-area/thread-private-area/README.md","ref":"space-memory-management/jvm-run-time-area/thread-private-area/README.md","articles":[{"title":"JVM栈","level":"4.2.2.1","depth":3,"path":"space-memory-management/jvm-run-time-area/thread-private-area/stack.md","ref":"space-memory-management/jvm-run-time-area/thread-private-area/stack.md","articles":[]},{"title":"程序计数器","level":"4.2.2.2","depth":3,"path":"space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md","ref":"space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"space-memory-management/jvm-run-time-area/thread-private-area/stack.md","mtime":"2020-05-28T10:48:56.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-31T16:53:56.776Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1856 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>解释执行 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="jit.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">语言：符号组织</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../../language-symbol-organization/symbol-compile/">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/">
+            
+                    
+                    符号编译
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/hide.html">
+            
+                    
+                    隐藏(hide)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/obscure.html">
+            
+                    
+                    遮掩(obscure)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/shadow.html">
+            
+                    
+                    遮蔽(shadow)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-compile/overloading.html">
+            
+                    
+                    重载(overloading)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/">
+            
+                    
+                    过程结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/sequence-structure.html">
+            
+                    
+                    顺序结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/">
+            
+                    
+                    选择结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.2.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.html">
+            
+                    
+                    if...else 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.html">
+            
+                    
+                    switch 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/tiao-jian-san-mu-yun-suan-fu.html">
+            
+                    
+                    条件三目运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.4" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/optional.html">
+            
+                    
+                    Optional、各种类库等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.5" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/assert.html">
+            
+                    
+                    assert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2.6" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/case-structure/try-catch.html">
+            
+                    
+                    try...catch 等
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/while.html">
+            
+                    
+                    while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/do-while.html">
+            
+                    
+                    do...while 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/for.html">
+            
+                    
+                    for 语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/syntactic-sugar.html">
+            
+                    
+                    语法糖等
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                <a href="../../../../language-symbol-organization/guo-cheng-jie-gou/cycle-structure/iterator.html">
+            
+                    
+                    迭代器Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../../../language-symbol-organization/symbol-definition/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/">
+            
+                    
+                    符号定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/">
+            
+                    
+                    类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.1" data-path="../../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/primitive-types.html">
+            
+                    
+                    原生类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/">
+            
+                    
+                    引用类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/">
+            
+                    
+                    类类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.1.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/object.html">
+            
+                    
+                    Object对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.1.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/class-types/string.html">
+            
+                    
+                    String对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/interface-types.html">
+            
+                    
+                    接口类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.2.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.html">
+            
+                    
+                    类型擦除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.2" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.html">
+            
+                    
+                    边界
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.3" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.html">
+            
+                    
+                    通配符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.4" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.html">
+            
+                    
+                    自限定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.3.5" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.html">
+            
+                    
+                    协变
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.2.4" data-path="../../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/reference-types/array-types.html">
+            
+                    
+                    数组类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/">
+            
+                    
+                    类型转换
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1.3.1" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.html">
+            
+                    
+                    原生类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.2" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/reference-types-conversion.html">
+            
+                    
+                    引用类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.1.3.3" data-path="../../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/types/type-conversion/auto-boxing.html">
+            
+                    
+                    自动装箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../../../../language-symbol-organization/symbol-definition/value.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/value.html">
+            
+                    
+                    值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/variables.html">
+            
+                    
+                    变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                <a href="../../../../language-symbol-organization/symbol-definition/keywords.html">
+            
+                    
+                    关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../../../language-symbol-organization/execute-preperation/">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/">
+            
+                    
+                    执行准备
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="../../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/loading.html">
+            
+                    
+                    加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="../../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/linking.html">
+            
+                    
+                    链接
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="../../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                <a href="../../../../language-symbol-organization/execute-preperation/initialization.html">
+            
+                    
+                    初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">时间：并发同步</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../../time-concurrent/java-language-specification/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/">
+            
+                    
+                    JAVA语言标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/">
+            
+                    
+                    Java内存模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/">
+            
+                    
+                    要解决的问题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.html">
+            
+                    
+                    可见性问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.2" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.html">
+            
+                    
+                    指令重排问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/">
+            
+                    
+                    要满足的原则
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.2.1" data-path="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.html">
+            
+                    
+                    happens-before原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/">
+            
+                    
+                    Java代码层面
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.html">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.html">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.html">
+            
+                    
+                    final
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.4" data-path="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                <a href="../../../../time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.html">
+            
+                    
+                    Concurrent工具包
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/">
+            
+                    
+                    JVM标准
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/">
+            
+                    
+                    同步方法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.html">
+            
+                    
+                    通过读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式获取monitor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/">
+            
+                    
+                    同步语句块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.html">
+            
+                    
+                    通过monitorenter, monitorexit这两个指令来显式获取和释放moniter
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/volatile/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.2.1" data-path="../../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                <a href="../../../../time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.html">
+            
+                    
+                    给字段加上ACC_VOLATILE标志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../../../time-concurrent/hotspot-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/">
+            
+                    
+                    Hotspot实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/volatile-realization/">
+            
+                    
+                    volatile
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1.1" data-path="../../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/volatile-realization/lock-instruction.html">
+            
+                    
+                    lock指令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/">
+            
+                    
+                    synchronize
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.2.1" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.html">
+            
+                    
+                    重量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.2" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.html">
+            
+                    
+                    轻量锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2.3" data-path="../../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                <a href="../../../../time-concurrent/hotspot-realization/synchronize-realization/biased-lock.html">
+            
+                    
+                    偏向锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">空间：内存管理</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    程序的运行过程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                <a href="../../lei-jia-zai-lian-jie-chu-shi-hua.html">
+            
+                    
+                    类加载、链接、初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    方法执行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1.2.1.1" data-path="explain-execute.html">
+            
+                <a href="explain-execute.html">
+            
+                    
+                    解释执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.1.2" data-path="jit.html">
+            
+                <a href="jit.html">
+            
+                    
+                    编译执行
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2" data-path="../lei-de-shi-li-hua/">
+            
+                <a href="../lei-de-shi-li-hua/">
+            
+                    
+                    类的实例化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1" data-path="../lei-de-shi-li-hua/dui-xiang/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.1" data-path="../lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/chuang-jian.html">
+            
+                    
+                    创建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/">
+            
+                    
+                    销毁
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/">
+            
+                    
+                    GC机制
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.1" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.html">
+            
+                    
+                    GC时机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.2" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.html">
+            
+                    
+                    GC对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2.2.1.2.1.3" data-path="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                <a href="../lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.html">
+            
+                    
+                    GC算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../lei-xie-zai.html">
+            
+                <a href="../../lei-xie-zai.html">
+            
+                    
+                    类卸载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../../jvm-run-time-area/">
+            
+                <a href="../../../jvm-run-time-area/">
+            
+                    
+                    JVM运行时数据区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../../jvm-run-time-area/pre-knowledge.html">
+            
+                <a href="../../../jvm-run-time-area/pre-knowledge.html">
+            
+                    
+                    前置知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../../../jvm-run-time-area/thread-private-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/">
+            
+                    
+                    线程私有区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.2.1" data-path="../../../jvm-run-time-area/thread-private-area/stack.html">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/stack.html">
+            
+                    
+                    JVM栈
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2.2" data-path="../../../jvm-run-time-area/thread-private-area/program-counter.html">
+            
+                <a href="../../../jvm-run-time-area/thread-private-area/program-counter.html">
+            
+                    
+                    程序计数器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../../../jvm-run-time-area/thread-share-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/">
+            
+                    
+                    线程共享区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.1" data-path="../../../jvm-run-time-area/thread-share-area/java-heap.html">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/java-heap.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3.2" data-path="../../../jvm-run-time-area/thread-share-area/method-area/">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/method-area/">
+            
+                    
+                    方法区
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.3.2.1" data-path="../../../jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.html">
+            
+                <a href="../../../jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.html">
+            
+                    
+                    运行时常量池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >解释执行</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x89E3;&#x91CA;&#x6267;&#x884C;">&#x89E3;&#x91CA;&#x6267;&#x884C;</h1>
+<p>[toc]</p>
+<p>Java &#x6E90;&#x7A0B;&#x5E8F;&#x7ECF;&#x7F16;&#x8BD1;&#x540E;&#x79F0;&#x4E3A;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x7531;&#x8FD0;&#x884C;&#x65F6;&#x73AF;&#x5883;&#x5BF9;&#x5B57;&#x8282;&#x7801;&#x8FDB;&#x884C;&#x89E3;&#x91CA;&#x6267;&#x884C;&#x3002;&#x63D0;&#x4F9B;&#x89E3;&#x91CA;&#x529F;&#x80FD;&#x7684;JVM&#x7EC4;&#x4EF6;&#x79F0;&#x4E3A;&#x89E3;&#x91CA;&#x5668;</p>
+<p><strong>&#x89E3;&#x91CA;&#x6267;&#x884C;</strong>&#x53EF;&#x4EE5;&#x4E0E;<strong>CPU&#x7684;&#x5904;&#x7406;&#x8FC7;&#x7A0B;</strong>&#x8FDB;&#x884C;&#x7C7B;&#x6BD4;&#xFF0C;CPU&#x5C31;&#x662F;&#x5728;&#x91CD;&#x590D;&#x8FDB;&#x884C;&#x7740;&#x201C;<strong>&#x53D6;&#x6307;-&#x8BD1;&#x7801;-&#x6267;&#x884C;</strong>&#x201C;&#x8FD9;&#x4E00;&#x64CD;&#x4F5C;&#xFF0C;&#x5E76;&#x5728;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4E2D;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x6761;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x7A0B;&#x5E8F;&#x89C4;&#x5B9A;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;<strong>&#x89E3;&#x91CA;&#x5668;</strong>&#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;CPU&#x8FD9;&#x4E2A;&#x89D2;&#x8272;&#xFF0C;&#x4E5F;&#x5728;&#x4E0D;&#x65AD;&#x7684;&#x201C;&#x53D6;&#x6307;-&#x8BD1;&#x7801;-&#x6267;&#x884C;&#x201D;&#xFF0C;&#x4E0B;&#x6587;&#x5C06;&#x4ECB;&#x7ECD;HopSpot VM&#x89E3;&#x91CA;&#x5668;&#x7684;&#x5206;&#x7C7B;&#x4E0E;&#x7EC4;&#x6210;&#xFF0C;&#x5E76;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;s&#x89E3;&#x91CA;&#x5668;&#x7684;&#x8FD0;&#x4F5C;&#x6D41;&#x7A0B;</p>
+<h2 id="1&#x3001;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x5206;&#x7C7B;&#x4E0E;&#x7EC4;&#x6210;">1&#x3001;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x5206;&#x7C7B;&#x4E0E;&#x7EC4;&#x6210;</h2>
+<p>&#x4ECE;&#x8BD1;&#x7801;&#x7684;&#x89D2;&#x5EA6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;HotSpot&#x5B9E;&#x73B0;&#x89E3;&#x91CA;&#x5668;&#x5206;&#x4E3A;<strong>C++&#x89E3;&#x91CA;&#x5668;</strong>&#x4E0E;<strong>&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;</strong>&#x4E24;&#x79CD;&#xFF0C;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;C++&#x89E3;&#x91CA;&#x5668;&#x662F;&#x5C06;<strong>&#x5B57;&#x8282;&#x7801;</strong>&#x201C;&#x8BD1;&#x7801;&#x201C;&#x6210;C++&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x5176;&#x5B9E;&#x5F88;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x6BD5;&#x7ADF;HotSpot&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x7528;C++&#x5B9E;&#x73B0;&#x7684;&#xFF1B;&#x800C;&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x5219;&#x662F;&#x5C06;<strong>&#x5B57;&#x8282;&#x7801;</strong>&#x201C;&#x8BD1;&#x7801;&#x201C;&#x6210;&#x4E86;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x76EE;&#x524D;HotSpot&#x76EE;&#x524D;&#x7684;&#x9ED8;&#x8BA4;&#x89E3;&#x91CA;&#x5668;</p>
+<h3 id="11-c&#x89E3;&#x91CA;&#x5668;">1.1 C++&#x89E3;&#x91CA;&#x5668;</h3>
+<p>&#x5BF9;&#x4E8E;C++&#x89E3;&#x91CA;&#x5668;&#x800C;&#x8A00;&#xFF0C;&#x662F;&#x5C06;&#x5B57;&#x8282;&#x7801;&#x8BD1;&#x7801;&#x6210;C++&#x4EE3;&#x7801;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x6267;&#x884C;&#x6027;&#x80FD;&#x4E0A;&#x5E94;&#x8BE5;&#x662F;&#x4E0D;&#x5982;&#x8BD1;&#x7801;&#x6210;&#x673A;&#x5668;&#x7801;&#x7684;</p>
+<p>&#x6BD4;&#x5982;&#x5728;&#x5BC4;&#x5B58;&#x5668;&#x5206;&#x914D;&#x4E0A;&#x65F6;&#xFF0C;&#x624B;&#x5199;&#x6C47;&#x7F16;&#x5728;&#x8FD9;&#x79CD;&#x5F88;&#x5C0F;&#x8303;&#x56F4;&#x5F88;&#x7EC6;&#x8282;&#x7684;&#x5730;&#x65B9;&#x80FD;&#x6709;&#x6548;&#x7684;&#x3001;&#x7CBE;&#x786E;&#x7684;&#x63A7;&#x5236;&#x5BC4;&#x5B58;&#x5668;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E0D;&#x4F1A;&#x6D6A;&#x8D39;&#x5BC4;&#x5B58;&#x5668;</p>
+<p>&#x800C;C++&#x7F16;&#x8BD1;&#x5668;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x5B8C;&#x7F8E;&#x7684;&#x9009;&#x62E9;&#x5230;&#x6700;&#x597D;&#x7684;&#x5BC4;&#x5B58;&#x5668;&#x5206;&#x914D;&#x65B9;&#x5F0F;&#x3002;&#x5728;&#x6BD4;&#x8F83;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x4EE3;&#x7801;&#x91CC;&#x7F16;&#x8BD1;&#x5668;&#x53EF;&#x80FD;&#x6BD4;&#x624B;&#x5199;&#x505A;&#x5F97;&#x597D;&#xFF0C;&#x56E0;&#x4E3A;&#x4EBA;&#x80FD;&#x5728;&#x8111;&#x5B50;&#x7BA1;&#x7406;&#x597D;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E5F;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF1B;&#x4F46;&#x5C0F;&#x89C4;&#x6A21;&#x4EE3;&#x7801;&#x7684;&#x7CBE;&#x786E;&#x63A7;&#x5236;&#x901A;&#x5E38;&#x8FD8;&#x662F;&#x4EBA;&#x505A;&#x5F97;&#x597D;&#x4E9B;&#x3002;</p>
+<p>&#x90A3;&#x6309;&#x7406;&#x6765;&#x8BF4;&#xFF0C;&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x5E94;&#x8BE5;&#x662F;C++&#x89E3;&#x91CA;&#x5668;&#x7684;&#x5347;&#x7EA7;&#x7248;(<strong>&#x5F88;&#x591A;&#x535A;&#x5BA2;&#x548C;&#x4E66;&#x7C4D;&#x4E2D;&#x90FD;&#x662F;&#x8FD9;&#x4E48;&#x63CF;&#x8FF0;&#x7684;</strong>)&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x662F;&#xFF0C;&#x5728;@RednaxelaFX&#x7684;&#x8C46;&#x74E3;&#x7B14;&#x8BB0;&#x4E2D;&#x7FFB;&#x5230;&#x4E86;&#x8FD9;&#x6837;&#x4E00;&#x6BB5;&#x5173;&#x4E8E;&#x8FD9;&#x4E24;&#x7C7B;&#x89E3;&#x91CA;&#x5668;&#x7531;&#x6765;&#x7684;&#x5386;&#x53F2;&#xFF0C;&#x8FD8;&#x633A;&#x6709;&#x610F;&#x601D;&#x7684;</p>
+<blockquote>
+<p>&#x5176;&#x5B9E;HotSpot&#x4ECE;&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x6709;&#x6A21;&#x677F;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x800C;C++&#x89E3;&#x91CA;&#x5668;&#x53CD;&#x800C;&#x662F;&#x540E;&#x6765;&#x52A0;&#x8FDB;&#x6765;&#x7684;&#x3002;&#x524D;&#x8005;&#x6E90;&#x4E8E;HotSpot&#x7684;&#x524D;&#x8EAB;Strongtalk&#xFF0C;&#x800C;&#x540E;&#x8005;&#x6E90;&#x4E8E;Sun&#x7684;&#x53E6;&#x4E00;&#x4E2A;JVM(CVM)&#xFF0C;&#x53C8;&#x540D;&#x201C;CDC HotSpot Implementation&#x201D;&#x6216;&#x8005;&#x201C;CDC-HI&#x201D;&#x3002;CVM&#x66F4;&#x65E9;&#x7684;&#x524D;&#x8EAB;&#x662F;Sun&#x7684;Classic VM&#x3002; &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x8FD9;&#x4FE9;&#x89E3;&#x91CA;&#x5668;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x8840;&#x7F18;&#x5173;&#x7CFB;&#xFF0C;&#x524D;&#x8005;&#x5E76;&#x975E;&#x5C06;&#x540E;&#x8005;&#x7FFB;&#x8BD1;&#x4E3A;&#x6C47;&#x7F16;&#x3002;&#x5F53;&#x65F6;Sun&#x4E4B;&#x6240;&#x4EE5;&#x628A;&#x540E;&#x8005;&#x52A0;&#x5230;HotSpot&#x662F;&#x5728;&#x5B9E;&#x73B0;Itanium&#xFF08;IA-64&#xFF09;&#x7684;&#x79FB;&#x690D;&#x65F6;&#x60F3;&#x5077;&#x61D2;&#xFF0C;&#x4EBA;&#x8089;&#x5199;Itanium&#x6C47;&#x7F16;&#x633A;&#x70E6;&#x7684;&#x6240;&#x4EE5;&#x8981;&#x5B9E;&#x73B0;Itanium&#x7248;&#x6A21;&#x677F;&#x89E3;&#x91CA;&#x5668;&#x4E0D;&#x65B9;&#x4FBF;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C31;&#x60F3;&#x5230;&#x4E86;&#x628A;CVM&#x7684;&#x89E3;&#x91CA;&#x5668;&#x79FB;&#x690D;&#x8FC7;&#x6765;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x5C11;&#x5199;&#x70B9;&#x6C47;&#x7F16;&#x5C31;&#x80FD;&#x5B8C;&#x6210;&#x79FB;&#x690D;&#x3002;&#x7ED3;&#x679C;&#x4E00;&#x76F4;&#x4EE5;&#x6765;HotSpot&#x80FD;&#x8FD0;&#x884C;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x53EA;&#x6709;Itanium&#x7248;&#x662F;&#x771F;&#x7684;&#x7528;&#x4E86;&#x8FD9;&#x4E2A;C++&#x89E3;&#x91CA;&#x5668;&#x7684;&#xFF0C;&#x800C;&#x5176;&#x5B83;&#x5E73;&#x53F0;&#x4E0A;&#x9ED8;&#x8BA4;&#x90FD;&#x5728;&#x7528;&#x6A21;&#x677F;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x4F46;&#x8FD8;&#x662F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F16;&#x8BD1;&#x53C2;&#x6570;&#x9009;&#x62E9;&#x4F7F;&#x7528;C++&#x89E3;&#x91CA;&#x5668;&#x3002;```</p>
+</blockquote>
+<h3 id="12-&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;">1.2 &#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;</h3>
+<p>&#x6A21;&#x677F;&#x89E3;&#x91CA;&#x5668;&#x76F8;&#x5BF9;&#x4E8E;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;<strong>&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;</strong>&#x90FD;&#x5199;&#x4E86;&#x4E00;&#x6BB5;&#x5B9E;&#x73B0;&#x5BF9;&#x5E94;&#x529F;&#x80FD;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF0C;&#x5728;<strong>JVM&#x521D;&#x59CB;&#x5316;</strong>&#x65F6;&#xFF0C;&#x6C47;&#x7F16;&#x5668;&#x4F1A;&#x5C06;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x7FFB;&#x8BD1;&#x6210;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&#x6267;&#x884C;iload&#x6307;&#x4EE4;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x6267;&#x884C;&#x5BF9;&#x5E94;&#x7684;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x5373;&#x53EF;&#x3002;&#x5982;&#x4F55;&#x6267;&#x884C;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#xFF1F;&#x76F4;&#x63A5;&#x8DF3;&#x5F80;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x7684;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5730;&#x5740;&#x5373;&#x53EF;&#x3002;</p>
+<h4 id="121-&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x7EC4;&#x6210;">1.2.1 &#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x7EC4;&#x6210;</h4>
+<h5 id="1211-&#x6A21;&#x7248;&#x8868;">1.2.1.1 &#x6A21;&#x7248;&#x8868;</h5>
+<p>JVM&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F1A;&#x4E3A;&#x6BCF;&#x4E2A;<strong>&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;</strong>&#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x6BCF;&#x4E2A;&#x6A21;&#x677F;&#x90FD;&#x5173;&#x8054;&#x5176;&#x5BF9;&#x5E94;&#x7684;<strong>&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x51FD;&#x6570;</strong>&#xFF0C;&#x6240;&#x6709;&#x5B57;&#x8282;&#x7801;&#x7684;&#x6A21;&#x7248;&#x7EC4;&#x5408;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x6784;&#x6210;&#x4E00;&#x4E2A;&#x6A21;&#x7248;&#x8868;&#x3002;&#x8868;&#x4E2D;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x6A21;&#x7248;&#xFF0C;&#x5143;&#x7D20;&#x6309;&#x7167;&#x5B57;&#x8282;&#x7801;&#x503C;&#x7684;&#x9012;&#x589E;&#x987A;&#x5E8F;&#x6392;&#x5217;&#xFF0C;&#x7B2C;n&#x53F7;&#x5143;&#x7D20;&#x8868;&#x793A;&#x7684;&#x5C31;&#x662F;&#x5B57;&#x8282;&#x7801;&#x4E3A;n&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x7248;</p>
+<blockquote>
+<p>&#x6211;&#x4EEC;&#x5E73;&#x65F6;&#x8BF4;&#x7684;iload&#x6307;&#x4EE4;&#x7B49;&#xFF0C;&#x5176;&#x5B9E;&#x90FD;&#x53EA;&#x662F;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x7684;&#x52A9;&#x8BB0;&#x7B26;&#xFF0C;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x7406;&#x89E3;&#xFF0C;&#x771F;&#x6B63;&#x7684;&#x5B57;&#x8282;&#x7801;&#x7801;&#x6307;&#x4EE4;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6BD4;&#x5982;iload&#x662F;21&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x6267;&#x884C;21&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x65F6;&#xFF0C;&#x5C31;&#x662F;&#x6267;&#x884C;iload</p>
+</blockquote>
+<p>&#x4EE5;&#x4E0B;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x6A21;&#x7248;&#x7684;<strong>&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x51FD;&#x6570;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> Template::generate(InterpreterMacroAssembler* masm) {
+  <span class="hljs-comment">// parameter passing</span>
+  TemplateTable::_desc = <span class="hljs-keyword">this</span>;
+  TemplateTable::_masm = masm;
+  <span class="hljs-comment">// code generation</span>
+  _gen(_arg);
+  masm-&gt;flush();
+}
+</code></pre>
+<h5 id="1212-&#x673A;&#x5668;&#x7801;&#x751F;&#x6210;&#x5668;">1.2.1.2 &#x673A;&#x5668;&#x7801;&#x751F;&#x6210;&#x5668;</h5>
+<p>&#x5728;JVM&#x542F;&#x52A8;&#x65F6;&#xFF0C;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#x5C06;&#x7EDF;&#x4E00;&#x4E3A;&#x5B57;&#x8282;&#x7801;&#x4EE5;&#x53CA;JVM&#x5185;&#x90E8;&#x4F8B;&#x7A0B;&#x751F;&#x6210;&#x673A;&#x5668;&#x7801;&#xFF0C;&#x5BF9;&#x4E8E;&#x5B57;&#x8282;&#x7801;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x6A21;&#x7248;&#x8868;&#x91CC;&#x627E;&#x5230;&#x5B57;&#x8282;&#x7801;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x7248;&#xFF0C;&#x7136;&#x540E;&#x6839;&#x636E;&#x6C47;&#x7F16;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x51FD;&#x6570;&#x751F;&#x6210;&#x4EE3;&#x7801;&#xFF0C;&#x5177;&#x4F53;&#x5230;&#x6E90;&#x7801;&#x5C42;&#x9762;&#xFF0C;&#x673A;&#x5668;&#x7801;&#x751F;&#x6210;&#x5668;&#x5C31;&#x662F;&#x4E2A;C++&#x7C7B;<code>TemplateInterpreterGenerator</code>,&#x901A;&#x8FC7;&#x5B83;&#x7684;<code>generate_all()</code>&#x51FD;&#x6570;&#x751F;&#x6210;&#x4EE3;&#x7801;</p>
+<p>&#x5728;JVM&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7531;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x5668;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x7531;&#x4E00;&#x4E2A;Codelet&#x6765;&#x8868;&#x793A;&#xFF0C;&#x9762;&#x5411;&#x89E3;&#x91CA;&#x5668;&#x7684;Codelet&#x79F0;&#x4E3A;InterpreterCodelet&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;Codelet&#x6765;&#x5B8C;&#x6210;&#x5728;JVM&#x5185;&#x90E8;&#x5B58;&#x50A8;&#x3001;&#x5B9A;&#x4F4D;&#x548C;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x4EFB;&#x52A1;</p>
+<p>&#x6BCF;&#x4E2A;InterpreterCodelet&#x5177;&#x6709;&#x540D;&#x79F0;&#x548C;&#x5B57;&#x8282;&#x7801;&#x7F16;&#x53F7;&#xFF0C;&#x5E76;&#x80FD;&#x591F;&#x627E;&#x5230;&#x673A;&#x5668;&#x7801;&#x5728;JVM&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x8D77;&#x3001;&#x6B62;&#x5730;&#x5740;</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">class</span> InterpreterCodelet: <span class="hljs-keyword">public</span> Stub {
+ <span class="hljs-keyword">private</span>:
+  <span class="hljs-keyword">int</span>         _size;                             <span class="hljs-comment">// the size in bytes</span>
+  Bytecodes::Code _bytecode;                     <span class="hljs-comment">// associated bytecode if any</span>
+ <span class="hljs-keyword">public</span>:
+  <span class="hljs-comment">// Code info</span>
+  <span class="hljs-function">address <span class="hljs-title">code_begin</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span>                     </span>{ <span class="hljs-keyword">return</span> (address)<span class="hljs-keyword">this</span> + round_to(<span class="hljs-keyword">sizeof</span>(InterpreterCodelet), CodeEntryAlignment); }
+  <span class="hljs-function">address <span class="hljs-title">code_end</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span>                       </span>{ <span class="hljs-keyword">return</span> (address)<span class="hljs-keyword">this</span> + size(); }
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#xFF0C;&#x5728;&#x89E3;&#x91CA;&#x5668;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;InterpreterCodelet&#x5E76;&#x4E0D;&#x662F;&#x5B64;&#x7ACB;&#x7684;&#xFF0C;&#x5B83;&#x4EEC;&#x5171;&#x540C;&#x6784;&#x6210;&#x4E86;&#x4E00;&#x4E2A;<strong>Stub&#x961F;&#x5217;</strong></p>
+<blockquote>
+<p>&#x521A;&#x5F00;&#x59CB;&#x5B66;&#x8FD9;&#x5757;&#x65F6;&#xFF0C;&#x603B;&#x662F;&#x5206;&#x4E0D;&#x6E05;Stub&#x662F;&#x4E2A;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#xFF0C;&#x660E;&#x660E;&#x961F;&#x5217;&#x91CC;&#x653E;&#x7684;s&#x662F;Codelet&#x8FD8;&#x8981;&#x53EB;Stub&#x961F;&#x5217;&#xFF08;&#x535A;&#x5BA2;&#x548C;&#x4E66;&#x7C4D;&#x91CC;&#xFF09;&#xFF0C;&#x540E;&#x9762;&#x770B;&#x4E86;&#x4E0A;&#x9762;&#x90A3;&#x6BB5;&#x6E90;&#x7801;&#xFF0C;&#x539F;&#x6765;Stub&#x5C31;&#x662F;&#x4E2A;&#x7236;&#x7C7B;&#xFF0C;&#x6B64;&#x5916;&#xFF0C;Stub&#x6709;&#x4E2A;&#x610F;&#x601D;&#x662F;&#x201C;&#x4E00;&#x5C0F;&#x5757;&#x4EE3;&#x7801;&#x201D;&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x6709;&#x4E2A;caller&#x8981;&#x8C03;&#x7528;callee&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E2D;&#x95F4;&#x9700;&#x8981;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5C31;&#x4F1A;&#x7528;&#x8FD9;&#x79CD;&#x201C;&#x5C0F;&#x5757;&#x4EE3;&#x7801;&#x201D;&#x53BB;&#x505A;&#xFF0C;&#x5B83;&#x4EEC;&#x5E76;&#x4E0D;&#x662F;&#x6700;&#x7EC8;&#x7684;&#x8C03;&#x7528;&#x76EE;&#x6807;&#xFF0C;&#x800C;&#x662F;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x5904;&#x7406;&#x4E4B;&#x540E;&#x201C;&#x8DF3;&#x201D;&#x5230;&#x771F;&#x6B63;&#x7684;&#x76EE;&#x6807;&#x53BB;&#x3002;</p>
+</blockquote>
+<p><img src="../../../../img/stub_queue.png" alt="stub_queue"></p>
+<h5 id="1213-&#x5B57;&#x8282;&#x7801;&#x6A21;&#x5757;">1.2.1.3 &#x5B57;&#x8282;&#x7801;&#x6A21;&#x5757;</h5>
+<p>&#x5B57;&#x8282;&#x7801;&#x6A21;&#x5757;&#x4E3B;&#x8981;&#x627F;&#x62C5;&#x4E86;&#x4E24;&#x4E2A;&#x804C;&#x8D23;&#xFF0C;&#x4E00;&#x662F;&#x7EF4;&#x62A4;&#x4E86;&#x4E00;&#x5F20;&#x5B57;&#x8282;&#x7801;&#x8868;&#x6765;&#x63D0;&#x4F9B;&#x7D22;&#x5F15;&#x670D;&#x52A1;&#xFF0C;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x5229;&#x7528;&#x5B57;&#x8282;&#x7801;&#x7F16;&#x53F7;&#x4ECE;&#x8868;&#x4E2D;&#x76F8;&#x5E94;&#x4F4D;&#x7F6E;&#x53D6;&#x5F97;&#x5B57;&#x8282;&#x7801;&#x4FE1;&#x606F;&#xFF1B;&#x4E8C;&#x662F;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x201C;&#x53D6;&#x7801;&#x201D;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x65B9;&#x6CD5;&#x548C;&#x504F;&#x79FB;&#x91CF;&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x7684;&#x51FD;&#x6570;(&#x4E0E;&#x4E0A;&#x6587;&#x7684;&#x201C;&#x53D6;&#x6307;&#x201D;&#x8FC7;&#x7A0B;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x4E1C;&#x897F;)</p>
+<p>&#x9996;&#x5148;&#x770B;<strong>&#x5B57;&#x8282;&#x7801;&#x8868;</strong>&#xFF0C;&#x5728;JVM&#x542F;&#x52A8;&#x65F6;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x5F20;&#x5B57;&#x8282;&#x7801;&#x8868;&#x5E76;&#x5C06;&#x6240;&#x6709;&#x5B57;&#x8282;&#x7801;&#x7684;&#x5C5E;&#x6027;&#x9010;&#x4E00;&#x586B;&#x597D;&#xFF0C;&#x8FD9;&#x91CC;&#x6307;&#x7684;&#x5C5E;&#x6027;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x51E0;&#x9879;&#xFF1A;</p>
+<ul>
+<li>&#x5B57;&#x8282;&#x7801;&#xFF08;&#x6570;&#x5B57;&#xFF09;</li>
+<li>&#x5B57;&#x8282;&#x7801;&#x52A9;&#x8BB0;&#x7B26;&#xFF0C;&#x5982;&#x201C;<code>iconst_0</code>&#x201D;&#x7B49;</li>
+<li>&#x5B57;&#x8282;&#x7801;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x6765;&#x81EA;HotSpot&#x5185;&#x90E8;&#x5B9A;&#x4E49;&#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;BasicType,&#x5305;&#x62EC;<code>T_BOOLEAN&#x3001;T_CHAR&#x3001;T_FLOAT&#x3001;T_DOUBLE&#x3001;T_BYTE&#x3001;T_SHORT&#x3001;T_INT&#x3001;T_LONG&#x3001;T_OBJECT&#x3001;T_ARRAY&#x3001;T_VOID&#x3001;T_ADDRESS&#x548C;T_NARROWOOP</code>&#x7B49;</li>
+<li>&#x6269;&#x5C55;&#x6307;&#x4EE4;&#x683C;&#x5F0F;(wide format) </li>
+<li>&#x6307;&#x4EE4;&#x957F;&#x5EA6;</li>
+</ul>
+<p>&#x5176;&#x4E2D;&#x552F;&#x4E00;&#x4E0D;&#x592A;&#x597D;&#x7406;&#x89E3;&#x7684;&#x5C31;&#x662F;<strong>&#x6269;&#x5C55;&#x6307;&#x4EE4;&#x683C;&#x5F0F;</strong>&#xFF08;wide f&#xFF09;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x6E90;&#x7801;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x4E24;&#x6761;&#x5B57;&#x8282;&#x7801;</p>
+<pre><code class="lang-c++"><span class="hljs-comment">//  bytecode(&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x5E38;&#x91CF;)   bytecode name           format   wide f.   result tp  stk traps</span>
+def(_iload               , <span class="hljs-string">&quot;iload&quot;</span>               , <span class="hljs-string">&quot;bi&quot;</span>   , <span class="hljs-string">&quot;wbii&quot;</span>  , T_INT    ,  <span class="hljs-number">1</span>, <span class="hljs-literal">false</span>);
+def(_iinc                , <span class="hljs-string">&quot;iinc&quot;</span>                , <span class="hljs-string">&quot;bic&quot;</span>  , <span class="hljs-string">&quot;wbiicc&quot;</span>, T_VOID   ,  <span class="hljs-number">0</span>, <span class="hljs-literal">false</span>);
+</code></pre>
+<blockquote>
+<p>&#x5B57;&#x8282;&#x7801;&#x7684;&#x6307;&#x4EE4;&#x662F;&#x5355;&#x5B57;&#x8282;&#x7684;,&#x5BF9;&#x4E8E;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6765;&#x8BF4;,&#x6700;&#x591A;&#x5BB9;&#x7EB3;256&#x4E2A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;
+wide&#x6307;&#x4EE4;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x6269;&#x5C55;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x6570;&#x7684; ,&#x5C06;8&#x4F4D;&#x7684;&#x7D22;&#x5F15;&#x5728;&#x6269;&#x5C55;8&#x4F4D;,&#x4E5F;&#x5C31;&#x662F;16&#x4F4D; &#x6700;&#x591A;65536
+wide &#x8981;&#x88AB;&#x6269;&#x5C55;&#x7684;&#x64CD;&#x4F5C;&#x7801;&#x6BD4;&#x5982;<strong>iload &#x64CD;&#x4F5C;&#x6570;</strong>  (wide iload 257 &#x4E5F;&#x5C31;&#x662F; wide iload byte1 byte2), &#x5219;&#x683C;&#x5F0F;&#x8BB0;&#x4E3A;<strong>&#x201C;wbii&#x201D;</strong>
+wide &#x8981;&#x88AB;&#x6269;&#x5C55;&#x7684;&#x64CD;&#x4F5C;&#x7801;&#x6BD4;&#x5982;<strong>iinc &#x64CD;&#x4F5C;&#x6570;,&#x64CD;&#x4F5C;&#x6570;</strong> &#xFF08;wide iinc 257,257 &#x4E5F;&#x5C31;&#x662F; wide iinc byte1 byte2 constbyte1 constbyte2 &#xFF0C;&#x5219;&#x683C;&#x5F0F;&#x8BB0;&#x4E3A; <strong>&#x201C;wbiicc&#x201D;</strong></p>
+</blockquote>
+<p>&#x518D;&#x770B;<strong>&#x201C;&#x53D6;&#x7801;&#x201D;</strong>&#x529F;&#x80FD;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x89E3;&#x91CA;&#x5668;&#x5728;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F80;&#x5F80;&#xFF08;&#x5E76;&#x4E0D;&#x5305;&#x62EC;&#x6587;&#x7AE0;&#x5F00;&#x5934;&#x8BF4;&#x7684;<strong>&#x201C;&#x53D6;&#x6307;&#x201D;</strong>&#xFF09;&#x8981;&#x6839;&#x636E;&#x5B57;&#x8282;&#x7801;&#x504F;&#x79FB;&#x91CF;&#xFF08;bytecode index&#xFF0C;&#x7F29;&#x5199;&#x4E3A;bci&#xFF09;&#x83B7;&#x53D6;&#x5728;<strong>&#x8BE5;&#x65B9;&#x6CD5;&#x5185;</strong>(<strong>&#x8FD9;&#x70B9;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;</strong>)&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x7684;&#x5B57;&#x8282;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8BF4;&#x7684;&#x201C;&#x53D6;&#x7801;&#x201D;&#xFF08;fetch bytecode&#xFF09;</p>
+<p>&#x5728;&#x5B57;&#x8282;&#x7801;&#x6A21;&#x5757;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;code_at()&#x51FD;&#x6570;&#x6765;&#x5BF9;&#x201C;&#x53D6;&#x7801;&#x201D;&#x8FDB;&#x884C;&#x5B9E;&#x73B0;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;&#xFF08;methodOop&#xFF09;&#x548C;bci&#x8FDB;&#x884C;&#x53D6;&#x7801;</p>
+<pre><code class="lang-c++">Bytecodes::Code Bytecodes::code_at(Method* method, <span class="hljs-keyword">int</span> bci) {
+  <span class="hljs-keyword">return</span> code_at(method, method-&gt;bcp_from(bci));
+}
+...
+address Method::bcp_from(<span class="hljs-keyword">int</span> bci) <span class="hljs-keyword">const</span> {
+...
+  address bcp = code_base() + bci;
+...
+  <span class="hljs-keyword">return</span> bcp;
+}
+</code></pre>
+<p>&#x51FD;&#x6570;code_at()&#x9996;&#x5148;&#x5F97;&#x5230;&#x8BE5;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x5B57;&#x8282;&#x7801;&#x6D41;&#x5728;JVM&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x57FA;&#x5730;&#x5740;code_base&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6839;&#x636E;<code>bcp = code_base() + bci</code>&#x8BA1;&#x7B97;&#x5F97;&#x5230;<strong>&#x5B57;&#x8282;&#x7801;&#x6307;&#x9488;&#xFF08;byte code pointer,&#x7F29;&#x5199;&#x4E3A;bcp&#xFF09;&#x5730;&#x5740;</strong>&#xFF1B;&#x6700;&#x540E;&#x8BBF;&#x95EE;bcp&#x6307;&#x5411;&#x5185;&#x5B58;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x5373;&#x5F97;&#x5230;&#x76EE;&#x6807;bytecode&#xFF0C;&#x5B8C;&#x6210;&#x201C;&#x53D6;&#x7801;&#x201D;&#xFF0C;&#x5177;&#x4F53;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;</p>
+<p><img src="../../../../img/fetch_bytecode.png" alt=""></p>
+<h5 id="1214-&#x8F6C;&#x53D1;&#x8868;">1.2.1.4 &#x8F6C;&#x53D1;&#x8868;</h5>
+<p>&#x540C;&#x6837;&#x662F;&#x5728;JVM&#x7684;&#x542F;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5C06;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x5F20;&#x8F6C;&#x53D1;&#x8868;(DispatchTable)&#xFF0C;&#x8F6C;&#x53D1;&#x8868;&#x662F;&#x8FDE;&#x63A5;&#x5B57;&#x8282;&#x7801;&#x548C;&#x673A;&#x5668;&#x7801;&#x7684;&#x6865;&#x6881;&#xFF0C;&#x8BB0;&#x5F55;&#x4E86;<strong>&#x5B57;&#x8282;&#x7801;</strong>&#x4EE5;&#x53CA;&#x5176;&#x5BF9;&#x5E94;&#x7684;<strong>&#x673A;&#x5668;&#x7801;&#x7684;&#x5165;&#x53E3;&#x5730;&#x5740;(entry_point)</strong>&#xFF0C;&#x8FD9;&#x6837;&#x5728;JVM&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8BE5;&#x5B57;&#x8282;&#x7801;&#x7684;&#x673A;&#x5668;&#x7801;&#x65F6;&#xFF0C;&#x53EA;&#x7528;&#x901A;&#x8FC7;&#x8F6C;&#x53D1;&#x8868;&#x5C31;&#x80FD;&#x8DF3;&#x8FC7;&#x53BB;&#x6267;&#x884C;&#x4E86;</p>
+<p><img src="../../../../img/dispatch.png" alt=""></p>
+<h4 id="122-&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x8FD0;&#x4F5C;&#x8FC7;&#x7A0B;">1.2.2 &#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x8FD0;&#x4F5C;&#x8FC7;&#x7A0B;</h4>
+<p>&#x5728;&#x4E86;&#x89E3;&#x4E86;&#x6A21;&#x7248;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x7EC4;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x5B83;&#x7684;&#x8FD0;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E5F;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#x4E86;&#xFF0C;&#x7ED3;&#x5408;&#x7740;&#x201C;<strong>&#x53D6;&#x6307;-&#x8BD1;&#x7801;-&#x6267;&#x884C;</strong>&#x201C;&#x8FD9;&#x4E00;&#x5FAA;&#x73AF;&#x64CD;&#x4F5C;&#xFF0C;&#x5404;&#x4E2A;&#x6A21;&#x5757;&#x95F4;&#x662F;&#x8FD9;&#x4E48;&#x4EA4;&#x4E92;&#x7684;&#xFF1A;</p>
+<p><img src="../../../../img/intercepter_run.png" alt=""></p>
+<p>&#x518D;&#x6B21;&#x56DE;&#x5230;&#x89E3;&#x91CA;&#x5668;&#x7684;&#x4E3B;&#x5FAA;&#x73AF;&#x201C;<strong>&#x53D6;&#x6307;-&#x8BD1;&#x7801;-&#x6267;&#x884C;</strong>&#x201C;&#xFF0C;&#x601D;&#x8003;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;CPU&#x662F;&#x5982;&#x4F55;&#x4E0D;&#x65AD;&#x7684;&#x6267;&#x884C;&#x6307;&#x4EE4;&#x7684;&#xFF0C;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x7684;&#x7BA1;&#x7406;&#x8005;&#xFF0C;&#x4E0D;&#x65AD;&#x7684;&#x53D6;&#x51FA;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x5417;&#xFF0C;&#x5176;&#x5B9E;&#x4E0D;&#x662F;&#x7684;&#xFF0C;&#x5F53;&#x4EE3;&#x7801;&#x6BB5;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x540E;&#xFF0C;&#x4F1A;&#x653E;&#x5230;&#x8FDE;&#x7EED;&#x7684;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x533A;&#x57DF;&#xFF0C;&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x90FD;&#x662F;<strong>&#x7EBF;&#x6027;</strong>&#x6392;&#x5728;&#x4E00;&#x8D77;&#x7684;&#x3002;CPU&#x5229;&#x7528;CS:IP&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x6307;&#x4EE4;&#x5730;&#x5740;&#xFF0C;&#x56E0;&#x4E3A;&#x6307;&#x4EE4;&#x90FD;&#x662F;&#x8FDE;&#x7EED;&#x6392;&#x5728;&#x4E00;&#x8D77;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x6267;&#x884C;&#x5B8C;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x540E;&#xFF0C;&#x76F4;&#x63A5;&#x6839;&#x636E;&#x5F53;&#x524D;&#x6307;&#x4EE4;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x504F;&#x79FB;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5730;&#x5740;&#xFF0C;&#x9001;&#x5165;IP&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x8FDE;&#x7EED;&#x4E0D;&#x65AD;&#x7684;&#x53D6;&#x6307;&#x3002;</p>
+<p>HotSpot&#x501F;&#x7528;&#x4E86;&#x8FD9;&#x4E00;&#x601D;&#x60F3;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x5BF9;&#x5E94;&#x751F;&#x6210;&#x7684;<strong>&#x673A;&#x5668;&#x7801;&#x672B;&#x5C3E;</strong>&#xFF0C;&#x4F1A;&#x63D2;&#x5165;&#x4E00;&#x6BB5;&#x8DF3;&#x8F6C;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x7684;&#x903B;&#x8F91;&#x3002;&#x8FD9;&#x6837;&#x5F53;&#x524D;&#x5B57;&#x8282;&#x7801;&#x5728;&#x5B8C;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x529F;&#x80FD;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x53D6;&#x51FA;&#x65B9;&#x6CD5;&#x4F53;&#x4E2D;&#x6392;&#x5728;&#x5B83;&#x540E;&#x9762;&#x7684;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5F00;&#x59CB;&#x6267;&#x884C;</p>
+<p>&#x5177;&#x4F53;&#x903B;&#x8F91;&#x5728;<strong>&#x673A;&#x5668;&#x7801;&#x751F;&#x6210;&#x5668;</strong>&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;generate_and_dispatch&#xFF08;&#xFF09;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> TemplateInterpreterGenerator::generate_and_dispatch(Template* t, TosState tos_out) {
+  ......
+  <span class="hljs-comment">// generate template</span>
+  t-&gt;generate(_masm);
+  <span class="hljs-comment">// advance</span>
+  <span class="hljs-keyword">if</span> (t-&gt;does_dispatch()) {
+<span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> ASSERT</span>
+    <span class="hljs-comment">// make sure execution doesn&apos;t go beyond this point if code is broken</span>
+    __ should_not_reach_here();
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span> <span class="hljs-comment">// ASSERT</span></span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// dispatch to next bytecode</span>
+    __ dispatch_epilog(tos_out, step);
+  }
+}
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x6839;&#x636E;&#x6A21;&#x7248;&#x751F;&#x6210;&#x4E86;&#x5BF9;&#x5E94;&#x673A;&#x5668;&#x7801;&#x4E4B;&#x540E;generate(<em>masm),&#x8FD8;&#x4F1A;&#x8C03;&#x7528; _</em> dispatch_epilog(tos_out, step)&#x65B9;&#x6CD5;&#x6765;&#x751F;&#x6210;&#x8DF3;&#x8F6C;&#x5230;&#x4E0B;&#x4E00;&#x6761;&#x5B57;&#x8282;&#x7801;&#x5BF9;&#x5E94;&#x673A;&#x5668;&#x7801;&#x7684;&#x5165;&#x53E3;&#x5730;&#x5740;&#xFF0C;&#x518D;&#x770B;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#xFF1A;</p>
+<pre><code class="lang-c++"><span class="hljs-keyword">void</span> InterpreterMacroAssembler::dispatch_next(TosState state, <span class="hljs-keyword">int</span> step) {
+  load_unsigned_byte(rbx, Address(_bcp_register, step));
+  <span class="hljs-comment">// advance _bcp_register</span>
+  increment(_bcp_register, step);
+  dispatch_base(state, Interpreter::dispatch_table(state));
+}
+</code></pre>
+<p>load_unsigned_byte&#xFF08;&#xFF09;&#x4F1A;&#x6839;&#x636E;&#x5F53;&#x524D;&#x6307;&#x4EE4;&#x5730;&#x5740;&#x504F;&#x79FB;&#xFF0C;&#x83B7;&#x53D6;&#x4E0B;&#x6761;&#x6307;&#x4EE4;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x5730;&#x5740;&#x83B7;&#x5F97;&#x6307;&#x4EE4;,&#x653E;&#x5165;rbx&#x5BC4;&#x5B58;&#x5668;</p>
+<p>_bcp_register&#x5C31;&#x662F;rsi&#x5BC4;&#x5B58;&#x5668;&#xFF0C;HotSpot&#x5229;&#x7528;rsi&#x5BC4;&#x5B58;&#x5668;&#x6765;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x6307;&#x4EE4;&#x5730;&#x5740;&#x3002;</p>
+<p>&#x53D6;&#x6307;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x8C03;&#x7528;increment(_bcp_register, step)&#x6765;&#x66F4;&#x65B0;rsi&#x5BC4;&#x5B58;&#x5668;&#xFF0C;&#x4F7F;&#x5176;&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x6761;&#x6307;&#x4EE4;&#x5730;&#x5740;&#x3002;</p>
+<p>dispatch_base&#x5C31;&#x662F;&#x6839;&#x636E;&#x8F6C;&#x53D1;&#x8868;&#x8DF3;&#x8F6C;&#x7684;&#x903B;&#x8F91;&#xFF0C;Interpreter::dispatch_table(state)&#x5373;&#x8FD4;&#x56DE;&#x4E86;&#x4E4B;&#x524D;&#x751F;&#x6210;&#x7684;&#x8F6C;&#x53D1;&#x8868;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 方法执行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="jit.html" class="navigation navigation-next " aria-label="Next page: 编译执行">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"解释执行","level":"4.1.2.1.1","depth":4,"next":{"title":"编译执行","level":"4.1.2.1.2","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","articles":[]},"previous":{"title":"方法执行","level":"4.1.2.1","depth":3,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md","articles":[{"title":"解释执行","level":"4.1.2.1.1","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","articles":[]},{"title":"编译执行","level":"4.1.2.1.2","depth":4,"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","ref":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/jit.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["expandable-chapters","livereload"],"pluginsConfig":{"expandable-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md","mtime":"2020-05-28T10:48:56.029Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-31T16:53:56.776Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
