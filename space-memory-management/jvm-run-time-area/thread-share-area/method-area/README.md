@@ -14,7 +14,7 @@
 
 ## 2、hotspot实现
 
-![](../../../../.gitbook/assets/image%20%2814%29.png)
+![](../../../../img/image%20%2814%29.png)
 
 
 
