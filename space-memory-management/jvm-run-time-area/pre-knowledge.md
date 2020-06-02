@@ -6,46 +6,6 @@ description: linux进程虚拟地址空间
 
 在介绍JVM运行时数据区时会涉及到一些底层的实现，这部分与Linux进程密切相关， 读懂本章的内容有助于后续内容的理解
 
-​ \* [1、Linux进程空间划分](pre-knowledge.md#1linux进程空间划分)
-
-​ \* [1.1 代码段（code segment/text segment）](pre-knowledge.md#11-代码段code-segmenttext-segment)
-
-​ \* [1.2 数据段\(data segment\)](pre-knowledge.md#12-数据段data-segment)
-
-​ \* [1.3 bss段\(bss segment\)](pre-knowledge.md#13-bss段bss-segment)
-
-​ \* [1.4 堆](pre-knowledge.md#14-堆)
-
-​ \* [1.5 文件内存映射与匿名映射区](pre-knowledge.md#15-文件内存映射与匿名映射区)
-
-​ \* [1.5.1 文件内存映射](pre-knowledge.md#151-文件内存映射)
-
-​ \* [1.5.2 匿名映射区](pre-knowledge.md#152-匿名映射区)
-
-​ \* [1.6 用户栈](pre-knowledge.md#16-用户栈)
-
-​ \* [1.7 内核虚拟内存](pre-knowledge.md#17-内核虚拟内存)
-
-​ \* [2、linux 进程、轻量级进程的地址空间](pre-knowledge.md#2linux-进程轻量级进程的地址空间)
-
-​ \* [2.1 轻量级进程\(LWP\)的地址空间](pre-knowledge.md#21-轻量级进程lwp的地址空间)
-
-​ \* [2.2 进程的地址空间](pre-knowledge.md#22-进程的地址空间)
-
-​ \* [3、Linux进程分配空间的方式](pre-knowledge.md#3linux进程分配空间的方式)
-
-​ \* [3.1系统调用层](pre-knowledge.md#31系统调用层)
-
-​ \* [3.1.1 mmap\(\)](pre-knowledge.md#311-mmap)
-
-​ \* [3.1.1 brk\(\)](pre-knowledge.md#311-brk)
-
-​ \* [3.2 C标准库层](pre-knowledge.md#32-c标准库层)
-
-​ \* [3.2.1 malloc\(\)函数](pre-knowledge.md#321-malloc函数)
-
-​ \* [3.2.2 mmap\(\)函数\(与系统调用同名\)](pre-knowledge.md#322-mmap函数与系统调用同名)
-
 ## 1、Linux进程空间划分
 
 ![](../../img/image%20%2819%29.png)
