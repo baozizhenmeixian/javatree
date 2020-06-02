@@ -127,7 +127,7 @@ public class Demo {
 
 让我们看看两个版本在概念上是如何工作的，**首先看JVM**：
 
-![JVM](../../../.gitbook/assets/f2629890-07dc-34f5-9102-9274e5dafffc.gif)
+![JVM](../../../img/f2629890-07dc-34f5-9102-9274e5dafffc.gif)
 
 （图中数字均以十六进制表示。其中字节码的一列表示的是字节码指令的实际数值，后面跟着的助记符则是其对应的文字形式。标记为红色的值是相对上一条指令的执行状态有所更新的值。下同）
 
@@ -135,7 +135,7 @@ public class Demo {
 
 再看**Dalvik VM**：
 
-![Dalvik VM](../../../.gitbook/assets/c6b17556-f5e0-3da2-979a-178cfe1f934f.gif)
+![Dalvik VM](../../../img/c6b17556-f5e0-3da2-979a-178cfe1f934f.gif)
 
 说明：Dalvik字节码以16位为单元（或许叫“双字节码”更准确），上面代码中有5条指令，其中mul-int/lit8指令占2单元，其余每条都只占1单元，共6单元==12字节。 
 
@@ -222,7 +222,7 @@ bool os::create_thread(Thread* thread, ThreadType thr_type, size_t stack_size){
 
 至此，hotspot涉及到的栈相关的概念就都清楚了（进程栈、lwp栈、java栈，操作树栈）
 
-![](../../../.gitbook/assets/image%20%2825%29.png)
+![](../../../img/image%20%2825%29.png)
 
 
 
