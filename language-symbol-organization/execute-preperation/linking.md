@@ -78,7 +78,9 @@ VM完成 Java 类加载之后，接着便开始进行链接。所谓链接，虽
 
 根据方法的类型，可以将方法的解析分为**非虚方法的解析**与**虚方法的解析**，二者的区别在于虚方法的解析是**运行时可变**的，而非虚方法的解析是**运行时不可变**的
 
-非虚方法包括：**静态方法、私有方法、实例构造方法、父类方法**，除此之外都是虚方法，这里要注意一点，虽然**final方法**在规范中是定义为虚方法的，走的也是虚方法的解析流程，但是实际上，它运行时也是不可变的
+非虚方法包括：**静态方法、私有方法、实例构造方法、父类方法**，除此之外都是虚方法
+
+这里要注意一点，虽然**final方法**在规范中是定义为虚方法的，走的也是虚方法的解析流程，但是实际上，它运行时也是不可变的，详情见 3.1.3.2.2 小节
 
 > Java 字节码中与调用相关的指令共有五种:
 > invokestatic：用于调用静态方法
@@ -105,7 +107,7 @@ VM完成 Java 类加载之后，接着便开始进行链接。所谓链接，虽
 
 在之前对字节码的介绍中，我们知道它有着**方法表**这个一个区域，当其加载到了jvm内存之后就进了**方法区**，其抽象结构都是类似的，那我们就可以遍历**类的方法列表**，根据符号引用找相匹配的方法，并返回它的直接引用
 
-感兴趣的可以看看以下**HotSpot VM 解析逻辑**的具体实现，源码的注释比较清晰
+**感兴趣的**可以看看以下**HotSpot VM 解析逻辑**的具体实现，源码的注释比较清晰
 
 这是解析方法的外层逻辑：
 
@@ -240,13 +242,104 @@ public void test(){
 9: invokevirtual #7                  // Method Parent.sayHi:()V
 ```
 
-可以看出，其**符号引用**其实指向的是**父类方法引用**`Parent.sayHi:()V`,那么jvm是怎么在运行时知道真正应该调用的方法呢？接下来具体介绍非虚方法的解析过程
+可以看出，其**符号引用**其实指向的是**父类方法引用**`Parent.sayHi:()V`,那么jvm是怎么在运行时知道**真正应该调用的方法**呢？接下来具体介绍非虚方法的解析过程
 
+非虚方法的解析过程总体上可以分为两个步骤：
 
+- **第一步：解析静态类型**
 
+  这一步与非虚方法的解析过程是基本一致的，以上述例子来看，就是将`Parent.sayHi:()V`解析成了直接引用，但是显然，这不是最终jvm需要的直接引用
 
+- **第二步：解析实际类型**
 
+  根据第一步获得的静态类型的直接引用，通过**虚方法表**和**运行时的调用者类型**获取实际类型的直接引用
 
+下面重点介绍第二步是如何**解析实际类型**的，首先介绍一下**虚方法表**
+
+###### 3.1.3.2.1 虚方法表
+
+熟悉C++的同学，应该对虚方法表这个概念不会陌生，实际上，C++中也有虚方法表这个概念，它是动态绑定技术（多态）的核心，而Java的虚方法表与C++的虚方法本质上原理都一样，下面开始介绍Java的虚方法表
+
+针对于invokevirtual指令，虚拟机会在类的方法区建立一个虚方法表的数据结构(virtual method table,**vtable**)，针对于invokeinterface指令来说，虚拟机会建立一个叫做接口方法表的数据结构(interface method table,**itable**)，二者机制基本一致，下文将以虚方法表为例进行介绍
+
+虚方法表会在**类加载过程中**初始化，虚方法表存储的是该类方法入口的一个映射，比如父类的方法A的索引号是1，方法B的索引号是2
+
+- 如果子类继承了父类，但是某个父类的方法没有被子类重写，那么在子类的方法表里边，该方法对应映射指向的是**父类方法的入口**
+- 如果子类重写了父类的方法，那么在子类的方法表里边，该方法对应映射指向的是**子类方法的入口**，这里要注意一点，该方法在子类和父类虚方法表中的**索引号是一致的**
+
+在**Hotspot**中，vtable用一个klassVtable类型表示，klassVtable对象提供了一种对vtable较为便捷的访问方式，并未实际持有vatble数据，其成员如下：
+
+```c++
+class klassVtable : public ResourceObj {
+  KlassHandle  _klass;            // my klass
+  int          _tableOffset;      // offset of start of vtable data within klass
+  int          _length;           // length of vtable (number of entries)
+}
+```
+
+其中，`_klass`指向所在类，`_tableOffset`表示vtable在klass中的地址偏移量，`_length`表示vtable的长度
+
+vtable表是有一组变长连续的**vtableEntry**元素构成的数组，其中每个vtableEntry指向类的一个函数(Method*)
+
+在类初始化vtable表时，虚拟机将复制父类的虚函数表，然后根据自己的函数定义更新vtableEntry(重写)，或向vatble表增加新的元素（父类没有的方法）：
+
+- 若java方法时**重写**父类方法，虚拟机将更新虚函数表中**相同顺序**的元素，使其指向重写后的实现方法
+
+  这一点非常重要，保证了对于相同的方法，出现在父类和子类的vtable中的顺序是一样的，那么有什么用呢？试想一下，如果已经知道了**父类方法**在vtable中的顺序，那只要再拿到子类的vtable，岂不是就能直接拿到**子类方法**了，而不用再走一次查找过程
+
+- 若是**重载**方法，或者自身新增的方法，虚拟机将按顺序添加到虚函数中
+
+<img src="../../img/vtable.png" alt="image-20200602105455019" style="zoom:50%;" />
+
+上图是上文java代码中，Parent类和Son类生成的**虚方法表**模型，用于辅助理解
+
+###### 3.1.3.2.2 运行时的调用者类型
+
+了解了虚方法表，整个虚方法的解析过程就呼之欲出了，如下图所示，但还差最后一块拼图—在**运行时**获取调用者的实际类型
+
+<img src="../../img/virtual_method_resolve.png" alt="image-20200602111609440" style="zoom:50%;" />
+
+直接从Hotspot源码看**解析动态类型**的函数，代码很短，但是很重要也很容易理解：
+
+```C++
+void LinkResolver::runtime_resolve_virtual_method(CallInfo& result,
+                                                 const methodHandle& resolved_method,
+                                                 KlassHandle resolved_klass,
+                                                 Handle recv,
+                                                 KlassHandle recv_klass,
+                                                 bool check_null_and_abstract,
+                                                 TRAPS) {
+  ...
+    //根据解析静态类型得到的方法直接引用，获取它在虚方法表中的索引vtable_index
+  	vtable_index = resolved_method->vtable_index();
+   // We could get a negative vtable_index for final methods,
+   // because as an optimization they are they are never put in the vtable,
+   // unless they override an existing method.
+   // If we do get a negative, it means the resolved method is the the selected
+   // method, and it can never be changed by an override.
+   // 如果是final方法，直接返回静态类型的方法直接引用
+   if (vtable_index == Method::nonvirtual_vtable_index) {
+     assert(resolved_method->can_be_statically_bound(), "cannot override this method");
+     selected_method = resolved_method;
+   } else {
+     //从运行时调用者类的虚方法表中根据vtable_index取出方法直接引用
+     selected_method = methodHandle(THREAD, recv_klass->method_at_vtable(vtable_index));
+   }
+  ...
+}
+```
+
+函数入参中，`resolved_method`就是**解析静态类型**后得到的**方法**直接引用，`resolved_klass`就是**运行时调用者类**的直接引用：
+
+- 根据解析静态类型得到的方法直接引用，获取它在虚方法表中的索引`vtable_index`
+
+- 如果是`final`方法，直接返回静态类型的方法直接引用
+
+  从源码注释里可以看出，尽管final方法被划分在虚方法里，但是在语义上它是不能被重写的，所以只是表面上进行了这么一次动态解析，实际上是将**静态解析**得到的直接引用返回了
+
+- 从**运行时调用者类**的虚方法表中根据`vtable_index`取出方法直接引用
+
+至此，虚方法的解析过程就介绍完了
 
 
 
