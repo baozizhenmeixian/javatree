@@ -42,10 +42,6 @@
     * [值](language-symbol-organization/symbol-definition/value.md)
     * [变量](language-symbol-organization/symbol-definition/variables.md)
     * [关键字](language-symbol-organization/symbol-definition/keywords.md)
-* [执行准备](language-symbol-organization/execute-preperation/README.md)
-    * [加载](language-symbol-organization/execute-preperation/loading.md)
-    * [链接](language-symbol-organization/execute-preperation/linking.md)
-    * [初始化](language-symbol-organization/execute-preperation/initialization.md)
 
 ## 时间：并发同步
 * [JAVA语言标准](time-concurrent/java-language-specification/README.md)
