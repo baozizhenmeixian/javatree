@@ -1,4 +1,4 @@
-# Summary
+Summary
 
 * [Introduction](README.md)
 
@@ -48,33 +48,17 @@
     * [初始化](language-symbol-organization/execute-preperation/initialization.md)
 
 ## 时间：并发同步
-* [JAVA语言标准](time-concurrent/java-language-specification/README.md)
-    * [Java内存模型](time-concurrent/java-language-specification/java-memory-model/README.md)
-        * [要解决的问题](time-concurrent/java-language-specification/java-memory-model/jmm-solve/README.md)
-            * [可见性问题](time-concurrent/java-language-specification/java-memory-model/jmm-solve/visibility-problem.md)
-            * [指令重排问题](time-concurrent/java-language-specification/java-memory-model/jmm-solve/instruction-reorder.md)
-        * [要满足的原则](time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/README.md)
-            * [happens-before原则](time-concurrent/java-language-specification/java-memory-model/yao-man-zu-de-yuan-ze/happensbefore-yuan-ze.md)
-    * [Java代码层面](time-concurrent/java-language-specification/java-dai-ma-ceng-mian/README.md)
-        * [volatile](time-concurrent/java-language-specification/java-dai-ma-ceng-mian/volatile.md)
-        * [synchronize](time-concurrent/java-language-specification/java-dai-ma-ceng-mian/synchronize.md)
-        * [final](time-concurrent/java-language-specification/java-dai-ma-ceng-mian/final.md)
-        * [Concurrent工具包](time-concurrent/java-language-specification/java-dai-ma-ceng-mian/concurrent-gong-ju-bao.md)
-* [JVM标准](time-concurrent/java-virtual-machine-specification/README.md)
-    * [synchronize](time-concurrent/java-virtual-machine-specification/synchronize/README.md)
-        * [同步方法](time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/README.md)
-            * [通过读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式获取monitor](time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-fang-fa/tong-guo-du-qu-yun-hang-shi-chang-liang-chi-zhong-fang-fa-de-accsynchronized-biao-zhi-lai-yin-shi-hu.md)
-        * [同步语句块](time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/README.md)
-            * [通过monitorenter, monitorexit这两个指令来显式获取和释放moniter](time-concurrent/java-virtual-machine-specification/synchronize/tong-bu-yu-ju-kuai/tong-guo-monitorenter-monitorexit-zhe-liang-ge-zhi-ling-lai-xian-shi-huo-qu-he-shi-fang-moniter.md)
-    * [volatile](time-concurrent/java-virtual-machine-specification/volatile/README.md)
-        * [给字段加上ACC_VOLATILE标志](time-concurrent/java-virtual-machine-specification/volatile/gei-zi-duan-jia-shang-accvolatile-biao-zhi.md)
-* [Hotspot实现](time-concurrent/hotspot-realization/README.md)
-    * [volatile](time-concurrent/hotspot-realization/volatile-realization/README.md)
-        * [lock指令](time-concurrent/hotspot-realization/volatile-realization/lock-instruction.md)
-    * [synchronize](time-concurrent/hotspot-realization/synchronize-realization/README.md)
-        * [重量锁](time-concurrent/hotspot-realization/synchronize-realization/heavy-weight-lock.md)
-        * [轻量锁](time-concurrent/hotspot-realization/synchronize-realization/light-weight-lock.md)
-        * [偏向锁](time-concurrent/hotspot-realization/synchronize-realization/biased-lock.md)
+* [并发问题及产生的根源](time-concurrent/concurrent-bug-reason/concurrent-bug-reason.md)
+    * [本地内存导致的可见性问题](time-concurrent/concurrent-bug-reason/vicibility.md)
+    * [线程切换导致的原子性问题](time-concurrent/concurrent-bug-reason/atomicity.md)
+    * [编译器处理器优化指令重排带来的有序性问题](time-concurrent/concurrent-bug-reason/orderling.md)
+* [Java内存模型理论](time-concurrent/jmm-theory/README.md)
+    * [并发编程模型的分类](time-concurrent/jmm-theory/cocurrent-types.md)
+    * [JMM 理论定义](time-concurrent/jmm-theory/jmm-theory.md)
+    * [JMM 实现策略](time-concurrent/jmm-theory/jmm-impliment-theory.md)
+* [Java内存模型实现](time-concurrent/jmm-implement/README.md)
+    * [volatile](time-concurrent/jmm-implement/volatile.md)
+    * [synchronized](time-concurrent/jmm-implement/synchronized.md)
 
 ## 空间：内存管理 <a id="space-memory-management"></a>
 
