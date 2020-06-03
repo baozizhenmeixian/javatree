@@ -29,11 +29,6 @@ Summary
                 * [String对象](language-symbol-organization/symbol-definition/types/reference-types/class-types/string.md)
             * [接口类型](language-symbol-organization/symbol-definition/types/reference-types/interface-types.md)
             * [泛型](language-symbol-organization/symbol-definition/types/reference-types/generic-type/README.md)
-                * [类型擦除](language-symbol-organization/symbol-definition/types/reference-types/generic-type/type-erasure.md)
-                * [边界](language-symbol-organization/symbol-definition/types/reference-types/generic-type/boundary.md)
-                * [通配符](language-symbol-organization/symbol-definition/types/reference-types/generic-type/wildcard-types.md)
-                * [自限定](language-symbol-organization/symbol-definition/types/reference-types/generic-type/zi-xian-ding.md)
-                * [协变](language-symbol-organization/symbol-definition/types/reference-types/generic-type/covariant.md)
             * [数组类型](language-symbol-organization/symbol-definition/types/reference-types/array-types.md)
         * [类型转换](language-symbol-organization/symbol-definition/types/type-conversion/README.md)
             * [原生类型转换](language-symbol-organization/symbol-definition/types/type-conversion/primitive-types-conversion.md)
@@ -48,7 +43,7 @@ Summary
     * [本地内存导致的可见性问题](time-concurrent/concurrent-bug-reason/vicibility.md)
     * [线程切换导致的原子性问题](time-concurrent/concurrent-bug-reason/atomicity.md)
     * [编译器处理器优化指令重排带来的有序性问题](time-concurrent/concurrent-bug-reason/orderling.md)
-* [Java内存模型理论](time-concurrent/jmm-theory/README.md)
+* Java内存模型理论
     * [并发编程模型的分类](time-concurrent/jmm-theory/cocurrent-types.md)
     * [JMM 理论定义](time-concurrent/jmm-theory/jmm-theory.md)
     * [JMM 实现策略](time-concurrent/jmm-theory/jmm-impliment-theory.md)
@@ -57,6 +52,16 @@ Summary
     * [synchronized](time-concurrent/jmm-implement/synchronized.md)
 
 ## 空间：内存管理 <a id="space-memory-management"></a>
+
+* [JVM运行时数据区](space-memory-management/jvm-run-time-area/README.md)
+  * [前置知识](space-memory-management/jvm-run-time-area/pre-knowledge.md)
+  * [线程私有区](space-memory-management/jvm-run-time-area/thread-private-area/README.md)
+    * [JVM栈](space-memory-management/jvm-run-time-area/thread-private-area/stack.md)
+    * [程序计数器](space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md)
+  * [线程共享区](space-memory-management/jvm-run-time-area/thread-share-area/README.md)
+    * [堆](space-memory-management/jvm-run-time-area/thread-share-area/java-heap.md)
+    * [方法区](space-memory-management/jvm-run-time-area/thread-share-area/method-area/README.md)
+      * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.md)
 
 * [程序的运行过程](space-memory-management/process-of-program/README.md)
   * [执行准备](space-memory-management/process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.md)
@@ -74,13 +79,4 @@ Summary
           * [GC机制](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/README.md)
           * [GC算法](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md)
   * 类卸载
-* [JVM运行时数据区](space-memory-management/jvm-run-time-area/README.md)
-    * [前置知识](space-memory-management/jvm-run-time-area/pre-knowledge.md)
-    * [线程私有区](space-memory-management/jvm-run-time-area/thread-private-area/README.md)
-        * [JVM栈](space-memory-management/jvm-run-time-area/thread-private-area/stack.md)
-        * [程序计数器](space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md)
-    * [线程共享区](space-memory-management/jvm-run-time-area/thread-share-area/README.md)
-        * [堆](space-memory-management/jvm-run-time-area/thread-share-area/java-heap.md)
-        * [方法区](space-memory-management/jvm-run-time-area/thread-share-area/method-area/README.md)
-            * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.md)
 
