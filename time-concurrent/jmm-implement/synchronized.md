@@ -8,8 +8,11 @@
 具体不进行举例。但是三种方式的底层原理是相同的，依赖于进入和退出 Monitor （可译为“管程”）对象来实现。
 ### 1.1. 重量级锁的实现原理
 在Java对象头中，会记录指向该对象对应的重量级锁的指针。每个对象都存在着一个 monitor 与之关联，对象与其 monitor 之间的关系又存在多种实现方式，如 monitor 可以与对象一起创建销毁，或当线程试图获取对象锁时自动生成。但当一个 monitor 被某个线程持有后，它便处于锁定状态。在 HotSpot 中，monitor是由 ObjectMonitor 实现的。参考 /hotspot/src/share/vm/runtime/objectMonitor.hpp 中的定义：
+
 ![monitor数据结构](../../img/concurrent/monitor_struct.png)
+
 ObjectMonitor中有两个队列，_WaitSet 和 _EntryList，用来保存 ObjectWaiter对象列表 （每个等待锁的线程都会被封装成ObjectWaiter对象，也在objectMonitor.hpp中定义，知道有这么个东西就行了）：
+
 <img src="../../img/concurrent/ObjectWaiter_struct.png" alt="ObjectWaiter数据结构" style="zoom:67%;" />
 
 _owner 指向持有 ObjectMonitor 对象的线程，当多个线程同时访问一段同步代码时，首先会进入 _EntryList 集合，当线程获取到对象的 monitor 后进入 _owner 区域并把 monitor 中的 owner 变量设置为当前线程，同时monitor中的计数器 count 加1（这个 count 主要是为了可重入设置）。若当前线程执行完毕将释放 monitor 并复位变量的值，以便其他线程进入获取monitor。
@@ -30,7 +33,9 @@ public class SynchronizedTest {
 }
 ```
 javap 字节码：
+
 ![同步代码块](../../img/concurrent/code_1.png)
+
 从字节码中可知同步语句块的实现使用的是 monitorenter 和 monitorexit 指令，其中 monitorenter 指令指向同步代码块的开始位置，monitorexit 指令则指明同步代码块的结束位置。当执行monitorenter指令时，当前线程将试图获取对象锁所对应的 monitor 的持有权，当 monitor 的进入计数器count为 0，那线程可以成功取得 monitor，并将计数器值设置为 1，取锁成功。如果当前线程已经拥有  monitor 的持有权，那它可以重入这个 monitor ，重入时计数器的值也会加 1。倘若其他线程已经拥有 monitor 的所有权，那当前线程将被阻塞，直到正在执行线程执行完毕。
 注意：编译器会确保无论方法通过何种方式完成，方法中调用过的每条 monitorenter 指令都有执行其对应 monitorexit 指令，而无论这个方法是正常结束还是异常结束。为了保证在方法异常完成时 monitorenter 和 monitorexit 指令依然可以正确配对执行，编译器会自动产生一个异常处理器，这个异常处理器声明可处理所有的异常，它的目的就是用来执行 monitorexit 指令。从字节码中也可以看出多了一个monitorexit 指令，它就是异常结束时被执行的释放monitor 的指令。
 
@@ -57,12 +62,22 @@ JDK1.6优化后，加锁存在4种状态：无锁、偏向锁、轻量级锁、�
 ### 2.1.1. Java对象、对象头的组成
 Java对象存储在堆内存中，对象的存储可以分为三部分：对象头、实例变量和填充字节。
 - 对象头：由 mark word 和  klass pointer 两部分组成。mark word存储了同步状态、标识、- hashcode、GC状态等；klass pointer存储对象的类元数据的指针，虚拟机通过这个指针来确定这个对象是哪个类的实例，64位虚拟机可对 klass pointer 开启压缩至32位。
-- 实例变量：存储对象的属性信息，包括父类的属性信息，按照4字节对齐。
-- 填充字节：用于凑齐虚拟机要求的8字节整数倍。
-对象头结构图示（具体知识情前置学习）：
-32位：![32位对象头](../../img/concurrent/sheet_1.png)
 
-开启压缩后的64位：![开启压缩后的64位](../../img/concurrent/sheet_2.png)
+- 实例变量：存储对象的属性信息，包括父类的属性信息，按照4字节对齐。
+
+- 填充字节：用于凑齐虚拟机要求的8字节整数倍。
+  对象头结构图示（具体知识情前置学习）：
+  32位：
+
+  ![32位对象头](../../img/concurrent/sheet_1.png)
+
+
+
+开启压缩后的64位：
+
+![开启压缩后的64位](../../img/concurrent/sheet_2.png)
+
+
 
 其中重要的两个字段：
 lock:  锁状态标志位，该标记的值不同，整个mark word表示的含义不同。
@@ -81,6 +96,8 @@ biased_lock：偏向锁标记，为1时表示对象启用偏向锁，为0时表�
 参考 [理解字节序-阮一峰](https://www.ruanyifeng.com/blog/2016/11/byte-order.html)
 ### 2.1.4. 对象信息打印示例
 ![对象打印示例](../../img/concurrent/code_3.png)
+
+
 
 以上对象头信息中可知：该对象现在处于无锁状态，数据读取采取小端字节序。同时注意：hashCode延迟加载，当对象使用 hashCode() 计算后，才会将结果写到该对象头中。
 接下来进入正题。
@@ -131,6 +148,7 @@ public static void biasedLockingWithBias() throws InterruptedException {
 }
 ```
 ![偏向某个线程的偏向锁](../../img/concurrent/code_6.png)
+
 由实验结果看出，一开始是没有偏向的偏向锁。而后主线程持有锁后成为偏向主线程的偏向锁，绿框中存储了被偏向的线程ID。且在该线程不再持有锁之后，偏向锁不会自行释放（准确地说是不会主动更改记录的偏向threadId）。
 
 > 偏向锁什么时候升级
@@ -157,6 +175,7 @@ public static void lightweightLockNoBiased() throws InterruptedException {
 }
 ```
 ![直接升级轻量级锁](../../img/concurrent/code_7.png)
+
 本过程没有经过偏向锁（偏向锁还没回过神儿来）的时候，直接进入了同步代码块，升级为轻量级锁，之后也就没有偏向锁阶段了（不能降级）。
 
 ### 2.3.2. 偏向锁升级为轻量级锁
@@ -205,6 +224,7 @@ public static void startLightweightLock() throws InterruptedException {
 }
 ```
 ![偏向锁升级轻量级锁](../../img/concurrent/code_8.png)
+
 由实验结果看出：起初是无偏向的偏向锁；thread1持有后成为偏向thread1的偏向锁；thread1退出同步代码块后，但是线程还存在，此时锁不会自动取消偏向；thread2持有锁后，成为了轻量级锁；thread2退出同步代码块后，成为无锁状态。
 
 * 注意：我们常说的锁状态只能升级不能降级，是说比如一旦成为轻量级锁，下次加锁的时候就会直接加轻量级锁，不经过偏向锁阶段，成为重量级锁同理不经过轻量级锁阶段。而不是理解为，成为轻量级锁就不能解锁，当没有同步需求时，是会回到001无锁状态的。
@@ -263,6 +283,7 @@ public static void startHeavyweightLock() throws InterruptedException {
 }
 ```
 ![重量级锁](../../img/concurrent/code_9.png)
+
 由实验结果看出，thread1 一开始持有偏向锁，当其仍然持有锁的时候，thread2 也竞争锁，就升级成为了重量级锁。
 
 # 三. 偏向锁专题——批量重偏向和批量撤销
@@ -340,8 +361,12 @@ public static void bulkRebias() throws InterruptedException {
 }
 ```
 实验结果：
+
 ![批量重偏向](../../img/concurrent/code_10.png)
+
 3.3. 批量撤销实验
+
+
 
 ```
 public static void bulkRevoke() throws InterruptedException {
@@ -410,6 +435,8 @@ public static void bulkRevoke() throws InterruptedException {
     }
 }
 ```
+
+
 ![批量撤销](../../img/concurrent/code_11.png)
 
 
