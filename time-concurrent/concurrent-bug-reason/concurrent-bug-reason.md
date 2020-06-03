@@ -13,7 +13,7 @@
 一个线程对共享变量的修改，另外一个线程能够立刻看到，称为可见性。但是本地内存的出现使得可见性可能受到破坏。
 
 本地内存（Local Memory）是JMM的一个抽象概念，线程私有，存储了该线程读写变量的副本，对应于主内存（Main Memory）的概念。但是这只是一个抽象概念，并不物理存在，它涵盖了缓存、写缓冲区、寄存器其他编译器和硬件优化。我们常常可以见到以下这张“JMM内存模型的抽象结构示意图”，较为贴切地说明了本地内存和主内存的关系。
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-76422a535e8d8ffa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="../../img/concurrent/jmm_construct.png"  align="middle" alt="image.png" style="zoom:50%;"/>
 
 为什么需要本地内存？既然本地内存不真实存在，我们就以CPU多级缓存为例解释。CPU的频率很快，但是主存的速度较慢无法匹配，导致CPU常处于空闲中浪费资源。所以多级缓存出现，是为了缓解CPU和内存之间速度的不匹配问题。背后的原理也是我们耳熟能详的：局部性原理。
 
@@ -78,13 +78,13 @@ a = b + c ;
 d = e + f ;
 ```
 
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-d61cf91a31809322.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](/Users/wuliangliang/Java/java梳理/gitbook/javatree/img/concurrent/flow_line.png)
 
 在某些指令上存在X的标志，X代表中断的含义，也就是只要有X的地方就会导致指令流水线技术停顿，同时也会影响后续指令的执行，可能需要经过1个或几个指令周期才可能恢复正常。这是因为部分数据还没准备好，如执行ADD指令时，需要使用到前面指令的数据R1，R2，而此时R2的MEM操作没有完成，即未拷贝到存储器中，这样加法计算就无法进行，必须等到MEM操作完成后才能执行。
 
 停顿会造成CPU性能下降，因此我们应该想办法消除这些停顿，这时就需要使用到指令重排了，既然ADD指令需要等待，那我们就利用等待的时间做些别的事情，如把`LW R4,e` 和 `LW R5,f `移动到前面执行，毕竟`LW R4,e` 和 `LW R5,f`执行并没有数据依赖关系，对他们有数据依赖关系的`SUB R6,R5,R4`指令在 R4, R5 加载完成后才执行的，没有影响，过程如下：
 
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-5a0904a14e23714f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../../img/concurrent/flow_line_after.png)
 
 对于单线程而已指令重排几乎不会带来任何影响，重排的前提是保证串行语义执行的一致性。但对于多线程环境，指令重排就可能导致严重的程序顺序执行问题。
 
@@ -101,7 +101,7 @@ d = e + f ;
 
 初始状态：a = b = 0，如果严格按照程序顺序执行，不可能出现 x 和 y 同时为 0 的情况（ a 和 b 总有一个会先被赋值），但是实际执行完毕后可能得到 x = y = 0 的结果。执行过程如下图表示：
 
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-59f357e8a31f170c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="../../img/concurrent/1.3.1.3_order.png" alt="image.png" style="zoom:50%;" />
 
 从内存操作实际发生的顺序来看，直到处理器 A 执行 A3 来刷新自己的写缓存区，写操作 A1 才算真正执行了。虽然处理器 A 执行内存操作的顺序为：A1->A2，但内存操作实际发生的顺序却是：A2->A1。此时，处理器 A 的内存操作顺序被重排序了。
 

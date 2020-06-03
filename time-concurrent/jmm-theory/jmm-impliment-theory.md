@@ -14,12 +14,12 @@ volatile 读/写 建立的 happens-before 关系与锁的 获取-释放 有相�
 - volatile读的内存语义：当读一个volatile变量时，JMM会把该线程对应的本地内存置为无效，线程接下来从主内存中读取共享变量。
 - volatile写的内存语义：当写一个volatile变量时，JMM会把该线程对应的本地内存中的共享变量值刷新到主内存。
 - 线程A volatile 写一个变量可以看做线程A向接下来将要读这个volatile变量的某个线程发出了消息，线程B volatile 读一个变量可以看做线程B接收了之前某个线程发出的消息。整个过程可以看做线程A通过主内存向线程B发送消息。
-  ![image.png](https://upload-images.jianshu.io/upload_images/9341275-30f446e17f64e5c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  <img src="../../img/concurrent/2.3.1.2_communicate.png" alt="image.png" style="zoom:50%;" />
 
 #### 2.3.1.3 volatile内存语义的实现
 
 为了实现 volatile 内存语义，JMM 会分别限制编译器重排序和处理器重排序。下面是 JMM 针对编译器制定的 volatile 重排序规则表：
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-7203bce6adad98a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../../img/concurrent/volatile_order.png)
 为了实现这个规则，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎不可能，为此，JMM 采取保守策略。下面是基于保守策略的 JMM 内存屏障插入策略：
 
 - 在每个 volatile 写操作的前面插入一个 StoreStore 屏障。
@@ -54,7 +54,7 @@ class VolatileExample {
 }
 ```
 
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-24210c47ddbb1062.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="../../img/concurrent/2.3.1.4_order.png" alt="image.png" style="zoom:50%;" />
 
 由于 1 和 2 之间没有数据依赖关系，1 和 2 之间可能被重排序（3 和 4 类似）。其结果就是：读线程 B 执行 4 时，不一定能看到写线程 A 在执行 1 时对共享变量的修改。
 
