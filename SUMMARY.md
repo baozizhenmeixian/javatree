@@ -63,7 +63,10 @@ Summary
 ## 空间：内存管理 <a id="space-memory-management"></a>
 
 * [程序的运行过程](space-memory-management/process-of-program/README.md)
-  * [类加载、链接、初始化](space-memory-management/process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.md)
+  * [执行准备](space-memory-management/process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.md)
+    * [加载](language-symbol-organization/execute-preperation/loading.md)
+    * [链接](language-symbol-organization/execute-preperation/linking.md)
+    * [初始化](language-symbol-organization/execute-preperation/initialization.md)
   * [执行](space-memory-management/process-of-program/execution/README.md)
     * [方法执行](space-memory-management/process-of-program/execution/fang-fa-zhi-hang/README.md)
       * [解释执行](space-memory-management/process-of-program/execution/fang-fa-zhi-hang/explain-execute.md)
@@ -71,12 +74,10 @@ Summary
     * [类的实例化](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/README.md)
       * [对象](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/README.md)
         * [创建](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/chuang-jian.md)
-        * [销毁](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/README.md)
+        * 销毁
           * [GC机制](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/README.md)
-            * [GC时机](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-shi-ji.md)
-            * [GC对象](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-dui-xiang.md)
-            * [GC算法](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md)
-  * [类卸载](space-memory-management/process-of-program/lei-xie-zai.md)
+          * [GC算法](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md)
+  * 类卸载
 * [JVM运行时数据区](space-memory-management/jvm-run-time-area/README.md)
     * [前置知识](space-memory-management/jvm-run-time-area/pre-knowledge.md)
     * [线程私有区](space-memory-management/jvm-run-time-area/thread-private-area/README.md)
