@@ -66,7 +66,12 @@ happens-before 规则在JSR-133中是通过 synchronized-with 边缘来辅助定
 对于JMM来说， happens-before 关系有一些薄弱，不能满足正确顺序的需求。JMM在其基础上加上了因果关系，即**一个写操作不能发生在一个其依赖的读操作之前**，因为它涉及写操作是否会触发自身发生的问题。
 
 举一个JSR -133给出的官方示例：
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-df0ef0161813e0d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+
+<img src="../../img/concurrent/code_12.png" alt="image.png" style="zoom:50%;" />
+
+
 
 按照JMM，r1 == r2 == 0 是唯一合法结果。但是在 happens-before 内存模型下，存在执行结果是 r1 == r2 == 1 的可能性，因为程序中没有 synchronizes-with 或 happens-before 边缘，允许每个读操作看到其它线程写的值，单个线程内的执行顺序也不受约束。想得到上述结果的执行顺序是：
 

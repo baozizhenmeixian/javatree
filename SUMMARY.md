@@ -40,9 +40,6 @@ Summary
 
 ## 时间：并发同步
 * [并发问题及产生的根源](time-concurrent/concurrent-bug-reason/concurrent-bug-reason.md)
-    * [本地内存导致的可见性问题](time-concurrent/concurrent-bug-reason/vicibility.md)
-    * [线程切换导致的原子性问题](time-concurrent/concurrent-bug-reason/atomicity.md)
-    * [编译器处理器优化指令重排带来的有序性问题](time-concurrent/concurrent-bug-reason/orderling.md)
 * Java内存模型理论
     * [并发编程模型的分类](time-concurrent/jmm-theory/cocurrent-types.md)
     * [JMM 理论定义](time-concurrent/jmm-theory/jmm-theory.md)

@@ -14,12 +14,12 @@ volatile 读/写 建立的 happens-before 关系与锁的 获取-释放 有相�
 - volatile读的内存语义：当读一个volatile变量时，JMM会把该线程对应的本地内存置为无效，线程接下来从主内存中读取共享变量。
 - volatile写的内存语义：当写一个volatile变量时，JMM会把该线程对应的本地内存中的共享变量值刷新到主内存。
 - 线程A volatile 写一个变量可以看做线程A向接下来将要读这个volatile变量的某个线程发出了消息，线程B volatile 读一个变量可以看做线程B接收了之前某个线程发出的消息。整个过程可以看做线程A通过主内存向线程B发送消息。
-  ![image.png](https://upload-images.jianshu.io/upload_images/9341275-30f446e17f64e5c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+  <img src="../../img/concurrent/2.3.1.2_communicate.png" alt="image.png" style="zoom:50%;" />
 
 #### 2.3.1.3 volatile内存语义的实现
 
 为了实现 volatile 内存语义，JMM 会分别限制编译器重排序和处理器重排序。下面是 JMM 针对编译器制定的 volatile 重排序规则表：
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-7203bce6adad98a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](../../img/concurrent/volatile_order.png)
 为了实现这个规则，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎不可能，为此，JMM 采取保守策略。下面是基于保守策略的 JMM 内存屏障插入策略：
 
 - 在每个 volatile 写操作的前面插入一个 StoreStore 屏障。
@@ -54,7 +54,7 @@ class VolatileExample {
 }
 ```
 
-![image.png](https://upload-images.jianshu.io/upload_images/9341275-24210c47ddbb1062.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<img src="../../img/concurrent/2.3.1.4_order.png" alt="image.png" style="zoom:50%;" />
 
 由于 1 和 2 之间没有数据依赖关系，1 和 2 之间可能被重排序（3 和 4 类似）。其结果就是：读线程 B 执行 4 时，不一定能看到写线程 A 在执行 1 时对共享变量的修改。
 
@@ -62,21 +62,21 @@ class VolatileExample {
 
 ### 2.3.2 锁
 
-### 2.3.2.1 锁的内存语义
+#### 2.3.2.1 锁的内存语义
 
 - 当线程释放锁时，JMM 会把该线程对应的本地内存中的共享变量刷新到主内存中。
 - 当线程获取锁时，JMM 会把该线程对应的本地内存置为无效。从而使得被监视器保护的临界区代码必须要从主内存中去读取共享变量。
 
 对比锁释放 - 获取的内存语义与 volatile 写 - 读的内存语义，可以看出：锁释放与 volatile 写有相同的内存语义；锁获取与 volatile 读有相同的内存语义。线程 A 释放一个锁，实质上是线程 A 向接下来将要获取这个锁的某个线程发出了（线程 A 对共享变量所做修改的）消息。线程 B 获取一个锁，实质上是线程 B 接收了之前某个线程发出的（在释放这个锁之前对共享变量所做修改的）消息。线程 A 释放锁，随后线程 B 获取这个锁，这个过程实质上是线程 A 通过主内存向线程 B 发送消息。
 
-### 2.3.2.2 锁的内存语义的实现
+#### 2.3.2.2 锁的内存语义的实现
 
 - 利用volatile变量的读写所具有的内存语义；
 - 利用CAS附带的volatile读写所具有的内存语义；
 
 ### 2.3.3 final
 
-### 2.3.3.1 JMM 赋予 final 的重排序规则
+#### 2.3.3.1 JMM 赋予 final 的重排序规则
 
 对于 final 域，编译器和处理器要遵守三个重排序规则：
 
@@ -84,12 +84,12 @@ class VolatileExample {
 - 读 final 域的重排序规则：初次读一个包含 final 域的对象的引用，与随后初次读这个 final 域，这两个操作之间不能重排序；
 - 对于引用类型，写 final 域的重排序规则对编译器和处理器增加了约束：在构造函数内对一个 final 引用的对象的成员域的写入，与随后在构造函数外把这个被构造对象的引用赋值给一个引用变量，这两个操作之间不能重排序。
 
-### 2.3.3.2 JMM 赋予 final 的重排序规则的意义
+#### 2.3.3.2 JMM 赋予 final 的重排序规则的意义
 
 - 写 final 域的重排序规则可以确保：在对象引用为任意线程可见之前，对象的 final 域已经被正确初始化过了，而普通域不具有这个保障。
 - 读 final 域的重排序规则可以确保：在读一个对象的 final 域之前，一定会先读包含这个 final 域的对象的引用。如果该引用不为 null，那么引用对象的 final 域一定已经被线程初始化过了。
 
-### 2.3.3.3 JMM 赋予 final 的重排序规则的实现
+#### 2.3.3.3 JMM 赋予 final 的重排序规则的实现
 
 - 写 final 域的重排序规则会要求译编器在 final 域的写之后，构造函数 return 之前，插入一个 StoreStore 障屏；
 - 读 final 域的重排序规则要求编译器在读 final 域的操作前面插入一个 LoadLoad 屏障。
