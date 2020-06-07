@@ -185,3 +185,9 @@ dispatch_base就是根据转发表跳转的逻辑，Interpreter::dispatch_table(
 
 
 
+最后再从**JAVA、字节码、机器码**三个层面看代码的执行：
+
+<img src="../../../../img/execute_in_different_level.png" alt="image-20200607175359508" style="zoom:45%;" />
+
+
+
