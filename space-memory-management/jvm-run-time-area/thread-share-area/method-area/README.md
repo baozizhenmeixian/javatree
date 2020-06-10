@@ -71,7 +71,7 @@ Metaspace 是用来存放 class metadata 的，class metadata 用于记录一个
 - 中间层，负责分出一小块一小块给每个类加载器；
 - 最顶层，类加载器负责把这些申请到的内存块用来存放 class metadata。
 
-##### 2.2.1.1 最底层
+##### 2.2.1.1 最底层(node)
 
 在最底层，JVM 通过 `mmap(3)` 接口向操作系统申请内存映射，在 64 位平台上，每次申请 **2MB** 空间。
 
@@ -84,6 +84,10 @@ Metaspace 是用来存放 class metadata 的，class metadata 用于记录一个
 一个 Node 是 2MB 的空间，前面说了在使用的时候再向操作系统申请实际的内存，但是频繁的系统调用会降低性能，所以 Node 内部需要维护一个水位线，当 Node 内已使用内存快达到水位线的时候，向操作系统要新的内存页。并且相应地提高水位线。
 
 直到一个 Node 被完全用完，会分配一个新的 Node，并且将其加入到链表中，老的 Node 就 “退休” 了。下图中，前面的三个 Node 就是退休状态了。
+
+![image-20200608175201759](../../../../img/meta_node_list.png)
+
+##### 2.2.1.2 中间层(chunk)
 
 从一个 Node 中分配内存，每一块称为 MetaChunk，chunk 有三种规格，在 64 位系统中分别为 1K、4K、64K
 
@@ -107,8 +111,6 @@ Metaspace 是用来存放 class metadata 的，class metadata 用于记录一个
 >
 > 当然，由这个 Node 进入到空闲列表的节点也要删除。
 
-##### 2.2.1.2 中间层
-
 通常一个类加载器在申请 Metaspace 空间用来存放 metadata 的时候，也就需要几十到几百个字节，但是它会得到一个 Metachunk，一个比要求的内存大得多的内存块。
 
 为什么？因为前面说了，要从全局的 `VirtualSpaceList` 链表的 Node 中分配内存是昂贵的操作，需要加锁。我们不希望这个操作太频繁，所以一次性给一个大的 MetaChunk，以便于这个类加载器之后加载其他的类，这样就可以做到多个类加载器并发分配了。只有当这个 chunk 用完了，类加载器才需要又去 `VirtualSpaceList` 申请新的 chunk。
@@ -121,9 +123,9 @@ Metaspace 是用来存放 class metadata 的，class metadata 用于记录一个
 
 类加载器申请空间的时候，每次都给类加载器一个 chunk，这种优化，是建立在假设它们立马就会需要新的空间的基础上的。这种假设可能正确也可能错误，可能在拿到一个很大的 chunk 后，这个类加载器恰巧就不再需要加载新的类了。
 
-##### 2.2.1.3 最顶层
+##### 2.2.1.3 最顶层(Metabolck)
 
-在 Metachunk 上，我们有一个二级分配器（class-loader-local allocator），它将一个 Metachunk 分割成一个个小的单元，这些小的单元称为 Metablock，它们是实际分配给每个调用者的。
+在 Metachunk 上，我们有一个二级分配器（class-loader-local allocator），它将一个 Metachunk 分割成一个个小的单元，这些小的单元称为 Metablock，它们是实际分配给每个调用者的，即每个InstanceKlass占用一个单元。
 
 这个二级分配器非常原始，它的速度也非常快：
 

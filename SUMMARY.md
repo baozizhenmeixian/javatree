@@ -50,8 +50,9 @@ Summary
 
 ## 空间：内存管理 <a id="space-memory-management"></a>
 
+* [前置知识-虚拟机基础](space-memory-management/pre-knowledge.md)
 * [JVM运行时数据区](space-memory-management/jvm-run-time-area/README.md)
-  * [前置知识](space-memory-management/jvm-run-time-area/pre-knowledge.md)
+  * [前置知识-linux进程空间](space-memory-management/jvm-run-time-area/pre-knowledge.md)
   * [线程私有区](space-memory-management/jvm-run-time-area/thread-private-area/README.md)
     * [JVM栈](space-memory-management/jvm-run-time-area/thread-private-area/stack.md)
     * [程序计数器](space-memory-management/jvm-run-time-area/thread-private-area/program-counter.md)
@@ -59,7 +60,6 @@ Summary
     * [堆](space-memory-management/jvm-run-time-area/thread-share-area/java-heap.md)
     * [方法区](space-memory-management/jvm-run-time-area/thread-share-area/method-area/README.md)
       * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.md)
-
 * [程序的运行过程](space-memory-management/process-of-program/README.md)
   * [执行准备](space-memory-management/process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.md)
     * [加载](language-symbol-organization/execute-preperation/loading.md)
