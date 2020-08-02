@@ -75,5 +75,4 @@ Summary
         * 销毁
           * [GC机制](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/README.md)
           * [GC算法](space-memory-management/process-of-program/execution/lei-de-shi-li-hua/dui-xiang/xiao-hui/gc-ji-zhi/gc-suan-fa.md)
-  * 类卸载
 
