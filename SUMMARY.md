@@ -6,7 +6,7 @@ Summary
 * [符号编译](language-symbol-organization/symbol-compile/README.md)
     * [字节码](language-symbol-organization/symbol-compile/bytecode.md)
 * [过程结构](language-symbol-organization/guo-cheng-jie-gou/README.md)
-    * [顺序结构](language-symbol-organization/guo-cheng-jie-gou/sequence-structure.md)
+    * [顺序结构](language-symbol-organization/guo-cheng-jie-gou/sequence-structure.md)/Users/dina/Documents/project/code/javatree/SUMMARY.md
     * [选择结构](language-symbol-organization/guo-cheng-jie-gou/case-structure/README.md)
         * [if...else 语句](language-symbol-organization/guo-cheng-jie-gou/case-structure/if...else.md)
         * [switch 语句](language-symbol-organization/guo-cheng-jie-gou/case-structure/switch.md)
