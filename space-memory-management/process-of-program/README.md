@@ -19,3 +19,9 @@ Java虚拟机规范并没有强制约束加载（Loading）阶段何时开始，
 5）当使用jdk1.7的动态语言支持时，如果一个java.lang.invoke.MethodHandle实例最后的解析结果是REF_getStatic、REF_putStatic、REF_invokeStatic的方法句柄，并且这个方法句柄所对应的类没有进行过初始化，则需要先触发其初始化。
 
 以上5种场景中的行为称为对一个类进行主动引用。除此之外，所有引用类的方式都不会触发初始化，称为被动引用。
+
+下面我们通过一张脑图来看一下程序的运行过程：
+
+![program_execution](../../img/program_execution.png)
+
+后续章节会一一展开进行讲解。
