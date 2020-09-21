@@ -60,6 +60,7 @@ Summary
     * [堆](space-memory-management/jvm-run-time-area/thread-share-area/java-heap.md)
     * [方法区](space-memory-management/jvm-run-time-area/thread-share-area/method-area/README.md)
       * [运行时常量池](space-memory-management/jvm-run-time-area/thread-share-area/method-area/run-time-constant-pool.md)
+    * [字符串常量池](space-memory-management/jvm-run-time-area/thread-share-area/string-pool.md)
 * [程序的运行过程](space-memory-management/process-of-program/README.md)
   * [执行准备](space-memory-management/process-of-program/lei-jia-zai-lian-jie-chu-shi-hua.md)
     * [加载](language-symbol-organization/execute-preperation/loading.md)
